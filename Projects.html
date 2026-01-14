@@ -9,7 +9,7 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  color: #222;
+  color: #6F4E37; /* Coffee brown for body text */
   background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1); /* orange-pink-green gradient */
   padding: 20px;
 }
@@ -17,7 +17,7 @@ header {
   text-align: center;
   padding: 40px 20px;
   color: #fff;
-  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4);
+  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4); /* warm header gradient */
 }
 header h1 {
   font-size: 38px;
@@ -25,7 +25,7 @@ header h1 {
 }
 a.button {
   display: inline-block;
-  background: #ff6f61;
+  background: #4B3621; /* dark chocolate button */
   color: #fff;
   padding: 12px 25px;
   border-radius: 8px;
@@ -35,7 +35,7 @@ a.button {
   transition: 0.3s;
 }
 a.button:hover {
-  background: #ff3b2e;
+  background: #6F4E37; /* coffee brown on hover */
 }
 
 /* --- Cards --- */
@@ -47,17 +47,28 @@ a.button:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 h2 {
-  color: #ff6f61;
+  color: #8B5E3C; /* light brown headings */
   margin-bottom: 15px;
 }
 p {
   line-height: 1.6;
 }
-img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 20px;
+
+/* --- Infographics Horizontal Layout --- */
+.infographics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 15px;
 }
+.infographics-container img {
+  width: 30%;
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+/* --- Embedded PDFs & Slides --- */
 iframe {
   width: 100%;
   height: 500px;
@@ -78,7 +89,7 @@ iframe {
 
 <!-- PDF Project -->
 <div class="card">
-  <h2>Data Visualization</h2>
+  <h2>Data Visualization PDF</h2>
   <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
   <p>Automated student tracking with Python & XlsxWriter, reducing manual reporting effort significantly.</p>
 </div>
@@ -86,16 +97,18 @@ iframe {
 <!-- Infographics -->
 <div class="card">
   <h2>Instructional Infographics</h2>
-  <img src="data/Outliers.jpg" alt="Outliers Infographic">
-  <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
-  <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+  <div class="infographics-container">
+    <img src="data/Outliers.jpg" alt="Outliers Infographic">
+    <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
+    <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+  </div>
   <p>Visual summaries of key concepts in data analysis: handling outliers, missing values, and data wrangling.</p>
 </div>
 
 <!-- Lesson Slides -->
 <div class="card">
   <h2>Lesson Slides</h2>
-  <iframe src="https://docs.google.com/presentation/d/e/1h084Yx0NCmiy9dLPSlqsk3nPyqoqgkgr/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
+    <iframe src="https://docs.google.com/presentation/d/e/1h084Yx0NCmiy9dLPSlqsk3nPyqoqgkgr/embed?start=false&loop=false&delayms=3000" allowfullscreen></iframe>
   <p>Interactive slides demonstrating instructional content and workflow examples.</p>
 </div>
 
