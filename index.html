@@ -5,17 +5,18 @@
 <title>Geetu Sodhi | Data Analyst & Learning Specialist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* --- General Styles --- */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: #f4f6f8;
   color: #222;
+  background: linear-gradient(135deg, #a8edea, #fed6e3); /* ombre background */
 }
 header {
-  background: #0f172a;
-  color: white;
   padding: 60px 40px;
   text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #f093fb, #f5576c); /* ombre header */
 }
 header h1 {
   font-size: 40px;
@@ -25,26 +26,35 @@ header p {
   font-size: 18px;
   opacity: 0.9;
 }
+
+/* --- Sections & Cards --- */
 section {
   max-width: 1000px;
   margin: auto;
   padding: 40px 20px;
 }
 .card {
-  background: white;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 15px;
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 h2 {
-  color: #0f172a;
+  color: #d6336c;
   margin-bottom: 15px;
+}
+h3 {
+  color: #f5576c;
+  margin-bottom: 8px;
+}
+p {
+  line-height: 1.6;
 }
 .badge {
   display: inline-block;
-  background: #e0e7ff;
-  color: #1e3a8a;
+  background: #fed6e3;
+  color: #d6336c;
   padding: 6px 12px;
   border-radius: 20px;
   margin: 6px 6px 0 0;
@@ -55,8 +65,24 @@ h2 {
   padding: 40px;
   color: #666;
 }
+
+/* --- Project Grid --- */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.project-grid img {
+  width: 45%;
+  border-radius: 10px;
+}
+iframe {
+  border-radius: 10px;
+}
+
+/* --- Links --- */
 a {
-  color: #2563eb;
+  color: #d6336c;
   text-decoration: none;
 }
 </style>
@@ -67,11 +93,12 @@ a {
 <header>
   <h1>Geetu Sodhi</h1>
   <p>Data Analyst • Technical Trainer & Learning Specialist</p>
-  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com | 🔗 linkedin.com/in/geetusodhi</p>
+  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com | 🔗 <a href="https://linkedin.com/in/geetusodhi" target="_blank">linkedin.com/in/geetusodhi</a></p>
 </header>
 
 <section>
 
+<!-- About Me -->
 <div class="card">
   <h2>About Me</h2>
   <p>
@@ -88,6 +115,7 @@ a {
   </p>
 </div>
 
+<!-- Skills -->
 <div class="card">
   <h2>Core Skills & Tools</h2>
   <span class="badge">Python (Pandas, NumPy)</span>
@@ -104,28 +132,37 @@ a {
   <span class="badge">Articulate & LMS Tools</span>
 </div>
 
+<!-- Projects Section -->
 <div class="card">
-  <h2>Featured Data & Automation Projects</h2>
-  <p><strong>Student Progress Dashboard Automation</strong><br>
-  Built a Python-based tracking system that reduced reporting time by 90% and integrates with Blackboard.</p>
+  <h2>Projects & Instructional Content</h2>
 
-  <p><strong>Bulk Email & Certificate Automation</strong><br>
-  Automated Coursera certificate generation and bulk emailing using Python + Power Automate.</p>
+  <!-- Embedded PDF -->
+  <div>
+    <h3>Curriculum Overview</h3>
+    <iframe src="projects/CurriculumOverview.pdf" width="100%" height="500px"></iframe>
+    <p>Automated student performance tracking using Python & XlsxWriter. Reduced manual reporting time by 90%.</p>
+  </div>
 
-  <p><strong>SQL Performance Analysis</strong><br>
-  Used SQL to analyze training outcomes and recommend data-driven interventions.</p>
+  <!-- Embedded Infographics -->
+  <div>
+    <h3>Instructional Design Infographics</h3>
+    <div class="project-grid">
+      <img src="projects/Infographic1.png" alt="Infographic 1">
+      <img src="projects/Infographic2.png" alt="Infographic 2">
+    </div>
+    <p>Visual summaries of curriculum design principles and learning journeys.</p>
+  </div>
+
+  <!-- Embedded Slides -->
+  <div>
+    <h3>Sample Lesson Slides</h3>
+    <iframe src="https://docs.google.com/presentation/d/e/YOUR_LINK/embed?start=false&loop=false&delayms=3000" 
+            width="100%" height="500px" allowfullscreen></iframe>
+    <p>Interactive slides demonstrating instructional content and workflow examples.</p>
+  </div>
 </div>
 
-<div class="card">
-  <h2>Instructional Design & Training Highlights</h2>
-  <ul>
-    <li>Curriculum design & instructional content for diverse learners</li>
-    <li>Quality assurance, accessibility, and learner experience validation</li>
-    <li>Hands-on training in Python, SQL, Power BI, and workflow automation</li>
-    <li>Mock interviews, coaching, and mentoring for career readiness</li>
-  </ul>
-</div>
-
+<!-- Current Courses -->
 <div class="card">
   <h2>Currently Teaching & Exploring</h2>
   <ul>
@@ -139,14 +176,12 @@ a {
   </ul>
 </div>
 
+<!-- Contact -->
 <div class="card">
   <h2>Let’s Connect</h2>
-  <p>
-    I love collaborating on data education projects, workflow automation solutions, or creating interactive learning content.
-  </p>
-  <p>
-    📧 geetusodhi84@gmail.com<br>
-    🔗 linkedin.com/in/geetusodhi
+  <p>I love collaborating on data education projects, workflow automation solutions, or creating interactive learning content.</p>
+  <p>📧 geetusodhi84@gmail.com<br>
+     🔗 <a href="https://linkedin.com/in/geetusodhi" target="_blank">linkedin.com/in/geetusodhi</a>
   </p>
 </div>
 
