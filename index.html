@@ -10,16 +10,16 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   color: #222;
-  background: linear-gradient(135deg, #a8edea, #fed6e3); /* ombre background */
+  background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1); /* orange-pink-green gradient */
 }
 header {
   padding: 60px 40px;
   text-align: center;
   color: #fff;
-  background: linear-gradient(135deg, #f093fb, #f5576c); /* ombre header */
+  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4); /* warm, bright header gradient */
 }
 header h1 {
-  font-size: 40px;
+  font-size: 42px;
   margin-bottom: 10px;
 }
 header p {
@@ -41,11 +41,11 @@ section {
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
 h2 {
-  color: #d6336c;
+  color: #ff6f61;
   margin-bottom: 15px;
 }
 h3 {
-  color: #f5576c;
+  color: #ff914d;
   margin-bottom: 8px;
 }
 p {
@@ -53,37 +53,35 @@ p {
 }
 .badge {
   display: inline-block;
-  background: #fed6e3;
-  color: #d6336c;
+  background: #c3f9d1;
+  color: #333;
   padding: 6px 12px;
   border-radius: 20px;
   margin: 6px 6px 0 0;
   font-size: 14px;
 }
+
+/* --- Buttons --- */
+a.button {
+  display: inline-block;
+  background: #ff6f61;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+a.button:hover {
+  background: #ff3b2e;
+}
+
+/* --- Footer --- */
 .footer {
   text-align: center;
   padding: 40px;
   color: #666;
-}
-
-/* --- Project Grid --- */
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.project-grid img {
-  width: 45%;
-  border-radius: 10px;
-}
-iframe {
-  border-radius: 10px;
-}
-
-/* --- Links --- */
-a {
-  color: #d6336c;
-  text-decoration: none;
 }
 </style>
 </head>
@@ -93,7 +91,7 @@ a {
 <header>
   <h1>Geetu Sodhi</h1>
   <p>Data Analyst • Technical Trainer & Learning Specialist</p>
-  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com | 🔗 <a href="https://linkedin.com/in/geetusodhi" target="_blank">linkedin.com/in/geetusodhi</a></p>
+  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com | 🔗 <a href="https://linkedin.com/in/geetusodhi" target="_blank" style="color:white;">linkedin.com/in/geetusodhi</a></p>
 </header>
 
 <section>
@@ -105,13 +103,7 @@ a {
     I am a <strong>Technical Trainer and Learning Specialist</strong> with over <strong>10 years of experience</strong> in curriculum development, training delivery, and learning quality management. I specialize in creating <strong>structured, high-impact learning programs</strong> that turn complex technical topics into <strong>clear, practical, and engaging experiences</strong>.
   </p>
   <p>
-    My work spans the full learning lifecycle—from <strong>curriculum design and instructional content development</strong> to <strong>quality control, accessibility checks, learner experience validation, and continuous improvement</strong>. I ensure every program I build is <strong>accurate, consistent, scalable, and aligned with measurable learning outcomes</strong>. I have crafted learning experiences for diverse audiences from adults to K-12 students.
-  </p>
-  <p>
-    I don't just create content—I architect <strong>immersive learning journeys</strong> that ignite curiosity and drive meaningful change. My approach is grounded in <strong>design thinking and learning sciences theories</strong>, ensuring every learning solution is as engaging as it is inclusive.
-  </p>
-  <p>
-    I also support individuals and teams in building <strong>real-world data and automation skills</strong> using Python, SQL, APIs, dashboards, and workflow automation. My focus is always on helping learners not just complete courses—but confidently apply their skills in real professional environments.
+    I support individuals and teams in building <strong>real-world data and automation skills</strong> using Python, SQL, APIs, dashboards, and workflow automation. My focus is always on helping learners not just complete courses—but confidently apply their skills in real professional environments.
   </p>
 </div>
 
@@ -132,34 +124,11 @@ a {
   <span class="badge">Articulate & LMS Tools</span>
 </div>
 
-<!-- Projects Section -->
-<div class="card">
-  <h2>Projects & Instructional Content</h2>
-
-  <!-- Embedded PDF -->
-  <div>
-    <h3>Curriculum Overview</h3>
-    <iframe src="data/DataVisualization.pdf" width="100%" height="500px"></iframe>
-    <p>Automated student performance tracking using Python & XlsxWriter. Reduced manual reporting time by 90%.</p>
-  </div>
-
-  <!-- Embedded Infographics -->
-  <div>
-    <h3>Instructional Design Infographics</h3>
-    <div class="project-grid">
-      <img src="data/Outliers.jpg" alt="Infographic 1">
-      <img src="data/Data Wrangling.jpg" alt="Infographic 2">
-    </div>
-    <p>Visual summaries of curriculum design principles and learning journeys.</p>
-  </div>
-
-  <!-- Embedded Slides -->
-  <div>
-    <h3>Sample Lesson Slides</h3>
-    <iframe src="https://docs.google.com/presentation/d/e/YOUR_LINK/embed?start=false&loop=false&delayms=3000" 
-            width="100%" height="500px" allowfullscreen></iframe>
-    <p>Interactive slides demonstrating instructional content and workflow examples.</p>
-  </div>
+<!-- Button to Projects Page -->
+<div class="card" style="text-align:center;">
+  <h2>Explore My Projects</h2>
+  <p>Click below to see detailed instructional content, PDFs, and infographics showcasing my work as a Technical Trainer and Learning Specialist.</p>
+  <a href="projects.html" class="button">View Projects</a>
 </div>
 
 <!-- Current Courses -->
