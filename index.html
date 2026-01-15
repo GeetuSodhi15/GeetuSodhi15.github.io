@@ -4,84 +4,107 @@
 <meta charset="UTF-8">
 <title>Geetu Sodhi | Data Analyst & Learning Specialist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* --- General Styles --- */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   color: #222;
-  background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1); /* orange-pink-green gradient */
+  background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1);
 }
+
+/* HERO */
 header {
-  padding: 60px 40px;
+  padding: 80px 30px 100px;
   text-align: center;
-  color: #6F4E37;
-  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4); /* warm, bright header gradient */
+  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4);
+  color: #5a3a22;
 }
 header h1 {
-  font-size: 42px;
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
   margin-bottom: 10px;
 }
 header p {
-  font-size: 18px;
-  opacity: 0.9;
+  font-size: 20px;
+  margin: 8px 0;
 }
 
-/* --- Sections & Cards --- */
+/* SECTIONS */
 section {
   max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
+
+/* GLASS CARDS */
 .card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 15px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
 }
+
+/* HEADINGS */
 h2 {
+  font-family: 'Playfair Display', serif;
   color: #ff6f61;
-  margin-bottom: 15px;
+  font-size: 32px;
+  margin-bottom: 20px;
 }
 h3 {
+  font-family: 'Playfair Display', serif;
   color: #ff914d;
-  margin-bottom: 8px;
 }
-p {
-  line-height: 1.6;
-}
+
+/* BADGES */
 .badge {
   display: inline-block;
-  background: #c3f9d1;
-  color: #333;
-  padding: 6px 12px;
-  border-radius: 20px;
-  margin: 6px 6px 0 0;
+  background: linear-gradient(135deg, #c3f9d1, #8fd3f4);
+  color: #222;
+  padding: 8px 16px;
+  border-radius: 30px;
+  margin: 8px 8px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* BUTTON */
+a.button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6f61, #ff914d);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+a.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,111,97,0.5);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 50px 20px;
+  color: #555;
   font-size: 14px;
 }
 
-/* --- Buttons --- */
-a.button {
-  display: inline-block;
-  background: #ff6f61;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 8px;
+/* LINKS */
+a {
+  color: #ff6f61;
   text-decoration: none;
-  margin-top: 20px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-a.button:hover {
-  background: #ff3b2e;
-}
-
-/* --- Footer --- */
-.footer {
-  text-align: center;
-  padding: 40px;
-  color: #666;
+  font-weight: 500;
 }
 </style>
 </head>
@@ -90,28 +113,26 @@ a.button:hover {
 
 <header>
   <h1>Geetu Sodhi</h1>
-  <p>Data Analyst • Technical Trainer & Learning Specialist</p>
-  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com | 🔗 <a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank" style="color:white;">linkedin.com/in/geetusodhi</a></p>
+  <p>Data Analyst • Technical Trainer • Learning Specialist</p>
+  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com</p>
+  <p><a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank" style="color:white;">linkedin.com/in/geetusodhi</a></p>
 </header>
 
 <section>
 
-<!-- About Me -->
 <div class="card">
   <h2>About Me</h2>
   <p>
-    I am a <strong>Technical Trainer and Learning Specialist</strong> with over <strong>10 years of experience</strong> in curriculum development, training delivery, and learning quality management. I specialize in creating <strong>structured, high-impact learning programs</strong> that turn complex technical topics into <strong>clear, practical, and engaging experiences</strong>.
+    I am a <strong>Technical Trainer and Learning Specialist</strong> with over <strong>10 years of experience</strong> in curriculum design, content development, and learning quality management. I build structured, high-impact learning programs that transform complex technology into practical, real-world skills.
   </p>
   <p>
-    My work spans the full learning lifecycle—from <strong>curriculum design and instructional content development</strong> to <strong>quality control, accessibility checks, learner experience validation, and continuous improvement</strong>. I ensure every program I build is <strong>accurate, consistent, scalable, and aligned with measurable learning outcomes</strong>. I have crafted learning experiences for diverse audiences from adults to K-12 students. I don't just create content—I architect <strong>immersive learning journeys</strong> that ignite curiosity and drive meaningful change. My approach is grounded in <strong>design thinking and learning sciences theories</strong>, ensuring that every learning solution is as engaging as it is inclusive.
+    My expertise spans instructional design, accessibility, learner experience validation, and continuous improvement. I design immersive learning journeys that empower students, professionals, and organizations to apply data, automation, and analytics with confidence.
   </p>
   <p>
-    I support individuals and teams in building <strong>real-world data and automation skills</strong> using Python, SQL, APIs, dashboards, and workflow automation. My focus is always on helping learners not just complete courses—but confidently apply their skills in real professional environments.
+    I specialize in teaching <strong>Python, SQL, Power BI, and workflow automation</strong> with a focus on clarity, usability, and career-ready outcomes.
   </p>
 </div>
 
-
-<!-- Skills -->
 <div class="card">
   <h2>Core Skills & Tools</h2>
   <span class="badge">Python (Pandas, NumPy)</span>
@@ -123,38 +144,36 @@ a.button:hover {
   <span class="badge">JavaScript</span>
   <span class="badge">C++</span>
   <span class="badge">Curriculum Design</span>
-  <span class="badge">Instructional Content Dev</span>
-  <span class="badge">Learning Quality Management</span>
-  <span class="badge">Articulate & LMS Tools</span>
+  <span class="badge">Instructional Content</span>
+  <span class="badge">Learning QA</span>
+  <span class="badge">Articulate & LMS</span>
 </div>
 
-<!-- Button to Projects Page -->
 <div class="card" style="text-align:center;">
-  <h2>Explore My Projects</h2>
-  <p>Click below to see detailed instructional content, PDFs, and infographics showcasing my work as a Technical Trainer and Learning Specialist.</p>
+  <h2>Explore My Work</h2>
+  <p>View my instructional projects, dashboards, PDFs, and learning systems.</p>
   <a href="Projects.html" class="button">View Projects</a>
 </div>
 
-<!-- Current Courses -->
 <div class="card">
   <h2>Currently Teaching & Exploring</h2>
   <ul>
-    <li>IBM Data Analyst Certificate Curriculum</li>
+    <li>IBM Data Analyst Curriculum</li>
     <li>Microsoft Azure & AI Fundamentals (AZ-900, AI-900)</li>
-    <li>Python Basics to Applied Analysis</li>
-    <li>SQL Queries & Subqueries</li>
-    <li>Power BI for Business Insights</li>
-    <li>Exploring Power BI Copilot & AI-driven dashboards</li>
-    <li>Enhancing courses using generative AI in Articulate & LMS platforms</li>
+    <li>Python for Data Analysis</li>
+    <li>Advanced SQL & Query Optimization</li>
+    <li>Power BI Dashboards</li>
+    <li>AI-driven reporting & automation</li>
+    <li>Generative AI for learning platforms</li>
   </ul>
 </div>
 
-<!-- Contact -->
 <div class="card">
   <h2>Let’s Connect</h2>
-  <p>I love collaborating on data education projects, workflow automation solutions, or creating interactive learning content.</p>
-  <p>📧 geetusodhi84@gmail.com<br>
-     🔗 <a href="https://linkedin.com/in/geetusodhi" target="_blank">linkedin.com/in/geetusodhi</a>
+  <p>I enjoy collaborating on data education, automation systems, and learning experience design.</p>
+  <p>
+    📧 geetusodhi84@gmail.com <br>
+    🔗 <a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank">linkedin.com/in/geetusodhi</a>
   </p>
 </div>
 
