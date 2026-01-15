@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Geetu Sodhi | Data Analyst & Learning Specialist</title>
+<title>Geetu Sodhi — Portfolio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google Fonts -->
@@ -11,177 +11,211 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+/* GLOBAL */
+body, html {
   margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
-  color: #222;
+  scroll-behavior: smooth;
   background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  z-index: 100;
+}
+nav a:hover {
+  color: #ff6f61;
+}
+nav .menu {
+  gap: 20px;
+  display: flex;
 }
 
 /* HERO */
-header {
-  padding: 80px 30px 100px;
+#hero {
+  height: 90vh;
   text-align: center;
+  padding-top: 140px;
   background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4);
   color: #5a3a22;
 }
-header h1 {
+#hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 56px;
-  margin-bottom: 10px;
+  font-size: 60px;
+  margin: 0;
 }
-header p {
-  font-size: 20px;
-  margin: 8px 0;
+#hero p {
+  font-size: 21px;
+  margin-top: 10px;
 }
 
 /* SECTIONS */
 section {
-  max-width: 1000px;
+  padding: 80px 20px;
+  max-width: 1100px;
   margin: auto;
-  padding: 60px 20px;
 }
-
-/* GLASS CARDS */
-.card {
-  background: rgba(255,255,255,0.9);
-  border-radius: 20px;
-  padding: 40px;
-  margin-bottom: 40px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
-}
-
-/* HEADINGS */
 h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  text-align: center;
   color: #ff6f61;
-  font-size: 32px;
   margin-bottom: 20px;
 }
-h3 {
-  font-family: 'Playfair Display', serif;
-  color: #ff914d;
-}
 
-/* BADGES */
-.badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #c3f9d1, #8fd3f4);
-  color: #222;
-  padding: 8px 16px;
-  border-radius: 30px;
-  margin: 8px 8px 0 0;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* BUTTON */
-a.button {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6f61, #ff914d);
-  color: white;
-  padding: 14px 32px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-a.button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255,111,97,0.5);
-}
-
-/* FOOTER */
-.footer {
+/* ABOUT */
+#about p {
+  font-size: 18px;
+  line-height: 1.6;
   text-align: center;
-  padding: 50px 20px;
-  color: #555;
-  font-size: 14px;
 }
 
-/* LINKS */
-a {
-  color: #ff6f61;
-  text-decoration: none;
+/* SKILLS */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.skills .badge {
+  background: #c3f9d1;
+  padding: 8px 16px;
+  border-radius: 20px;
   font-weight: 500;
+}
+
+/* PROJECTS GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+}
+.project-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+.project-card .info {
+  padding: 14px 16px;
+}
+.project-card h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #ff6f61;
+}
+.project-card p {
+  font-size: 15px;
+  margin-top: 6px;
+  color: #444;
+}
+
+/* CONTACT */
+#contact p {
+  text-align: center;
+  font-size: 18px;
+}
+#contact a {
+  display: inline-block;
+  margin: 10px 8px;
+  font-weight: 600;
+  color: #ff6f61;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Geetu Sodhi</h1>
+<nav>
+  <div class="logo"><strong>Geetu Sodhi</strong></div>
+  <div class="menu">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <h1>Hello, I’m Geetu 👋</h1>
   <p>Data Analyst • Technical Trainer • Learning Specialist</p>
-  <p>📍 Toronto, Canada | 📧 geetusodhi84@gmail.com</p>
-  <p><a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank" style="color:white;">linkedin.com/in/geetusodhi</a></p>
-</header>
-
-<section>
-
-<div class="card">
-  <h2>About Me</h2>
-  <p>
-    I am a <strong>Technical Trainer and Learning Specialist</strong> with over <strong>10 years of experience</strong> in curriculum design, content development, and learning quality management. I build structured, high-impact learning programs that transform complex technology into practical, real-world skills.
-  </p>
-  <p>
-    My expertise spans instructional design, accessibility, learner experience validation, and continuous improvement. I design immersive learning journeys that empower students, professionals, and organizations to apply data, automation, and analytics with confidence.
-  </p>
-  <p>
-    I specialize in teaching <strong>Python, SQL, Power BI, and workflow automation</strong> with a focus on clarity, usability, and career-ready outcomes.
-  </p>
-</div>
-
-<div class="card">
-  <h2>Core Skills & Tools</h2>
-  <span class="badge">Python (Pandas, NumPy)</span>
-  <span class="badge">SQL</span>
-  <span class="badge">Power BI</span>
-  <span class="badge">Excel</span>
-  <span class="badge">Power Automate</span>
-  <span class="badge">Google Sheets Automation</span>
-  <span class="badge">JavaScript</span>
-  <span class="badge">C++</span>
-  <span class="badge">Curriculum Design</span>
-  <span class="badge">Instructional Content</span>
-  <span class="badge">Learning QA</span>
-  <span class="badge">Articulate & LMS</span>
-</div>
-
-<div class="card" style="text-align:center;">
-  <h2>Explore My Work</h2>
-  <p>View my instructional projects, dashboards, PDFs, and learning systems.</p>
-  <a href="Projects.html" class="button">View Projects</a>
-</div>
-
-<div class="card">
-  <h2>Currently Teaching & Exploring</h2>
-  <ul>
-    <li>IBM Data Analyst Curriculum</li>
-    <li>Microsoft Azure & AI Fundamentals (AZ-900, AI-900)</li>
-    <li>Python for Data Analysis</li>
-    <li>Advanced SQL & Query Optimization</li>
-    <li>Power BI Dashboards</li>
-    <li>AI-driven reporting & automation</li>
-    <li>Generative AI for learning platforms</li>
-  </ul>
-</div>
-
-<div class="card">
-  <h2>Let’s Connect</h2>
-  <p>I enjoy collaborating on data education, automation systems, and learning experience design.</p>
-  <p>
-    📧 geetusodhi84@gmail.com <br>
-    🔗 <a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank">linkedin.com/in/geetusodhi</a>
-  </p>
-</div>
-
+  <p>I create impactful learning experiences & real-world data systems.</p>
 </section>
 
-<div class="footer">
-  © 2026 Geetu Sodhi • Built with GitHub Pages
-</div>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I specialize in turning complexity into clarity — empowering learners with Python, SQL, Power BI, automation, and data storytelling. My work blends curriculum design, learner experience strategy, and quality-driven training delivery to build confident learners and real-world-ready skills.</p>
+
+  <div class="skills">
+    <span class="badge">Python</span>
+    <span class="badge">SQL</span>
+    <span class="badge">Power BI</span>
+    <span class="badge">Excel</span>
+    <span class="badge">Automation</span>
+    <span class="badge">Instructional Design</span>
+    <span class="badge">Dashboards</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="data/Data Visualization Preview.png" alt="Data Visualization">
+      <div class="info">
+        <h3>Data Visualization PDF</h3>
+        <p>Automated reporting & dashboards using Python & Excel.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="data/Outliers.jpg" alt="Outliers Infographic">
+      <div class="info">
+        <h3>Infographics Collection</h3>
+        <p>Visual guides for key data concepts.</p>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="data/Slide Preview.png" alt="Lesson Slides">
+      <div class="info">
+        <h3>Lesson Slides</h3>
+        <p>Interactive instructional material & examples.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Connect with Me</h2>
+  <p>Interested in collaborating or learning together?</p>
+  <a href="mailto:geetusodhi84@gmail.com">📧 Email Me</a>
+  <a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank">🔗 LinkedIn</a>
+</section>
 
 </body>
 </html>
