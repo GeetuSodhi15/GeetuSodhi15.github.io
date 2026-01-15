@@ -13,11 +13,11 @@
 <style>
 :root {
   --bg: linear-gradient(135deg, #ffb6c1, #ffc0cb, #fff0e1); /* soft pink with hint of gold */
-  --card: rgba(255,255,255,0.95);
+  --card: rgba(254, 246, 240, 0.85); /* soft neutral blush, instead of white */
   --text: #222;
   --accent: #ff6f61; /* pink-red accent */
-  --hero-name: #D18B47; /* soft copper / deep gold */
-  --hero-designation: #D18B47;
+  --hero-name: #800020; /* burgundy for name */
+  --hero-designation: #800020;
 }
 .dark {
   --bg: #0f172a;
@@ -74,7 +74,7 @@ nav a:hover { color: var(--accent); }
 #hero p {
   font-size: 20px;
   margin: 6px 0;
-  max-width: 650px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
@@ -91,7 +91,7 @@ nav a:hover { color: var(--accent); }
 
 /* SECTIONS */
 section {
-  max-width: 1000px;
+  max-width: 1100px; /* increased width */
   margin: auto;
   padding: 60px 20px;
   opacity: 0;
@@ -114,10 +114,10 @@ h2 {
 .card {
   background: var(--card);
   border-radius: 20px;
-  padding: 30px;
+  padding: 35px;
   margin-bottom: 40px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
