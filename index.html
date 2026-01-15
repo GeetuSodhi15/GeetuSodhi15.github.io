@@ -11,139 +11,123 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* GLOBAL */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  scroll-behavior: smooth;
-  background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1);
+:root {
+  --bg: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1);
+  --card: rgba(255,255,255,0.9);
+  --text: #222;
+  --accent: #ff6f61;
 }
-a {
-  text-decoration: none;
-  color: inherit;
+.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f1f5f9;
+  --accent: #fb7185;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
 }
 
 /* NAV */
 nav {
   position: sticky;
   top: 0;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  padding: 12px 30px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
+  padding: 15px 30px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
   z-index: 100;
 }
-nav a:hover {
-  color: #ff6f61;
-}
-nav .menu {
-  gap: 20px;
-  display: flex;
+.dark nav { background: rgba(15,23,42,0.8); }
+
+nav a {
+  margin-left: 20px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 /* HERO */
 #hero {
   height: 90vh;
   text-align: center;
-  padding-top: 140px;
+  padding-top: 150px;
   background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4);
   color: #5a3a22;
 }
 #hero h1 {
   font-family: 'Playfair Display', serif;
   font-size: 60px;
-  margin: 0;
-}
-#hero p {
-  font-size: 21px;
-  margin-top: 10px;
 }
 
 /* SECTIONS */
 section {
-  padding: 80px 20px;
   max-width: 1100px;
   margin: auto;
+  padding: 80px 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
 }
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  text-align: center;
-  color: #ff6f61;
-  margin-bottom: 20px;
+section.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ABOUT */
-#about p {
-  font-size: 18px;
-  line-height: 1.6;
+h2 {
+  font-family: 'Playfair Display', serif;
   text-align: center;
+  color: var(--accent);
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 30px;
+  margin: 20px 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12);
 }
 
 /* SKILLS */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-.skills .badge {
-  background: #c3f9d1;
+.badge {
+  display: inline-block;
   padding: 8px 16px;
+  background: #c3f9d1;
   border-radius: 20px;
-  font-weight: 500;
+  margin: 5px;
 }
 
-/* PROJECTS GRID */
-.projects-grid {
+/* PROJECTS */
+.projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
 }
-.project-card {
-  background: white;
-  border-radius: 18px;
+.project {
+  background: var(--card);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
+  transition: 0.3s;
 }
-.project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 }
-.project-card img {
+.project img {
   width: 100%;
-  height: 170px;
+  height: 160px;
   object-fit: cover;
 }
-.project-card .info {
-  padding: 14px 16px;
-}
-.project-card h3 {
-  font-size: 20px;
-  margin: 0;
-  color: #ff6f61;
-}
-.project-card p {
-  font-size: 15px;
-  margin-top: 6px;
-  color: #444;
-}
 
-/* CONTACT */
-#contact p {
-  text-align: center;
-  font-size: 18px;
-}
-#contact a {
-  display: inline-block;
-  margin: 10px 8px;
-  font-weight: 600;
-  color: #ff6f61;
+/* TOGGLE */
+.toggle {
+  cursor: pointer;
+  font-size: 20px;
 }
 </style>
 </head>
@@ -151,71 +135,75 @@ h2 {
 <body>
 
 <nav>
-  <div class="logo"><strong>Geetu Sodhi</strong></div>
-  <div class="menu">
+  <strong>Geetu Sodhi</strong>
+  <div>
     <a href="#about">About</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
+    <span class="toggle" onclick="toggleDark()">🌙</span>
   </div>
 </nav>
 
 <section id="hero">
   <h1>Hello, I’m Geetu 👋</h1>
   <p>Data Analyst • Technical Trainer • Learning Specialist</p>
-  <p>I create impactful learning experiences & real-world data systems.</p>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
-  <p>I specialize in turning complexity into clarity — empowering learners with Python, SQL, Power BI, automation, and data storytelling. My work blends curriculum design, learner experience strategy, and quality-driven training delivery to build confident learners and real-world-ready skills.</p>
-
-  <div class="skills">
+  <div class="card">
+    I design learning experiences that turn data, automation, and analytics into confident, real-world skills.
+  </div>
+  <div>
     <span class="badge">Python</span>
     <span class="badge">SQL</span>
     <span class="badge">Power BI</span>
-    <span class="badge">Excel</span>
     <span class="badge">Automation</span>
-    <span class="badge">Instructional Design</span>
-    <span class="badge">Dashboards</span>
   </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-
-  <div class="projects-grid">
-    <div class="project-card">
-      <img src="data/Data Visualization Preview.png" alt="Data Visualization">
-      <div class="info">
-        <h3>Data Visualization PDF</h3>
-        <p>Automated reporting & dashboards using Python & Excel.</p>
-      </div>
+  <div class="projects">
+    <div class="project">
+      <img src="data/Outliers.jpg">
+      <div class="card">Data Infographics</div>
     </div>
-
-    <div class="project-card">
-      <img src="data/Outliers.jpg" alt="Outliers Infographic">
-      <div class="info">
-        <h3>Infographics Collection</h3>
-        <p>Visual guides for key data concepts.</p>
-      </div>
+    <div class="project">
+      <img src="data/Data Wrangling.jpg">
+      <div class="card">Learning Slides</div>
     </div>
-
-    <div class="project-card">
-      <img src="data/Slide Preview.png" alt="Lesson Slides">
-      <div class="info">
-        <h3>Lesson Slides</h3>
-        <p>Interactive instructional material & examples.</p>
-      </div>
+    <div class="project">
+      <img src="data/NULL_values.jpg">
+      <div class="card">Data Visualization</div>
     </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Connect with Me</h2>
-  <p>Interested in collaborating or learning together?</p>
-  <a href="mailto:geetusodhi84@gmail.com">📧 Email Me</a>
-  <a href="https://www.linkedin.com/in/geetu-sodhi-canada/" target="_blank">🔗 LinkedIn</a>
+  <h2>Contact</h2>
+  <div class="card">
+    📧 geetusodhi84@gmail.com <br>
+    🔗 LinkedIn
+  </div>
 </section>
+
+<script>
+// Fade-in on scroll
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+// Dark mode
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+</script>
 
 </body>
 </html>
