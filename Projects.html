@@ -98,25 +98,25 @@ h2 {
 }
 
 /* PDF EMBED */
-.pdf-frame {
-  margin-top: 20px;
+./* Horizontal scroll for PDFs */
+.pdf-scroll-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  gap: 15px;
+  padding-bottom: 10px;
 }
-iframe {
-  width: 100%;
-  height: 600px;
+
+.pdf-scroll-container iframe {
+  flex: 0 0 80%; /* Less zoomed in, can adjust between 70%-90% */
+  height: 500px; /* slightly smaller than full card height */
   border-radius: 15px;
   border: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  scroll-snap-align: start;
 }
 
-/* PDF LINK */
-.pdf-link {
-  margin-top: 15px;
-}
-.pdf-link a {
-  font-weight: 600;
-  color: #ff6f61;
-}
 
 /* LINKS */
 a {
@@ -135,31 +135,35 @@ a {
 <section>
 
   <!-- PDF Project -->
-  <div class="card">
-    <h2>📊 Data Visualization Project (PDF)</h2>
+<!-- PDF Project -->
+<div class="card">
+  <h2>📊 Data Visualization Project (PDF)</h2>
 
-    <div class="pdf-frame">
-      <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
-    </div>
+  <div class="pdf-scroll-container">
+    <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
+  </div>
 
-    <div class="pdf-link">
-      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
-        📄 Open Full PDF in New Tab
-      </a>
-    </div>
+  <div class="pdf-link">
+    <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
+      📄 Open Full PDF in New Tab
+    </a>
+  </div>
+</div>
 
-    <div class="card">
-    <h2>📊 Python Lesson (PDF)</h2>
+<!-- Python Lesson -->
+<div class="card">
+  <h2>🐍 Python Lesson (PDF)</h2>
 
-    <div class="pdf-frame">
-      <iframe src="data/PythonLesson.pdf"></iframe>
-    </div>
+  <div class="pdf-scroll-container">
+    <iframe src="data/PythonLesson.pdf"></iframe>
+  </div>
 
-    <div class="pdf-link">
-      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
-        📄 Open Full PDF in New Tab
-      </a>
-    </div>
+  <div class="pdf-link">
+    <a href="data/PythonLesson.pdf" target="_blank">
+      📄 Open Full PDF in New Tab
+    </a>
+  </div>
+</div>
 
  
   </div>
