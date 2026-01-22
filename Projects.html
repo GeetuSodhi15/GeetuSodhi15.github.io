@@ -98,25 +98,22 @@ h2 {
 }
 
 /* PDF EMBED */
-./* Horizontal scroll for PDFs */
 .pdf-scroll-container {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  display: flex;
-  gap: 15px;
+  display: block;
   padding-bottom: 10px;
 }
-
 .pdf-scroll-container iframe {
-  flex: 0 0 80%; /* Less zoomed in, can adjust between 70%-90% */
-  height: 500px; /* slightly smaller than full card height */
+  width: 100%; /* full width of card */
+  height: 600px;
+  transform: scale(0.95); /* slightly less zoomed in */
+  transform-origin: top left;
   border-radius: 15px;
   border: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  scroll-snap-align: start;
+  display: block;
 }
-
 
 /* LINKS */
 a {
@@ -135,62 +132,42 @@ a {
 <section>
 
   <!-- PDF Project -->
-<!-- PDF Project -->
-<div class="card">
-  <h2>📊 Data Visualization Project (PDF)</h2>
-
-  <div class="pdf-scroll-container">
-    <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
+  <div class="card">
+    <h2>📊 Data Visualization Project (PDF)</h2>
+    <div class="pdf-scroll-container">
+      <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
+    </div>
+    <div class="pdf-link">
+      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">📄 Open Full PDF in New Tab</a>
+    </div>
   </div>
 
-  <div class="pdf-link">
-    <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
-      📄 Open Full PDF in New Tab
-    </a>
-  </div>
-</div>
-
-<!-- Python Lesson -->
-<div class="card">
-  <h2>🐍 Python Lesson (PDF)</h2>
-
-  <div class="pdf-scroll-container">
-    <iframe src="data/PythonLesson.pdf"></iframe>
-  </div>
-
-  <div class="pdf-link">
-    <a href="data/PythonLesson.pdf" target="_blank">
-      📄 Open Full PDF in New Tab
-    </a>
-  </div>
-</div>
-
- 
+  <!-- Python Lesson -->
+  <div class="card">
+    <h2>🐍 Python Lesson (PDF)</h2>
+    <div class="pdf-scroll-container">
+      <iframe src="data/PythonLesson.pdf"></iframe>
+    </div>
+    <div class="pdf-link">
+      <a href="data/PythonLesson.pdf" target="_blank">📄 Open Full PDF in New Tab</a>
+    </div>
   </div>
 
   <!-- Infographics -->
   <div class="card">
     <h2>🧠 Instructional Infographics</h2>
-
     <div class="infographics-container">
       <img src="data/Outliers.jpg" alt="Outliers Infographic">
       <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
       <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
     </div>
-
-    <p>
-      Visual learning aids designed to simplify core data analysis concepts such as outliers,
-      missing values, and data wrangling for beginner to intermediate learners.
-    </p>
+    <p>Visual learning aids designed to simplify core data analysis concepts such as outliers, missing values, and data wrangling for beginner to intermediate learners.</p>
   </div>
 
   <!-- Lesson Slides -->
   <div class="card">
     <h2>📚 Lesson Slides & Learning Flow</h2>
-    <p>
-      Structured lesson plans and slide decks created for data analytics and Python training programs,
-      focusing on concept clarity, hands-on practice, and real-world examples.
-    </p>
+    <p>Structured lesson plans and slide decks created for data analytics and Python training programs, focusing on concept clarity, hands-on practice, and real-world examples.</p>
   </div>
 
 </section>
