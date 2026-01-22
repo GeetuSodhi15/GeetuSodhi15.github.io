@@ -4,82 +4,108 @@
 <meta charset="UTF-8">
 <title>Project Portfolio | Geetu Sodhi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* --- BODY & HERO --- */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg,#ff9a8b,#fecfef,#c3f9d1);
-  color: #222;
+  font-family: 'Quicksand', sans-serif;
+  background: #f5f5f5; /* neutral soft background */
+  color: #333;
 }
-
-/* HERO */
 header {
   padding: 80px 20px 40px;
   text-align: center;
-  background: linear-gradient(135deg,#ff6f61,#ffb347,#8fd3f4);
-  color: #fff;
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
 }
 header h1 {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 10px;
+  color: #2e2e2e;
 }
 header p {
   font-size: 1.2rem;
-  opacity: 0.9;
+  color: #555;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.5;
 }
 
-/* SECTION GRID */
+/* --- CONTAINER GRID --- */
 .container {
   max-width: 1200px;
   margin: 50px auto 80px;
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 30px;
+  gap: 40px;
   padding: 0 20px;
 }
 
-/* CATEGORY CARDS */
+/* --- ROUND CARDS --- */
 .card {
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  padding: 40px 20px;
+  background: #fff;
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  padding: 20px;
+  position: relative;
 }
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  background: rgba(255,255,255,1);
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
+/* --- ICON --- */
 .card img {
-  width: 80px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
 .card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2) rotate(5deg);
 }
 
+/* --- TITLE & DESCRIPTION --- */
 .card h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-  color: #ff6f61;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #2e2e2e;
+}
+.card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
 }
 
-.card p {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  line-height: 1.5;
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 600px) {
+  .card {
+    width: 180px;
+    height: 180px;
+    padding: 15px;
+  }
+  .card h2 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.75rem;
+  }
 }
 </style>
 </head>
@@ -88,40 +114,40 @@ header p {
 
 <header>
   <h1>My Project Portfolio</h1>
-  <p>Explore my work across Articulate, Automation, Curriculum, PPT, Infographics, and PDFs</p>
+  <p>Discover my work across Articulate, Automation, Curriculum, Presentations, Infographics, and PDFs, elegantly showcased for easy exploration.</p>
 </header>
 
 <div class="container">
   <a href="Automation.html" class="card">
     <img src="icons/automation.png" alt="Automation Icon">
-    <h2>Automation Projects</h2>
+    <h2>Automation</h2>
     <p>Python scripts, Google Sheets automation, AI prototypes</p>
   </a>
-  
+
   <a href="Articulate.html" class="card">
     <img src="icons/articulate.png" alt="Articulate Icon">
     <h2>Articulate / eLearning</h2>
     <p>Interactive modules and training simulations built in Articulate 360</p>
   </a>
-  
+
   <a href="Curr.html" class="card">
     <img src="icons/curriculum.png" alt="Curriculum Icon">
-    <h2>Curriculum Design</h2>
+    <h2>Curriculum</h2>
     <p>Data analytics and Python course design with structured learning flow</p>
   </a>
-  
+
   <a href="ppt.html" class="card">
     <img src="icons/ppt.png" alt="PPT Icon">
-    <h2>Presentation Decks</h2>
+    <h2>Presentations</h2>
     <p>Engaging training decks, lesson plans, and slide designs</p>
   </a>
-  
+
   <a href="Infographics.html" class="card">
     <img src="icons/infographics.png" alt="Infographics Icon">
     <h2>Infographics</h2>
-    <p>Instructional visuals explaining complex concepts for learners</p>
+    <p>Visuals explaining complex concepts for learners</p>
   </a>
-  
+
   <a href="pdfs.html" class="card">
     <img src="icons/pdf.png" alt="PDF Icon">
     <h2>PDF Projects</h2>
