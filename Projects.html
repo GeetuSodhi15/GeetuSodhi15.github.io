@@ -43,23 +43,30 @@ header p {
 
 /* CATEGORY CARDS */
 .card {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   border-radius: 20px;
   padding: 40px 20px;
   text-align: center;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  background: rgba(255,255,255,1);
 }
 
 .card img {
   width: 80px;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.card:hover img {
+  transform: scale(1.1);
 }
 
 .card h2 {
@@ -81,11 +88,11 @@ header p {
 
 <header>
   <h1>My Project Portfolio</h1>
-  <p>Explore my work across Articulate, Automation, Curriculum, PPT, Infographics, and more</p>
+  <p>Explore my work across Articulate, Automation, Curriculum, PPT, Infographics, and PDFs</p>
 </header>
 
 <div class="container">
-  <a href="automation.html" class="card">
+  <a href="Automation.html" class="card">
     <img src="icons/automation.png" alt="Automation Icon">
     <h2>Automation Projects</h2>
     <p>Python scripts, Google Sheets automation, AI prototypes</p>
@@ -97,7 +104,7 @@ header p {
     <p>Interactive modules and training simulations built in Articulate 360</p>
   </a>
   
-  <a href="curriculum.html" class="card">
+  <a href="Currhtml.html" class="card">
     <img src="icons/curriculum.png" alt="Curriculum Icon">
     <h2>Curriculum Design</h2>
     <p>Data analytics and Python course design with structured learning flow</p>
@@ -109,7 +116,7 @@ header p {
     <p>Engaging training decks, lesson plans, and slide designs</p>
   </a>
   
-  <a href="infographics.html" class="card">
+  <a href="Infographics.html" class="card">
     <img src="icons/infographics.png" alt="Infographics Icon">
     <h2>Infographics</h2>
     <p>Instructional visuals explaining complex concepts for learners</p>
