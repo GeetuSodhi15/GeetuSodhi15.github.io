@@ -31,7 +31,7 @@ header h1 {
   margin-bottom: 15px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 a.button {
   display: inline-block;
   background: linear-gradient(135deg, #ff6f61, #ff914d);
@@ -59,7 +59,7 @@ section {
   background: rgba(255,255,255,0.9);
   border-radius: 20px;
   padding: 40px;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
   backdrop-filter: blur(10px);
 }
@@ -69,7 +69,13 @@ h2 {
   font-family: 'Playfair Display', serif;
   color: #ff6f61;
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.card p {
+  margin-top: 15px;
+  line-height: 1.6;
 }
 
 /* INFOGRAPHICS */
@@ -78,6 +84,7 @@ h2 {
   flex-wrap: wrap;
   gap: 25px;
   justify-content: center;
+  margin-top: 20px;
 }
 .infographics-container img {
   width: 30%;
@@ -90,20 +97,30 @@ h2 {
   transform: scale(1.05);
 }
 
-/* IFRAME */
+/* PDF EMBED */
+.pdf-frame {
+  margin-top: 20px;
+}
 iframe {
   width: 100%;
-  height: 500px;
+  height: 600px;
   border-radius: 15px;
   border: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* PDF LINK */
+.pdf-link {
+  margin-top: 15px;
+}
+.pdf-link a {
+  font-weight: 600;
+  color: #ff6f61;
+}
+
 /* LINKS */
 a {
-  color: #ff6f61;
   text-decoration: none;
-  font-weight: 500;
 }
 </style>
 </head>
@@ -117,28 +134,62 @@ a {
 
 <section>
 
-<!-- PDF Project -->
-<div class="card">
-  <h2>📊 Data Visualization PDF</h2>
-  <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
-  <p>
-    Automated student tracking and data visualization using Python and Excel workflows, reducing manual reporting and improving insight delivery.
-  </p>
-</div>
+  <!-- PDF Project -->
+  <div class="card">
+    <h2>📊 Data Visualization Project (PDF)</h2>
 
-<!-- Infographics -->
-<div class="card">
-  <h2>🧠 Instructional Infographics</h2>
-  <div class="infographics-container">
-    <img src="data/Outliers.jpg" alt="Outliers Infographic">
-    <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
-    <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+    <div class="pdf-frame">
+      <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
+    </div>
+
+    <div class="pdf-link">
+      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
+        📄 Open Full PDF in New Tab
+      </a>
+    </div>
+
+    <div class="card">
+    <h2>📊 Python Lesson (PDF)</h2>
+
+    <div class="pdf-frame">
+      <iframe src="data/PythonLesson.pdf"></iframe>
+    </div>
+
+    <div class="pdf-link">
+      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">
+        📄 Open Full PDF in New Tab
+      </a>
+    </div>
+
+ 
   </div>
-  <p>
-    Visual learning aids designed to explain core data analysis concepts such as outliers, missing values, and data wrangling in a clear, learner-friendly format.
-  </p>
-</div>
 
-<!-- Lesson Slides -->
-<div class="card">
-  <h2>📚 Lesson Slides & Learning Flow</h
+  <!-- Infographics -->
+  <div class="card">
+    <h2>🧠 Instructional Infographics</h2>
+
+    <div class="infographics-container">
+      <img src="data/Outliers.jpg" alt="Outliers Infographic">
+      <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
+      <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+    </div>
+
+    <p>
+      Visual learning aids designed to simplify core data analysis concepts such as outliers,
+      missing values, and data wrangling for beginner to intermediate learners.
+    </p>
+  </div>
+
+  <!-- Lesson Slides -->
+  <div class="card">
+    <h2>📚 Lesson Slides & Learning Flow</h2>
+    <p>
+      Structured lesson plans and slide decks created for data analytics and Python training programs,
+      focusing on concept clarity, hands-on practice, and real-world examples.
+    </p>
+  </div>
+
+</section>
+
+</body>
+</html>
