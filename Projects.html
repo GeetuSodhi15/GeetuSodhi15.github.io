@@ -2,122 +2,77 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Projects | Geetu Sodhi</title>
+<title>Project Portfolio | Geetu Sodhi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg,#ff9a8b,#fecfef,#c3f9d1);
   color: #222;
-  background: linear-gradient(135deg, #ff9a8b, #fecfef, #c3f9d1);
 }
 
 /* HERO */
 header {
-  padding: 70px 30px 80px;
+  padding: 80px 20px 40px;
   text-align: center;
-  background: linear-gradient(135deg, #ff6f61, #ffb347, #8fd3f4);
-  color: #5a3a22;
+  background: linear-gradient(135deg,#ff6f61,#ffb347,#8fd3f4);
+  color: #fff;
 }
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  margin-bottom: 15px;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
 }
 
-/* BUTTONS */
-a.button {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6f61, #ff914d);
-  color: white;
-  padding: 14px 32px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-a.button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255,111,97,0.5);
+/* SECTION GRID */
+.container {
+  max-width: 1200px;
+  margin: 50px auto 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 30px;
+  padding: 0 20px;
 }
 
-/* SECTIONS */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-}
-
-/* GLASS CARDS */
+/* CATEGORY CARDS */
 .card {
   background: rgba(255,255,255,0.9);
   border-radius: 20px;
-  padding: 40px;
-  margin-bottom: 50px;
+  padding: 40px 20px;
+  text-align: center;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
   backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
 }
 
-/* HEADINGS */
-h2 {
+.card img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin-bottom: 8px;
   color: #ff6f61;
-  font-size: 28px;
-  margin-bottom: 10px;
 }
 
-/* DESCRIPTION */
 .card p {
-  margin-top: 15px;
-  line-height: 1.6;
-}
-
-/* INFOGRAPHICS */
-.infographics-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-  margin-top: 20px;
-}
-.infographics-container img {
-  width: 30%;
-  min-width: 220px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
-}
-.infographics-container img:hover {
-  transform: scale(1.05);
-}
-
-/* PDF EMBED */
-.pdf-scroll-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  display: block;
-  padding-bottom: 10px;
-}
-.pdf-scroll-container iframe {
-  width: 100%; /* full width of card */
-  height: 600px;
-  transform: scale(0.95); /* slightly less zoomed in */
-  transform-origin: top left;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  display: block;
-}
-
-/* LINKS */
-a {
-  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.85;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -125,52 +80,47 @@ a {
 <body>
 
 <header>
-  <h1>Projects & Learning Assets</h1>
-  <a href="index.html" class="button">Back to Home</a>
+  <h1>My Project Portfolio</h1>
+  <p>Explore my work across Articulate, Automation, Curriculum, PPT, Infographics, and more</p>
 </header>
 
-<section>
-
-  <!-- PDF Project -->
-  <div class="card">
-    <h2>📊 Data Visualization Project (PDF)</h2>
-    <div class="pdf-scroll-container">
-      <iframe src="data/Data Visualization-Geetu Sodhi.pdf"></iframe>
-    </div>
-    <div class="pdf-link">
-      <a href="data/Data Visualization-Geetu Sodhi.pdf" target="_blank">📄 Open Full PDF in New Tab</a>
-    </div>
-  </div>
-
-  <!-- Python Lesson -->
-  <div class="card">
-    <h2>🐍 Python Lesson (PDF)</h2>
-    <div class="pdf-scroll-container">
-      <iframe src="data/PythonLesson.pdf"></iframe>
-    </div>
-    <div class="pdf-link">
-      <a href="data/PythonLesson.pdf" target="_blank">📄 Open Full PDF in New Tab</a>
-    </div>
-  </div>
-
-  <!-- Infographics -->
-  <div class="card">
-    <h2>🧠 Instructional Infographics</h2>
-    <div class="infographics-container">
-      <img src="data/Outliers.jpg" alt="Outliers Infographic">
-      <img src="data/NULL_values.jpg" alt="NULL Values Infographic">
-      <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
-    </div>
-    <p>Visual learning aids designed to simplify core data analysis concepts such as outliers, missing values, and data wrangling for beginner to intermediate learners.</p>
-  </div>
-
-  <!-- Lesson Slides -->
-  <div class="card">
-    <h2>📚 Lesson Slides & Learning Flow</h2>
-    <p>Structured lesson plans and slide decks created for data analytics and Python training programs, focusing on concept clarity, hands-on practice, and real-world examples.</p>
-  </div>
-
-</section>
+<div class="container">
+  <a href="automation.html" class="card">
+    <img src="icons/automation.png" alt="Automation Icon">
+    <h2>Automation Projects</h2>
+    <p>Python scripts, Google Sheets automation, AI prototypes</p>
+  </a>
+  
+  <a href="articulate.html" class="card">
+    <img src="icons/articulate.png" alt="Articulate Icon">
+    <h2>Articulate / eLearning</h2>
+    <p>Interactive modules and training simulations built in Articulate 360</p>
+  </a>
+  
+  <a href="curriculum.html" class="card">
+    <img src="icons/curriculum.png" alt="Curriculum Icon">
+    <h2>Curriculum Design</h2>
+    <p>Data analytics and Python course design with structured learning flow</p>
+  </a>
+  
+  <a href="ppt.html" class="card">
+    <img src="icons/ppt.png" alt="PPT Icon">
+    <h2>Presentation Decks</h2>
+    <p>Engaging training decks, lesson plans, and slide designs</p>
+  </a>
+  
+  <a href="infographics.html" class="card">
+    <img src="icons/infographics.png" alt="Infographics Icon">
+    <h2>Infographics</h2>
+    <p>Instructional visuals explaining complex concepts for learners</p>
+  </a>
+  
+  <a href="pdfs.html" class="card">
+    <img src="icons/pdf.png" alt="PDF Icon">
+    <h2>PDF Projects</h2>
+    <p>Data visualization, Python lessons, and other downloadable resources</p>
+  </a>
+</div>
 
 </body>
 </html>
