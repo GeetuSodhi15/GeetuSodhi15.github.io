@@ -1,111 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Project Portfolio | Geetu Sodhi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects | Geetu Sodhi</title>
 
 <style>
-/* --- BODY & HERO --- */
+/* =====================
+   OMBRE TOWN – ORANGE THEME
+   ===================== */
+:root {
+  --ombre-orange-start: #ff9a3c;
+  --ombre-orange-end: #ff6a00;
+
+  /* Circular card tones */
+  --beige: #f3ede4;
+  --soft-green: #dfeee6;
+  --soft-blue: #e6eef5;
+  --soft-teal: #dfecec;
+  --soft-sand: #efe7dc;
+
+  --text-dark: #2b2b2b;
+}
+
 body {
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: #f5f5f5; /* neutral soft background */
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--ombre-orange-start), var(--ombre-orange-end));
+  min-height: 100vh;
 }
+
+/* =====================
+   HEADER
+   ===================== */
 header {
-  padding: 80px 20px 40px;
+  padding: 60px 20px 40px;
   text-align: center;
-  background: #fff;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+  color: white;
 }
+
 header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-bottom: 10px;
-  color: #2e2e2e;
 }
+
 header p {
-  font-size: 1.2rem;
-  color: #555;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  opacity: 0.95;
 }
 
-/* --- CONTAINER GRID --- */
-.container {
-  max-width: 1200px;
-  margin: 50px auto 80px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 40px;
-  padding: 0 20px;
-}
-
-/* --- ROUND CARDS --- */
-.card {
+/* =====================
+   PROJECT SECTIONS GRID
+   ===================== */
+.section-wrapper {
   background: #fff;
-  border-radius: 50%;
-  width: 220px;
-  height: 220px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding: 60px 40px 80px;
+}
+
+.sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
   margin: auto;
+}
+
+.section-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  padding: 20px;
-  position: relative;
-}
-.card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 25px;
 }
 
-/* --- ICON --- */
-.card img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  transition: transform 0.3s ease;
-}
-.card:hover img {
-  transform: scale(1.2) rotate(5deg);
+.section-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* --- TITLE & DESCRIPTION --- */
-.card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-  color: #2e2e2e;
-}
-.card p {
-  font-size: 0.85rem;
-  color: #666;
-  line-height: 1.4;
+.section-card h3 {
+  margin-top: 15px;
+  font-size: 1.1rem;
 }
 
-/* --- RESPONSIVE FIXES --- */
+.section-card span {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* =====================
+   ICON STYLE
+   ===================== */
+.icon {
+  font-size: 2.6rem;
+}
+
+/* =====================
+   COLOR VARIANTS
+   ===================== */
+.beige { background: var(--beige); }
+.green { background: var(--soft-green); }
+.blue { background: var(--soft-blue); }
+.teal { background: var(--soft-teal); }
+.sand { background: var(--soft-sand); }
+
+/* =====================
+   RESPONSIVE
+   ===================== */
 @media (max-width: 600px) {
-  .card {
-    width: 180px;
-    height: 180px;
-    padding: 15px;
-  }
-  .card h2 {
-    font-size: 1rem;
-  }
-  .card p {
-    font-size: 0.75rem;
-  }
+  header h1 { font-size: 2rem; }
+  .section-wrapper { padding: 40px 20px 60px; }
 }
 </style>
 </head>
@@ -113,47 +125,51 @@ header p {
 <body>
 
 <header>
-  <h1>My Project Portfolio</h1>
-  <p>Discover my work across Articulate, Automation, Curriculum, Presentations, Infographics, and PDFs, elegantly showcased for easy exploration.</p>
+  <h1>My Work & Projects</h1>
+  <p>Learning design • Automation • Analytics • Curriculum • Visual storytelling</p>
 </header>
 
-<div class="container">
-  <a href="Automation.html" class="card">
-    <img src="icons/automation.png" alt="Automation Icon">
-    <h2>Automation</h2>
-    <p>Python scripts, Google Sheets automation, AI prototypes</p>
-  </a>
+<section class="section-wrapper">
+  <div class="sections-grid">
 
-  <a href="Articulate.html" class="card">
-    <img src="icons/articulate.png" alt="Articulate Icon">
-    <h2>Articulate / eLearning</h2>
-    <p>Interactive modules and training simulations built in Articulate 360</p>
-  </a>
+    <div class="section-card beige">
+      <div class="icon">📘</div>
+      <h3>Articulate & eLearning</h3>
+      <span>Interactive courses</span>
+    </div>
 
-  <a href="Curr.html" class="card">
-    <img src="icons/curriculum.png" alt="Curriculum Icon">
-    <h2>Curriculum</h2>
-    <p>Data analytics and Python course design with structured learning flow</p>
-  </a>
+    <div class="section-card green">
+      <div class="icon">⚙️</div>
+      <h3>Automation</h3>
+      <span>Python • Sheets • Power Automate</span>
+    </div>
 
-  <a href="ppt.html" class="card">
-    <img src="icons/ppt.png" alt="PPT Icon">
-    <h2>Presentations</h2>
-    <p>Engaging training decks, lesson plans, and slide designs</p>
-  </a>
+    <div class="section-card blue">
+      <div class="icon">📊</div>
+      <h3>Data Analytics</h3>
+      <span>Python • SQL • Dashboards</span>
+    </div>
 
-  <a href="Infographics.html" class="card">
-    <img src="icons/infographics.png" alt="Infographics Icon">
-    <h2>Infographics</h2>
-    <p>Visuals explaining complex concepts for learners</p>
-  </a>
+    <div class="section-card teal">
+      <div class="icon">🧩</div>
+      <h3>Curriculum Design</h3>
+      <span>Adult learning (18–60)</span>
+    </div>
 
-  <a href="pdfs.html" class="card">
-    <img src="icons/pdf.png" alt="PDF Icon">
-    <h2>PDF Projects</h2>
-    <p>Data visualization, Python lessons, and other downloadable resources</p>
-  </a>
-</div>
+    <div class="section-card sand">
+      <div class="icon">📑</div>
+      <h3>Presentations & PPTs</h3>
+      <span>Corporate & education</span>
+    </div>
+
+    <div class="section-card beige">
+      <div class="icon">🎨</div>
+      <h3>Infographics</h3>
+      <span>Data storytelling</span>
+    </div>
+
+  </div>
+</section>
 
 </body>
 </html>
