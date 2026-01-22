@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects | Geetu Sodhi</title>
+<title>Project Overview | Geetu Sodhi</title>
 
 <style>
-/* =====================
-   OMBRE TOWN – ORANGE THEME
-   ===================== */
 :root {
   --ombre-orange-start: #ff9a3c;
   --ombre-orange-end: #ff6a00;
@@ -31,9 +28,7 @@ body {
   min-height: 100vh;
 }
 
-/* =====================
-   HEADER
-   ===================== */
+/* HEADER */
 header {
   padding: 60px 20px 40px;
   text-align: center;
@@ -50,24 +45,24 @@ header p {
   opacity: 0.95;
 }
 
-/* =====================
-   PROJECT SECTIONS GRID
-   ===================== */
+/* WRAPPER */
 .section-wrapper {
-  background: #fff;
+  background: #ffffff;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  padding: 60px 40px 80px;
+  padding: 70px 40px 90px;
 }
 
+/* GRID */
 .sections-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 45px;
   max-width: 1200px;
   margin: auto;
 }
 
+/* CIRCULAR CARDS */
 .section-card {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -76,48 +71,45 @@ header p {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 30px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  padding: 25px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .section-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
 }
 
 .section-card h3 {
-  margin-top: 15px;
-  font-size: 1.1rem;
+  margin-top: 18px;
+  font-size: 1.15rem;
 }
 
 .section-card span {
+  margin-top: 6px;
   font-size: 0.9rem;
   opacity: 0.75;
 }
 
-/* =====================
-   ICON STYLE
-   ===================== */
+/* ICON */
 .icon {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
 }
 
-/* =====================
-   COLOR VARIANTS
-   ===================== */
+/* COLORS */
 .beige { background: var(--beige); }
 .green { background: var(--soft-green); }
 .blue { background: var(--soft-blue); }
 .teal { background: var(--soft-teal); }
 .sand { background: var(--soft-sand); }
 
-/* =====================
-   RESPONSIVE
-   ===================== */
+/* RESPONSIVE */
 @media (max-width: 600px) {
   header h1 { font-size: 2rem; }
-  .section-wrapper { padding: 40px 20px 60px; }
+  .section-wrapper { padding: 50px 20px 70px; }
 }
 </style>
 </head>
@@ -125,48 +117,60 @@ header p {
 <body>
 
 <header>
-  <h1>My Work & Projects</h1>
-  <p>Learning design • Automation • Analytics • Curriculum • Visual storytelling</p>
+  <h1>Project Overview</h1>
+  <p>Adult learning • Data analytics • Automation • Curriculum • Visual learning</p>
 </header>
 
 <section class="section-wrapper">
   <div class="sections-grid">
 
-    <div class="section-card beige">
-      <div class="icon">📘</div>
-      <h3>Articulate & eLearning</h3>
-      <span>Interactive courses</span>
-    </div>
-
-    <div class="section-card green">
-      <div class="icon">⚙️</div>
-      <h3>Automation</h3>
-      <span>Python • Sheets • Power Automate</span>
-    </div>
-
-    <div class="section-card blue">
+    <a href="DataAnalytics.html" class="section-card blue">
       <div class="icon">📊</div>
-      <h3>Data Analytics</h3>
+      <h3>Data Analytics Training</h3>
       <span>Python • SQL • Dashboards</span>
-    </div>
+    </a>
 
-    <div class="section-card teal">
+    <a href="Curriculum.html" class="section-card teal">
       <div class="icon">🧩</div>
       <h3>Curriculum Design</h3>
       <span>Adult learning (18–60)</span>
-    </div>
+    </a>
 
-    <div class="section-card sand">
-      <div class="icon">📑</div>
-      <h3>Presentations & PPTs</h3>
-      <span>Corporate & education</span>
-    </div>
+    <a href="Articulate.html" class="section-card beige">
+      <div class="icon">📘</div>
+      <h3>Digital Learning Design</h3>
+      <span>Articulate & eLearning</span>
+    </a>
 
-    <div class="section-card beige">
+    <a href="AutomationAI.html" class="section-card green">
+      <div class="icon">⚙️</div>
+      <h3>Automation & AI-Powered Learning</h3>
+      <span>Smart systems & workflows</span>
+    </a>
+
+    <a href="CareerReadiness.html" class="section-card sand">
+      <div class="icon">🎯</div>
+      <h3>Career Readiness & Mock Interviews</h3>
+      <span>Interview prep & employability</span>
+    </a>
+
+    <a href="InstructorEnablement.html" class="section-card blue">
+      <div class="icon">👩‍🏫</div>
+      <h3>Instructor Enablement</h3>
+      <span>Train-the-Trainer</span>
+    </a>
+
+    <a href="Assessment.html" class="section-card teal">
+      <div class="icon">📝</div>
+      <h3>Assessment & Evaluation</h3>
+      <span>Rubrics • Capstones</span>
+    </a>
+
+    <a href="Infographics.html" class="section-card beige">
       <div class="icon">🎨</div>
-      <h3>Infographics</h3>
+      <h3>Infographics & Visual Learning</h3>
       <span>Data storytelling</span>
-    </div>
+    </a>
 
   </div>
 </section>
