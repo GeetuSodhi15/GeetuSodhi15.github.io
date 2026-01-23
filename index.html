@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Geetu Sodhi | Data Analyst & Learning Specialist</title>
+<title>Geetu Sodhi | Technical Trainer & Learning Specialist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Google Fonts -->
@@ -12,23 +12,14 @@
 
 <style>
 :root {
-  /* Orange + Green (warm, natural, instructional) */
-  --bg: linear-gradient(
-    135deg,
-    #ff8c2f 0%,     /* warm orange */
-    #ffd6a3 40%,    /* soft peach transition */
-    #bfe3d0 100%    /* sage green */
-  );
-
-  --card: rgba(255, 255, 255, 0.88);
+  /* Warm orange + sage green + nude tone */
+  --bg: linear-gradient(135deg, #ff8c2f 0%, #ffd6a3 50%, #bfe3d0 100%);
+  --card: #f3ede4; /* nude beige */
   --text: #222;
-
-  --accent: #ff7a18;          /* orange accent */
-  --hero-name: #5a2a00;       /* deep warm brown */
-  --hero-designation: #2f3e3e;/* muted green-grey */
+  --accent: #ff7a18;       /* headings/buttons accent */
+  --hero-name: #800020;    /* burgundy */
+  --hero-designation: #800020;
 }
-
-
 
 * { box-sizing: border-box; }
 
@@ -39,7 +30,7 @@ body {
   color: var(--text);
 }
 
-/* NAV */
+/* NAVIGATION */
 nav {
   position: sticky;
   top: 0;
@@ -71,13 +62,24 @@ nav a:hover { color: var(--accent); }
   font-family: 'Playfair Display', serif;
   font-size: 46px;
   margin-bottom: 12px;
+  color: var(--hero-name);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards 0.3s;
 }
 
 #hero p {
   font-size: 20px;
   max-width: 720px;
   margin: auto;
-  opacity: 0.9;
+  color: var(--hero-designation);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards 0.8s;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* SECTIONS */
@@ -109,66 +111,7 @@ h2 {
   line-height: 1.8;
 }
 
-/* PROJECT SNAPSHOT */
-.projects-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 35px;
-}
-
-.project-circle {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 22px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-circle:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-.project-circle h3 {
-  margin-top: 12px;
-  font-size: 1.05rem;
-}
-
-.project-circle span {
-  font-size: 0.85rem;
-  opacity: 0.75;
-}
-
-.icon { font-size: 2.4rem; }
-
-.beige { background: var(--beige); }
-.green { background: var(--soft-green); }
-.blue { background: var(--soft-blue); }
-.teal { background: var(--soft-teal); }
-
-/* BUTTON */
-.button {
-  display: inline-block;
-  margin-top: 30px;
-  background: linear-gradient(135deg, #ff7a18, #ffb347);
-  color: white;
-  padding: 14px 34px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-/* CONTACT */
-#contact p { text-align: center; font-size: 18px; }
-
-
-  /* =====================
-   WORD CLOUD
-   ===================== */
+/* PROJECT WORD CLOUD */
 .word-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -178,7 +121,6 @@ h2 {
   padding: 50px 40px;
 }
 
-/* Base word style */
 .wc {
   font-family: 'Playfair Display', serif;
   font-weight: 500;
@@ -188,48 +130,33 @@ h2 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Sizes */
-.wc.large {
-  font-size: 1.6rem;
-}
-.wc.medium {
-  font-size: 1.2rem;
-}
-.wc.small {
-  font-size: 0.95rem;
+.wc.large { font-size: 1.6rem; }
+.wc.medium { font-size: 1.2rem; }
+.wc.small { font-size: 0.95rem; }
+
+.wc.orange { background: #fff1e6; color: #b45309; }
+.wc.green { background: #e7f3ee; color: #14532d; }
+.wc.teal { background: #e6f4f1; color: #065f46; }
+.wc.sand { background: #f3ede4; color: #5a4633; }
+.wc.muted { background: #f1f1f1; color: #555; }
+
+.wc:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+
+/* BUTTON */
+.button {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #ff7a18, #ffb347);
+  color: white;
+  padding: 14px 34px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
 }
 
-/* Colors (soft & neutral) */
-.wc.orange {
-  background: #fff1e6;
-  color: #b45309;
-}
-.wc.green {
-  background: #e7f3ee;
-  color: #14532d;
-}
-.wc.blue {
-  background: #e8f0f8;
-  color: #1e3a8a;
-}
-.wc.teal {
-  background: #e6f4f1;
-  color: #065f46;
-}
-.wc.sand {
-  background: #f3ede4;
-  color: #5a4633;
-}
-.wc.muted {
-  background: #f1f1f1;
-  color: #555;
-}
-
-/* Hover — subtle, premium */
-.wc:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
+/* CONTACT */
+#contact p { text-align: center; font-size: 18px; }
 
 </style>
 </head>
@@ -241,6 +168,8 @@ h2 {
   <div>
     <a href="#about">About</a>
     <a href="#courses">Courses</a>
+    <a href="#who">Who I Work With</a>
+    <a href="#impact">Learning Impact</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
@@ -261,13 +190,12 @@ h2 {
       My work spans the full learning lifecycle—from <strong>curriculum design and instructional content development</strong> to <strong>quality control, accessibility checks, learner experience validation, and continuous improvement</strong>. I ensure every program I build is <strong>accurate, consistent, scalable</strong>, and aligned with measurable learning outcomes.
     </p>
     <p>
-      I support individuals and teams in building <strong>real-world data and automation skills</strong> using Python, SQL, APIs, dashboards, and workflow automation—helping learners confidently apply skills in professional environments.
+      I support individuals and teams in building <strong>real-world data skills</strong>, helping learners confidently apply skills in professional environments.
     </p>
   </div>
 </section>
 
 <section id="courses">
- <section id="courses">
   <h2>Learning Programs & Instructional Design</h2>
   <div class="card">
     <ul>
@@ -281,25 +209,55 @@ h2 {
   </div>
 </section>
 
+<section id="who">
+  <h2>Who I Work With</h2>
+  <div class="card">
+    <p>
+      I work with adult learners, training teams, and organizations looking to build
+      practical, real-world data skills. My experience spans career-switchers, working
+      professionals, and teams seeking structured, scalable learning programs.
+    </p>
+  </div>
+</section>
+
+<section id="impact">
+  <h2>Learning Impact</h2>
+  <div class="card">
+    <ul>
+      <li>Designed and delivered structured learning programs for adult learners (18–60)</li>
+      <li>Supported learners in building job-ready data analysis skills</li>
+      <li>Improved learner confidence through scaffolded instruction and real-world tasks</li>
+      <li>Ensured learning quality through continuous content review and refinement</li>
+    </ul>
+  </div>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
- <div class="card word-cloud">
-  <span class="wc large orange">Articulate & eLearning</span>
-  <span class="wc medium blue">Data Analytics</span>
-  <span class="wc medium green">Curriculum Design</span>
-  <span class="wc large teal">Instructor Enablement</span>
-  <span class="wc small muted">Train the Trainer</span>
-  <span class="wc medium sand">Presentations & PPTs</span>
-  <span class="wc small blue">Infographics</span>
-  <span class="wc large orange">Mock Interviews & Career Readiness</span>
-  <span class="wc medium green">AI-Powered Learning</span>
-</div>
-
+  <div class="card word-cloud">
+    <span class="wc large orange">Articulate & eLearning</span>
+    <span class="wc medium green">Curriculum Design</span>
+    <span class="wc medium teal">Instructor Enablement</span>
+    <span class="wc small muted">Train the Trainer</span>
+    <span class="wc medium sand">Presentations & PPTs</span>
+    <span class="wc medium blue">Data Analytics</span>
+    <span class="wc small blue">Infographics</span>
+    <span class="wc large orange">Mock Interviews & Career Readiness</span>
+    <span class="wc medium green">AI-Powered Learning</span>
   </div>
   <div style="text-align:center; margin-top:20px;">
     <a href="Projects.html" class="button">View All Projects</a>
+  </div>
+</section>
+
+<section>
+  <h2>Let’s Connect</h2>
+  <div class="card" style="text-align:center">
+    <p>
+      Interested in structured learning design, training programs, or collaboration?
+      I’d love to connect.
+    </p>
+    <a href="#contact" class="button">Get in Touch</a>
   </div>
 </section>
 
