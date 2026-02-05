@@ -5,295 +5,310 @@
 <title>Geetu Sodhi | Technical Trainer & Learning Specialist</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root {
-  /* Warm orange + sage green + nude tone */
-  --bg: linear-gradient(135deg, #ff8c2f 0%, #ffd6a3 50%, #bfe3d0 100%);
-  --card: #f3ede4; /* nude beige */
-  --text: #222;
-  --accent: #ff7a18;       /* headings/buttons accent */
-  --hero-name: #800020;    /* burgundy */
-  --hero-designation: #800020;
+  --bg: #fafafa;
+  --bg-dark: #0f172a;
+  --text: #1f2937;
+  --text-dark: #e5e7eb;
+  --muted: #6b7280;
+  --muted-dark: #9ca3af;
+  --accent: #2563eb;
+  --border: #e5e7eb;
+  --border-dark: #334155;
 }
 
-* { box-sizing: border-box; }
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav {
   position: sticky;
   top: 0;
+  background: inherit;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+
+body.dark nav {
+  border-color: var(--border-dark);
+}
+
+.nav-inner {
+  max-width: 960px;
+  margin: auto;
+  padding: 18px 20px;
   display: flex;
   justify-content: space-between;
-  padding: 14px 30px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(8px);
-  z-index: 100;
-  font-weight: 600;
+  align-items: center;
 }
 
 nav a {
-  margin-left: 20px;
-  cursor: pointer;
-  color: var(--text);
+  margin-left: 18px;
   text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
 }
 
-nav a:hover { color: var(--accent); }
-
-/* HERO */
-#hero {
-  padding: 70px 20px 50px;
-  text-align: center;
+body.dark nav a {
+  color: var(--muted-dark);
 }
 
-#hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 46px;
-  margin-bottom: 12px;
-  color: var(--hero-name);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s forwards 0.3s;
+nav a:hover {
+  color: var(--accent);
 }
 
-#hero p {
-  font-size: 20px;
-  max-width: 720px;
-  margin: auto;
-  color: var(--hero-designation);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s forwards 0.8s;
-}
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* SECTIONS */
+/* LAYOUT */
 section {
-  max-width: 1100px;
+  max-width: 960px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 70px 20px;
+}
+
+.divider {
+  border-top: 1px solid var(--border);
+}
+
+body.dark .divider {
+  border-color: var(--border-dark);
+}
+
+h1 {
+  font-size: 44px;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: var(--accent);
-  text-align: center;
-  margin-bottom: 35px;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-/* CARD */
-.card {
-  background: var(--card);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+p {
+  color: var(--muted);
 }
 
-/* ABOUT */
-#about p {
-  font-size: 18px;
-  line-height: 1.8;
+body.dark p {
+  color: var(--muted-dark);
 }
 
-/* PROJECT WORD CLOUD */
-.word-cloud {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+/* HERO */
+#hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
   align-items: center;
-  gap: 18px 28px;
-  padding: 50px 40px;
+  padding-top: 90px;
 }
 
-.wc {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  padding: 10px 18px;
-  border-radius: 30px;
-  white-space: nowrap;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+#hero p {
+  font-size: 18px;
+  max-width: 520px;
 }
 
-.wc.large { font-size: 1.6rem; }
-.wc.medium { font-size: 1.2rem; }
-.wc.small { font-size: 0.95rem; }
+/* PHOTO PLACEHOLDER */
+.photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 2px dashed var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 14px;
+}
 
-.wc.orange { background: #fff1e6; color: #b45309; }
-.wc.green { background: #e7f3ee; color: #14532d; }
-.wc.teal { background: #e6f4f1; color: #065f46; }
-.wc.sand { background: #f3ede4; color: #5a4633; }
-.wc.muted { background: #f1f1f1; color: #555; }
+body.dark .photo {
+  border-color: var(--border-dark);
+  color: var(--muted-dark);
+}
 
-.wc:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 25px rgba(0,0,0,0.12); }
+/* LISTS */
+ul {
+  padding-left: 18px;
+}
 
-/* BUTTON */
+li {
+  margin-bottom: 10px;
+}
+
+/* PROJECTS */
+.project {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+body.dark .project {
+  border-color: var(--border-dark);
+}
+
+.project span {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+body.dark .project span {
+  color: var(--muted-dark);
+}
+
+/* BUTTONS */
 .button {
   display: inline-block;
-  margin-top: 20px;
-  background: linear-gradient(135deg, #ff7a18, #ffb347);
-  color: white;
-  padding: 14px 34px;
-  border-radius: 30px;
+  margin-top: 26px;
   text-decoration: none;
-  font-weight: 600;
-  text-align: center;
+  color: white;
+  background: var(--accent);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
-/* CONTACT */
-#contact p { text-align: center; font-size: 18px; }
-
-
-  #contact {
-  opacity: 0;
-  transform: translateY(50px) scale(0.9);
-  transition: all 0.6s ease;
-  pointer-events: none; /* prevent interaction while hidden */
+.link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
 }
 
-#contact.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  pointer-events: auto; /* enable interaction */
+/* FOOTER */
+footer {
+  max-width: 960px;
+  margin: auto;
+  padding: 50px 20px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
+/* DARK MODE TOGGLE */
+.toggle {
+  cursor: pointer;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 20px;
+}
 
+body.dark .toggle {
+  border-color: var(--border-dark);
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  #hero {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .photo {
+    margin-top: 30px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <nav>
-  <strong>Geetu Sodhi</strong>
-  <div>
-    <a href="#about">About</a>
-    <a href="#courses">Courses</a>
-    <a href="#who">Who I Work With</a>
-    <a href="#impact">Learning Impact</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+  <div class="nav-inner">
+    <strong>Geetu Sodhi</strong>
+    <div>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <span class="toggle" onclick="toggleDark()">🌙</span>
+    </div>
   </div>
 </nav>
 
 <section id="hero">
-  <h1>Hello, I’m Geetu</h1>
-  <p>Technical Trainer & Learning Specialist</p>
-</section>
-
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
+  <div>
+    <h1>Technical Trainer & Learning Specialist</h1>
     <p>
-      I am a <strong>Technical Trainer and Learning Specialist</strong> with over <strong>10 years of experience</strong> in curriculum development, training delivery, and learning quality management. I specialize in creating <strong>structured, high-impact learning programs</strong> that turn complex technical topics into clear, practical, and engaging experiences.
+      I design structured, outcome-driven learning programs that turn complex technical
+      concepts into clear, practical skills for adult learners and professionals.
     </p>
-    <p>
-      My work spans the full learning lifecycle—from <strong>curriculum design and instructional content development</strong> to <strong>quality control, accessibility checks, learner experience validation, and continuous improvement</strong>. I ensure every program I build is <strong>accurate, consistent, scalable</strong>, and aligned with measurable learning outcomes.
-    </p>
-    <p>
-      I support individuals and teams in building <strong>real-world data skills</strong>, helping learners confidently apply skills in professional environments.
-    </p>
+    <a href="#" class="button">Download Resume</a>
+  </div>
+
+  <div class="photo">
+    Upload<br>Your Photo
   </div>
 </section>
 
-<section id="courses">
-  <h2>Learning Programs & Instructional Design</h2>
-  <div class="card">
-    <ul>
-      <li>End-to-end curriculum design for adult learning programs</li>
-      <li>Data analytics learning pathways (Python, SQL, Power BI)</li>
-      <li>Instructional design for structured, outcome-driven courses</li>
-      <li>Assessment design, learning scaffolding, and skill progression</li>
-      <li>Program delivery and facilitation for diverse adult learners (18–60)</li>
-      <li>Learning quality review, content refinement, and learner experience improvement</li>
-    </ul>
-  </div>
+<section id="about" class="divider">
+  <h2>About</h2>
+  <p>
+    I have 10+ years of experience in curriculum development, instructional design,
+    training delivery, and learning quality management.
+  </p>
+  <p>
+    My focus is building scalable learning systems that support skill progression,
+    accessibility, and real-world application.
+  </p>
 </section>
 
-<section id="who">
-  <h2>Who I Work With</h2>
-  <div class="card">
-    <p>
-      I work with adult learners, training teams, and organizations looking to build
-      practical, real-world data skills. My experience spans career-switchers, working
-      professionals, and teams seeking structured, scalable learning programs.
-    </p>
-  </div>
+<section id="programs" class="divider">
+  <h2>Learning Programs</h2>
+  <ul>
+    <li>End-to-end curriculum design for adult learning</li>
+    <li>Data analytics pathways (Python, SQL, Power BI)</li>
+    <li>Assessment design and learning scaffolding</li>
+    <li>Instructor enablement & train-the-trainer programs</li>
+  </ul>
 </section>
 
-<section id="impact">
-  <h2>Learning Impact</h2>
-  <div class="card">
-    <ul>
-      <li>Designed and delivered structured learning programs for adult learners </li>
-      <li>Supported learners in building job-ready data analysis skills</li>
-      <li>Improved learner confidence through scaffolded instruction and real-world tasks</li>
-      <li>Ensured learning quality through continuous content review and refinement</li>
-    </ul>
-  </div>
-</section>
+<section id="projects" class="divider">
+  <h2>Selected Work</h2>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="card word-cloud">
-    <span class="wc large orange">Articulate & eLearning</span>
-    <span class="wc medium green">Curriculum Design</span>
-    <span class="wc medium teal">Instructor Enablement</span>
-    <span class="wc small muted">Train the Trainer</span>
-    <span class="wc medium sand">Presentations & PPTs</span>
-    <span class="wc medium blue">Data Analytics</span>
-    <span class="wc small blue">Infographics</span>
-    <span class="wc large orange">Mock Interviews & Career Readiness</span>
-    <span class="wc medium green">AI-Powered Learning</span>
-  </div>
-  <div style="text-align:center; margin-top:20px;">
-    <a href="Projects.html" class="button">View All Projects</a>
-  </div>
-</section>
-
-<section>
-
-  <h2>Let’s Connect</h2>
-  <div class="card" style="text-align:center">
-    <p>
-      Interested in structured learning design, training programs, or collaboration?
-      I’d love to connect.
-    </p>
-    <a href="#contact" id="contactBtn" class="button">Get in Touch</a>
+  <div class="project">
+    <strong>Curriculum Design & Instructional Content</strong><br>
+    <span>Structured learning pathways, assessments, learning frameworks</span>
   </div>
 
+  <div class="project">
+    <strong>Instructor Enablement</strong><br>
+    <span>Teaching frameworks, facilitation guides, quality rubrics</span>
+  </div>
 
+  <div class="project">
+    <strong>AI-Powered Learning Tools</strong><br>
+    <span>Mock interviews, automation, learner feedback systems</span>
+  </div>
+
+  <a href="Projects.html" class="link">View all projects →</a>
 </section>
 
-<section id="contact">
-  <h2>Connect</h2>
-  <p>📧 geetusodhi84@gmail.com<br>
-     🔗 <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">LinkedIn</a></p>
+<section id="contact" class="divider">
+  <h2>Contact</h2>
+  <p>
+    📧 geetusodhi84@gmail.com<br>
+    🔗 <a class="link" href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">LinkedIn</a>
+  </p>
 </section>
 
-  <script>
-const contactBtn = document.getElementById('contactBtn');
-const contactSection = document.getElementById('contact');
+<footer>
+  © 2026 Geetu Sodhi · Built with GitHub Pages
+</footer>
 
-contactBtn.addEventListener('click', (e) => {
-  e.preventDefault(); // prevent default anchor jump
-  contactSection.classList.add('show');
-  contactSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
+<script>
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
 </script>
 
 </body>
