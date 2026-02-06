@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Geetu Sodhi | Learning Experience Designer</title>
+<title>Geetu Sodhi | Technical Trainer & Learning Experience Designer</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
 :root {
-  --bg: #f9f6f1;        /* cream white */
-  --panel: #ffffff;
+  --bg: #fffdf7; /* cream-white */
+  --panel: #fffaf4;
   --text: #1f2937;
   --muted: #6b7280;
-  --accent: #111111;
-  --border: #e5e0d8;
+  --accent: #8b5cf6;
+  --border: #e7ded5;
 }
 
 /* RESET */
@@ -22,7 +22,6 @@
   padding: 0;
 }
 
-/* BODY */
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
@@ -42,10 +41,10 @@ body {
   scrollbar-color: #000 transparent;
 }
 
-/* MAIN LAYOUT */
+/* MAIN GRID */
 .main {
   display: grid;
-  grid-template-columns: 360px 1fr; /* wider left */
+  grid-template-columns: 360px 1fr; /* increased left sidebar width */
   min-height: 100vh;
 }
 
@@ -53,33 +52,31 @@ body {
 .left {
   background: var(--bg);
   border-right: 1px solid var(--border);
-  padding: 32px 20px 32px 36px; /* more left spacing */
+  padding: 24px 16px 24px 30px;
 }
 
 .left-scroll {
-  height: calc(100vh - 64px);
+  height: calc(100vh - 48px);
   overflow-y: auto;
-  padding-right: 12px;
+  padding-right: 10px;
 }
 
-/* SIDEBAR CARDS */
 .sidebar-card {
   background: var(--panel);
   border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 24px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+  padding: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* PROFILE */
-.profile-img {
-  width: 100%;
-  border-radius: 16px;
-  object-fit: cover;
+.sidebar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
 }
 
 .left h1 {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 6px;
 }
 
@@ -88,19 +85,23 @@ body {
   color: var(--muted);
 }
 
-/* LINKS */
 .left a {
   display: block;
   margin-top: 10px;
   color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resume-link {
   text-decoration: underline;
-  font-size: 14px;
 }
 
 /* QUALIFICATIONS */
 .qualifications h3 {
   font-size: 15px;
   font-weight: 600;
+  color: var(--accent);
   margin-bottom: 14px;
 }
 
@@ -120,21 +121,34 @@ body {
 
 /* RIGHT CONTENT */
 .right {
-  padding: 56px 72px;
+  padding: 50px 60px;
 }
 
-/* CONTENT CARDS */
 .card {
   background: var(--panel);
-  border-radius: 22px;
-  padding: 36px;
-  margin-bottom: 32px;
-  box-shadow: 0 18px 42px rgba(0,0,0,0.06);
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 30px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
 }
 
 h2 {
-  font-size: 24px;
-  margin-bottom: 16px;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section-line {
+  width: 42px;
+  height: 3px;
+  background: #111;
+  border-radius: 6px;
+  margin: 10px 0 22px;
 }
 
 p {
@@ -142,9 +156,20 @@ p {
   color: var(--muted);
 }
 
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
 /* PROJECTS */
 .project {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  border-left: 3px solid #111;
+  padding-left: 14px;
 }
 
 .project strong {
@@ -160,20 +185,20 @@ p {
 /* BUTTON */
 .button {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 26px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  padding: 10px 22px;
   border-radius: 999px;
-  background: #111;
-  color: #fff;
   text-decoration: none;
   font-size: 14px;
 }
 
 /* TECH STACK */
 #tech {
-  background: #f4f1ec;
-  border-radius: 22px;
-  padding: 44px;
+  background: #fffdf7;
+  border-radius: 20px;
+  padding: 40px;
 }
 
 #tech h2 {
@@ -188,6 +213,7 @@ p {
 .tech-group h3 {
   font-size: 18px;
   margin-bottom: 12px;
+  color: var(--accent);
 }
 
 .badges {
@@ -211,6 +237,192 @@ p {
     padding: 32px 24px;
   }
 }
+
+  /* CREDENTIALS – QUIET & COLLAPSIBLE */
+.credentials details {
+  cursor: pointer;
+}
+
+.credentials summary {
+  list-style: none;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.credentials summary::-webkit-details-marker {
+  display: none;
+}
+
+.credentials .hint {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.credentials details[open] summary {
+  margin-bottom: 20px;
+}
+
+.cred-content {
+  display: grid;
+  gap: 22px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.cred-group h4 {
+  font-size: 17px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.cred-group ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.cred-group li {
+  font-size: 16px;
+  color: var(--muted);
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.cred-group li:last-child {
+  border-bottom: none;
+}
+
+/* subtle animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* ELEGANT TECH STACK */
+.tech-elegant h2 {
+  font-size: 26px;
+  margin-bottom: 26px;
+}
+
+.tech-block {
+  margin-bottom: 34px;
+}
+
+.tech-block h3 {
+  font-size: 20px;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.tech-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tech-list li {
+  font-size: 16.5px;
+  color: var(--muted);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tech-list li:last-child {
+  border-bottom: none;
+}
+
+/* two-column feel without shouting */
+.tech-list.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 28px;
+}
+
+/* mobile fallback */
+@media (max-width: 700px) {
+  .tech-list.columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  /* TOP BAR */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  padding: 22px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+/* LEFT WELCOME */
+.welcome {
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* RIGHT LINKS */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.top-link {
+  font-size: 15.5px;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.top-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.top-link:hover::after {
+  width: 100%;
+}
+
+/* RESUME BUTTON */
+.top-button {
+  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  color: white;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.25s ease;
+}
+
+.top-button:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .topbar {
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+
 </style>
 </head>
 
@@ -218,12 +430,26 @@ p {
 
 <div class="main">
 
+  <header class="topbar">
+  <div class="topbar-left">
+    <span class="welcome">👋 Hello, you found me.</span>
+  </div>
+
+  <nav class="topbar-right">
+    <a href="#projects" class="top-link">Projects</a>
+    <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank" class="top-link">LinkedIn</a>
+    <a href="data/Geetu_Resume_LD.pdf" download class="top-button">Download Resume</a>
+  </nav>
+</header>
+
+
 <!-- LEFT -->
 <aside class="left">
   <div class="left-scroll">
 
     <div class="sidebar-card">
-      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi" class="profile-img">
+      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi"
+           style="width:100%; border-radius:14px; object-fit:cover;">
     </div>
 
     <div class="sidebar-card">
@@ -231,24 +457,27 @@ p {
       <p>Learning Experience Designer<br>Technical Trainer</p>
     </div>
 
+    <div class="card">
+    <h2>About</h2>
+    <div class="section-line"></div>
+    <p>
+      I am a Technical Trainer, Instructional and Learning Experience Designer with over 15 years of experience designing and delivering impactful learning for adult learners from diverse professional, cultural, and educational backgrounds.
+      My work focuses on transforming complex technical concepts into clear, structured, and outcome-driven learning experiences.
+      I specialize in curriculum design, instructional strategy, assessment design, and facilitator enablement—ensuring learning programs are practical, inclusive, and aligned with real-world application.
+      With experience across technology, data analytics, and professional upskilling, I bring a learner-centred and systems-thinking approach to building scalable learning solutions that support long-term skill development and measurable performance outcomes.
+    </p>
+    <p style="margin-top:14px; font-size:14px; color:#444;">
+      Educator at heart. Problem solver by nature. Trainer and Learning Experience Designer in action.
+    </p>
+  </div>
+
     <div class="sidebar-card">
-      <a href="data/Geetu_Resume_LD.pdf" download>Download Resume</a>
-      <a href="mailto:geetusodhi84@gmail.com">Email</a>
-      <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">LinkedIn</a>
+      <a href="data/Geetu_Resume_LD.pdf" download class="resume-link">📄 Download Resume</a>
+      <a href="mailto:geetusodhi84@gmail.com">✉️ Email</a>
+      <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">🔗 LinkedIn</a>
     </div>
 
-    <div class="sidebar-card qualifications">
-      <h3>Qualifications & Certifications</h3>
-      <ul>
-        <li>MCA – Master of Computer Applications</li>
-        <li>BCA – Bachelor of Computer Applications</li>
-        <li>LXD Certificate – University of Michigan</li>
-        <li>IBM Data Analyst Professional Certificate</li>
-        <li>AZ-900: Microsoft Azure Fundamentals</li>
-        <li>AI-900: Microsoft Azure AI Fundamentals</li>
-        <li>Instructional Design for Adult Learners</li>
-      </ul>
-    </div>
+
 
   </div>
 </aside>
@@ -256,69 +485,121 @@ p {
 <!-- RIGHT -->
 <main class="right">
 
-  <div class="card">
-    <h2>About</h2>
-    <p>
-      I am a Technical Trainer and Learning Experience Designer with over 15 years of experience
-      designing and delivering structured, outcome-driven learning for adult learners from diverse
-      professional and cultural backgrounds. I specialize in curriculum design, instructional
-      strategy, assessment frameworks, and facilitator enablement—transforming complex technical
-      concepts into clear, scalable learning experiences aligned with real-world performance.
-    </p>
-  </div>
+  
 
   <div class="card">
     <h2>Key Projects</h2>
+    <div class="section-line"></div>
 
     <div class="project">
       <strong>Curriculum Design & Instructional Content</strong>
-      <span>End-to-end learning pathways, assessments, and quality frameworks.</span>
+      <span>End-to-end learning pathways, assessments, and quality frameworks for adult learners.</span>
     </div>
 
     <div class="project">
       <strong>Instructor Enablement</strong>
-      <span>Train-the-trainer programs and facilitation guides.</span>
+      <span>Train-the-trainer programs including teaching frameworks and facilitation guides.</span>
     </div>
 
     <div class="project">
       <strong>Learning Experience Design (LXD)</strong>
-      <span>Persona-driven, scaffolded learning journeys.</span>
+      <span>Learner persona-driven, scaffolded learning journeys.</span>
     </div>
 
     <div class="project">
       <strong>Technical Mock Interviews & Career Readiness</strong>
-      <span>Python and data-focused mock interviews with feedback.</span>
+      <span>Python and data-focused mock interviews with structured feedback.</span>
     </div>
 
     <div class="project">
       <strong>Automation & Workflow Optimization</strong>
-      <span>Python, Google Sheets, and certificate automation.</span>
+      <span>Python scripts, Google Sheets automation, certificate workflows.</span>
     </div>
+
+    <p style="margin-top:20px; font-size:14px; color:#555;">
+      Designed with intention. Built for learners.
+    </p>
 
     <a href="Projects.html" class="button">View Projects</a>
   </div>
 
-  <section id="tech">
-    <h2>Tech Stack & Tools</h2>
+  <section class="card credentials">
+  <details>
+    <summary>
+      🎓 Credentials & Continuous Learning
+      <span class="hint">Formal education and industry-recognized certifications</span>
+    </summary>
 
-    <div class="tech-group">
-      <h3>Languages & Scripting</h3>
-      <div class="badges">
-        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-        <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-      </div>
-    </div>
+    <div class="cred-content">
 
-    <div class="tech-group">
-      <h3>Data & Visualization</h3>
-      <div class="badges">
-        <img src="https://img.shields.io/badge/PowerBI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black">
-        <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white">
-        <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white">
+      <div class="cred-group">
+        <h4>Education</h4>
+        <ul>
+          <li>Master’s in Computer Applications (MCA)</li>
+          <li>Bachelor’s in Computer Applications (BCA)</li>
+        </ul>
       </div>
+
+      <div class="cred-group">
+        <h4>Professional Certifications</h4>
+        <ul>
+          <li>Learning Experience Design — University of Michigan</li>
+          <li>IBM Data Analyst Professional Certificate</li>
+          <li>Microsoft Azure Fundamentals (AZ-900)</li>
+          <li>Microsoft Azure AI Fundamentals (AI-900)</li>
+        </ul>
+      </div>
+
+      <div class="cred-group">
+        <h4>Specialized Training</h4>
+        <ul>
+          <li>Instructional Design for Adult Learners</li>
+          <li>Curriculum Design & Assessment Strategies</li>
+        </ul>
+      </div>
+
     </div>
-  </section>
+  </details>
+</section>
+
+
+ <section class="card tech-elegant" id="tech">
+  <h2>Skills, Tools & Platforms</h2>
+
+  <!-- SKILLS -->
+  <div class="tech-block">
+    <h3>Core Skills & Learning Expertise</h3>
+    <ul class="tech-list">
+      <li>Learning Experience Design (LXD) & Instructional Design</li>
+      <li>Learner Persona Development & Journey Mapping</li>
+      <li>Curriculum Design for Adult & Professional Learners</li>
+      <li>Assessment Strategy & Learning Evaluation</li>
+      <li>Facilitation & Technical Training (Instructor-Led & Blended)</li>
+      <li>Train-the-Trainer & Instructor Enablement</li>
+      <li>Technical Mock Interviews & Career Readiness Coaching</li>
+      <li>Data-informed Learning Decisions & Performance Analysis</li>
+      <li>Workflow Automation for Learning Operations (Python-based)</li>
+    </ul>
+  </div>
+
+  <!-- TOOLS -->
+  <div class="tech-block">
+    <h3>Tools, Platforms & Technologies</h3>
+    <ul class="tech-list columns">
+      <li>Python, SQL, JavaScript</li>
+      <li>Google Colab, Jupyter, Pandas</li>
+      <li>Power BI, Excel, IBM Cognos</li>
+      <li>Articulate 360, Adobe Captivate, Camtasia</li>
+      <li>Coursera, Blackboard, Schoology</li>
+      <li>Microsoft Power Automate</li>
+      <li>Google Sheets Automation</li>
+      <li>Microsoft Loop</li>
+      <li>Asana, Trello, Jira, ServiceNow</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </div>
+</section>
+
 
 </main>
 </div>
