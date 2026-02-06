@@ -28,22 +28,26 @@ section { max-width:1100px; margin:auto; padding:50px 20px; }
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 600px; /* limit image size */
-  margin: 20px auto; /* center horizontally */
+  max-width: 600px; /* max width of carousel */
+  height: 400px;    /* fixed height for all slides */
+  margin: 20px auto;
   border-radius: 15px;
 }
 
 .slides {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  height: 100%; /* fill carousel height */
 }
 
 .carousel img {
   width: 100%;
-  height: auto; /* maintain aspect ratio */
+  height: 100%;           /* fill slide height */
   flex-shrink: 0;
-  object-fit: contain; /* avoid stretching */
+  object-fit: contain;     /* scale image to fit without distortion */
+  background: #fff;        /* optional: fill empty space with background */
 }
+
 
 .carousel button {
   position: absolute;
