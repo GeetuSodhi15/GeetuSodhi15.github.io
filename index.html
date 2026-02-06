@@ -33,7 +33,7 @@ body {
 }
 
 /* LEFT PANEL */
-./* LEFT PANEL */
+
 .left {
   position: relative;
   width: 320px;
@@ -256,6 +256,15 @@ li {
   color: #ff7a18; /* Slightly brighter accent on hover */
 }
 
+  .sidebar-card {
+  background: var(--panel);
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+}
+
+
 </style>
 </head>
 
@@ -268,19 +277,40 @@ li {
   <div class="left-scroll">
     <br>
     <br>
-    <div class="photo">
-      <img src="data/GeetuPic.jpg" class="photo" alt="Geetu Sodhi">
-    </div>
+    <div class="sidebar-card">
+  <img src="data/GeetuPic.jpg" alt="Geetu Sodhi"
+       style="width:100%; border-radius:14px; object-fit:cover;">
+</div>
 
-    <h1>Geetu Sodhi</h1>
-    <p>Learning Experience Designer<br>Technical Trainer</p>
 
-    <a href="data/Geetu_Resume_LD.pdf" download="Geetu_Resume_LD.pdf" class="resume-link">
-      Download Resume
-    </a>
+    <div class="sidebar-card">
+  <h1 style="font-size:24px; margin-bottom:6px;">Geetu Sodhi</h1>
+  <p style="font-size:14px; color:var(--muted); margin:0;">
+    Learning Experience Designer<br>
+    Technical Trainer
+  </p>
+</div>
 
-    <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">LinkedIn</a>
-    <a href="mailto:geetusodhi84@gmail.com">Email</a>
+
+   <div class="sidebar-card">
+  <a href="data/Geetu_Resume_LD.pdf"
+     download="Geetu_Resume_LD.pdf"
+     class="resume-link">
+    📄 Download Resume
+  </a>
+
+  <a href="mailto:geetusodhi84@gmail.com"
+     style="display:block; margin-top:10px;">
+    ✉️ Email
+  </a>
+
+  <a href="https://linkedin.com/in/geetu-sodhi-canada/"
+     target="_blank"
+     style="display:block; margin-top:10px;">
+    🔗 LinkedIn
+  </a>
+</div>
+
 
     <!-- Qualifications & Certifications -->
     <div class="qualifications" style="margin-top: 30px;">
