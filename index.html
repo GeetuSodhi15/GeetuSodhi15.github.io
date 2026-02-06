@@ -308,6 +308,77 @@ details[open] summary {
   margin-bottom: 32px;
 }
 
+.testimonials details {
+  padding: 30px 40px;
+  background: var(--panel);
+  border-radius: 20px;
+  margin: 40px 0;
+}
+
+.testimonials summary {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  cursor: pointer;
+  outline: none;
+}
+
+.testimonials summary::-webkit-details-marker {
+  display: none; /* remove default arrow */
+}
+
+.testimonial-form {
+  margin-top: 20px;
+}
+
+.testimonial-form input {
+  padding: 10px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  width: 250px;
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.testimonial-form button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.testimonial-form button:hover {
+  transform: scale(1.05);
+}
+
+.cloud {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.cloud span {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--accent);
+  font-size: 14px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cloud span:hover {
+  transform: scale(1.2);
+  background: rgba(139, 92, 246, 0.25);
+}
+
+  
 </style>
 </head>
 
@@ -471,11 +542,46 @@ details[open] summary {
   </details>
 </section>
 
+    <section class="testimonials">
+  <details>
+    <summary>💬 Share Your Feedback</summary>
+    <div class="testimonial-form">
+      <input type="text" id="testimonialInput" placeholder="Write your feedback..." />
+      <button onclick="addTestimonial()">Submit</button>
+    </div>
+    <div id="testimonialCloud" class="cloud"></div>
+  </details>
+</section>
+
+
 <p class="personality">
       Educator at heart |  Problem solver by nature | Trainer and Learning Experience Designer in action
       </p>
+
+    
   </main>
 </div>
+
+  <script>
+function addTestimonial() {
+  const input = document.getElementById('testimonialInput');
+  const cloud = document.getElementById('testimonialCloud');
+  const text = input.value.trim();
+
+  if(text !== "") {
+    const span = document.createElement('span');
+    span.textContent = text;
+
+    // Random font size for subtle word-cloud effect
+    const size = Math.floor(Math.random() * 6) + 14; // 14px to 20px
+    span.style.fontSize = size + "px";
+
+    cloud.appendChild(span);
+    input.value = "";
+  }
+}
+</script>
+
 
 </body>
 </html>
