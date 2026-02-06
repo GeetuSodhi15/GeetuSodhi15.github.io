@@ -35,25 +35,48 @@ body {
 /* LEFT PANEL */
 ./* LEFT PANEL */
 .left {
-  position: sticky;
-  top: 0;
+  position: relative;
+  width: 320px;
   height: 100vh;
-  padding: 40px 30px;
+  padding-left: 20px; /* margin from left edge */
   border-right: 1px solid var(--border);
   background: var(--bg);
-
-  overflow-y: auto; /* Add this line to make scrollable */
-  scrollbar-width: thin; /* For Firefox */
 }
 
-.left::-webkit-scrollbar {
+.left-scroll {
+  max-height: 100%;
+  overflow-y: auto; /* makes this div scrollable */
+  padding-right: 10px; /* spacing from scrollbar */
+}
+
+.left-scroll::-webkit-scrollbar {
   width: 6px;
 }
 
-.left::-webkit-scrollbar-thumb {
-  background-color: rgba(139, 92, 246, 0.5); /* match your accent */
+.left-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 92, 246, 0.5);
   border-radius: 3px;
 }
+
+.left h1 {
+  margin-left: 10px; /* optional for spacing from left */
+}
+
+.left p, .left a, .qualifications {
+  margin-left: 10px; /* consistent padding for content */
+}
+
+.qualifications h3 {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.qualifications ul {
+  padding-left: 18px;
+  font-size: 14px;
+  color: var(--text);
+}
+
 
 
 .photo {
@@ -219,36 +242,37 @@ li {
 
   <!-- LEFT PANEL -->
   <aside class="left">
+  <div class="left-scroll">
     <div class="photo">
       <img src="data/GeetuPic.jpg" class="photo" alt="Geetu Sodhi">
-
     </div>
 
     <h1>Geetu Sodhi</h1>
     <p>Learning Experience Designer<br>Technical Trainer</p>
-<a href="data/Geetu_Resume_LD.pdf" download="Geetu_Resume_LD.pdf" class="resume-link">
-  Download Resume
-</a>
 
+    <a href="data/Geetu_Resume_LD.pdf" download="Geetu_Resume_LD.pdf" class="resume-link">
+      Download Resume
+    </a>
 
     <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">LinkedIn</a>
     <a href="mailto:geetusodhi84@gmail.com">Email</a>
 
-
-     <!-- Qualifications & Certifications -->
-  <div class="qualifications" style="margin-top: 30px;">
-    <h3 style="font-size:16px; color:var(--accent); margin-bottom:12px;">Qualifications & Certifications</h3>
-    <ul style="padding-left: 18px; font-size:14px; color:var(--text);">
-      <li>Master's in Computer Applications (MCA)</li>
-      <li>Bachelor's in Computer Applications (BCA)</li>
-      <li>Learning Experience Designer Certificate, University of Michigan (Coursera)</li>
-      <li>IBM Data Analyst Professional Certificate</li>
-      <li>AZ-900: Microsoft Azure Fundamentals</li>
-      <li>AI-900: Microsoft Azure AI Fundamentals</li>
-      <li>Instructional Design for Adult Learners (LinkedIn Learning)</li>
-    </ul>
+    <!-- Qualifications & Certifications -->
+    <div class="qualifications" style="margin-top: 30px;">
+      <h3>Qualifications & Certifications</h3>
+      <ul>
+        <li>Master's in Computer Applications (MCA)</li>
+        <li>Bachelor's in Computer Applications (BCA)</li>
+        <li>Learning Experience Designer Certificate, University of Michigan (Coursera)</li>
+        <li>IBM Data Analyst Professional Certificate</li>
+        <li>AZ-900: Microsoft Azure Fundamentals</li>
+        <li>AI-900: Microsoft Azure AI Fundamentals</li>
+        <li>Instructional Design for Adult Learners (LinkedIn Learning)</li>
+      </ul>
+    </div>
   </div>
-  </aside>
+</aside>
+
 
   <!-- RIGHT CONTENT -->
   <main class="right">
