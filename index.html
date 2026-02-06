@@ -7,134 +7,191 @@
 
 <style>
 :root {
-  --bg: #fffefa; /* cream-white background */
-  --panel: #ffece0; /* pastel peach for cards */
+  --bg: #fffdf7; /* cream-white */
+  --panel: #fffaf4;
   --text: #1f2937;
-  --muted: #555555;
+  --muted: #6b7280;
   --accent: #8b5cf6;
   --border: #e7ded5;
 }
 
 /* RESET */
-* { box-sizing: border-box; margin:0; padding:0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.75;
-  font-size: 16px;
+  line-height: 1.65;
 }
 
-/* SCROLLBAR */
+/* BLACK SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #000; border-radius: 6px; }
+::-webkit-scrollbar-thumb {
+  background: #000;
+  border-radius: 6px;
+}
 ::-webkit-scrollbar-track { background: transparent; }
-* { scrollbar-width: thin; scrollbar-color: #000 transparent; }
-
-/* TOP BAR */
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 40px;
-  background: var(--panel);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  font-size: 17px;
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000 transparent;
 }
-.top-bar .shortcuts a {
-  margin-right: 20px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-.top-bar .shortcuts a:hover { text-decoration: underline; }
 
 /* MAIN GRID */
 .main {
   display: grid;
-  grid-template-columns: 380px 1fr; /* left wider */
-  min-height: calc(100vh - 64px);
-  gap: 20px;
-  padding-top: 20px;
+  grid-template-columns: 360px 1fr; /* wider sidebar */
+  min-height: 100vh;
 }
 
 /* LEFT SIDEBAR */
 .left {
   background: var(--bg);
   border-right: 1px solid var(--border);
-  padding: 24px 20px 24px 30px;
-  height: auto;
+  padding: 24px 16px 24px 30px;
 }
+
 .left-scroll {
-  max-height: calc(100vh - 64px);
+  height: calc(100vh - 48px);
   overflow-y: auto;
   padding-right: 10px;
 }
+
+/* SIDEBAR CARDS */
 .sidebar-card {
   background: var(--panel);
   border-radius: 18px;
   padding: 18px;
   margin-bottom: 22px;
   box-shadow: 0 10px 24px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
 }
-.left h1 { font-size: 26px; margin-bottom: 8px; }
-.left p { font-size: 15px; color: var(--muted); }
-.left a { display: block; margin-top: 10px; color: var(--accent); text-decoration: none; font-weight: 500; }
-.resume-link { text-decoration: underline; }
+
+.sidebar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
+}
+
+.left h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.left p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.left a {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.resume-link {
+  text-decoration: underline;
+}
 
 /* QUALIFICATIONS */
-.qualifications h3 { font-size: 16px; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
-.qualifications ul { list-style: none; }
-.qualifications li { font-size: 15px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
-.qualifications li:last-child { border-bottom: none; }
+.qualifications h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.qualifications ul {
+  list-style: none;
+}
+
+.qualifications li {
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.qualifications li:last-child {
+  border-bottom: none;
+}
 
 /* RIGHT CONTENT */
-.right { padding: 50px 60px; }
+.right {
+  padding: 50px 60px;
+}
+
+/* RIGHT CARDS */
 .card {
   background: var(--panel);
   border-radius: 20px;
-  padding: 36px;
+  padding: 32px;
   margin-bottom: 30px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s forwards;
 }
-h2 { font-size: 24px; margin-bottom: 16px; }
-p { font-size: 17px; color: var(--muted); }
-ul { padding-left: 24px; }
-li { margin-bottom: 8px; font-size: 16px; }
 
-/* PERSONA LINE ANIMATION */
-.personality {
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
+}
+
+/* HEADING & LINE */
+h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.section-line {
+  width: 42px;
+  height: 3px;
+  background: #111;
+  border-radius: 6px;
+  margin: 10px 0 22px;
+}
+
+p {
   font-size: 16px;
-  color: #444;
-  white-space: nowrap;
-  overflow: hidden;
-  display: inline-block;
-  animation: marquee 10s linear infinite;
-}
-@keyframes marquee {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  color: var(--muted);
 }
 
-/* PROJECTS HORIZONTAL SCROLL */
-.projects-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+ul {
+  padding-left: 20px;
 }
-.project {
-  display: inline-block;
-  min-width: 300px;
-  background: #ffe5d6;
-  margin-right: 16px;
-  padding: 16px;
-  border-radius: 16px;
+
+li {
+  margin-bottom: 8px;
   font-size: 15px;
+}
+
+/* PROJECTS */
+.project {
+  margin-bottom: 16px;
+  border-left: 3px solid #111;
+  padding-left: 14px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: fadeInRight 0.6s forwards;
+}
+
+.project strong {
+  font-size: 16px;
+}
+
+.project span {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* BUTTON */
@@ -143,59 +200,99 @@ li { margin-bottom: 8px; font-size: 16px; }
   margin-top: 18px;
   background: linear-gradient(135deg, #8b5cf6, #a78bfa);
   color: white;
-  padding: 12px 26px;
+  padding: 10px 22px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 16px;
-  transition: transform 0.3s;
+  font-size: 14px;
+  transition: transform 0.2s ease;
 }
-.button:hover { transform: scale(1.05); }
+
+.button:hover {
+  transform: scale(1.05);
+}
 
 /* TECH STACK */
 #tech {
-  background: #ffece0;
+  background: #fffdf7;
   border-radius: 20px;
   padding: 40px;
-  margin-top: 20px;
 }
-#tech h2 { font-size: 26px; margin-bottom: 30px; }
-.tech-group { margin-bottom: 28px; }
-.tech-group h3 { font-size: 20px; margin-bottom: 12px; color: var(--accent); }
-.badges { display: flex; flex-wrap: wrap; gap: 12px; }
+
+#tech h2 {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+.tech-group {
+  margin-bottom: 28px;
+}
+
+.tech-group h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--accent);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: transform 0.2s ease;
+}
+
+.badges img:hover {
+  transform: scale(1.1);
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
 /* MOBILE */
 @media (max-width: 900px) {
-  .main { grid-template-columns: 1fr; }
-  .left { border-right: none; border-bottom: 1px solid var(--border); }
-  .right { padding: 32px 24px; }
-  .projects-container { overflow-x: scroll; }
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .right {
+    padding: 32px 24px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="shortcuts">
-    <a href="#tech">Tech Stack</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div class="welcome">👋 Hello! You found me — Educator at heart, Problem solver by nature, Trainer & LXD in action.</div>
-</div>
-
 <div class="main">
-<!-- LEFT SIDEBAR -->
+
+<!-- LEFT -->
 <aside class="left">
   <div class="left-scroll">
+
     <div class="sidebar-card">
-      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi" style="width:100%; border-radius:14px; object-fit:cover;">
+      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi"
+           style="width:100%; border-radius:14px; object-fit:cover; transition: transform 0.3s;">
     </div>
 
     <div class="sidebar-card">
       <h1>Geetu Sodhi</h1>
       <p>Learning Experience Designer<br>Technical Trainer</p>
-      <p class="personality">Educator at heart. Problem solver by nature. Trainer and LXD in action.</p>
     </div>
 
     <div class="sidebar-card">
@@ -216,51 +313,67 @@ li { margin-bottom: 8px; font-size: 16px; }
         <li>Instructional Design for Adult Learners</li>
       </ul>
     </div>
+
   </div>
 </aside>
 
-<!-- RIGHT CONTENT -->
+<!-- RIGHT -->
 <main class="right">
+
   <div class="card">
     <h2>About</h2>
+    <div class="section-line"></div>
     <p>
       I am a Technical Trainer, Instructional and Learning Experience Designer with over 15 years of experience designing and delivering impactful learning for adult learners from diverse professional, cultural, and educational backgrounds.
       My work focuses on transforming complex technical concepts into clear, structured, and outcome-driven learning experiences.
       I specialize in curriculum design, instructional strategy, assessment design, and facilitator enablement—ensuring learning programs are practical, inclusive, and aligned with real-world application.
       With experience across technology, data analytics, and professional upskilling, I bring a learner-centred and systems-thinking approach to building scalable learning solutions that support long-term skill development and measurable performance outcomes.
     </p>
+    <p style="margin-top:14px; font-size:14px; color:#444;">
+      Educator at heart. Problem solver by nature. Trainer and LXD in action.
+    </p>
   </div>
 
   <div class="card">
     <h2>Key Projects</h2>
-    <div class="projects-container">
-      <div class="project">
-        <strong>Curriculum Design & Instructional Content</strong>
-        <span>End-to-end learning pathways, assessments, and quality frameworks for adult learners.</span>
-      </div>
-      <div class="project">
-        <strong>Instructor Enablement</strong>
-        <span>Train-the-trainer programs including teaching frameworks and facilitation guides.</span>
-      </div>
-      <div class="project">
-        <strong>Learning Experience Design (LXD)</strong>
-        <span>Learner persona-driven, scaffolded learning journeys.</span>
-      </div>
-      <div class="project">
-        <strong>Technical Mock Interviews & Career Readiness</strong>
-        <span>Python and data-focused mock interviews with structured feedback.</span>
-      </div>
-      <div class="project">
-        <strong>Automation & Workflow Optimization</strong>
-        <span>Python scripts, Google Sheets automation, certificate workflows.</span>
-      </div>
+    <div class="section-line"></div>
+
+    <div class="project">
+      <strong>Curriculum Design & Instructional Content</strong>
+      <span>End-to-end learning pathways, assessments, and quality frameworks for adult learners.</span>
     </div>
+
+    <div class="project">
+      <strong>Instructor Enablement</strong>
+      <span>Train-the-trainer programs including teaching frameworks and facilitation guides.</span>
+    </div>
+
+    <div class="project">
+      <strong>Learning Experience Design (LXD)</strong>
+      <span>Learner persona-driven, scaffolded learning journeys.</span>
+    </div>
+
+    <div class="project">
+      <strong>Technical Mock Interviews & Career Readiness</strong>
+      <span>Python and data-focused mock interviews with structured feedback.</span>
+    </div>
+
+    <div class="project">
+      <strong>Automation & Workflow Optimization</strong>
+      <span>Python scripts, Google Sheets automation, certificate workflows.</span>
+    </div>
+
+    <p style="margin-top:20px; font-size:14px; color:#555;">
+      Designed with intention. Built for learners.
+    </p>
+
     <a href="Projects.html" class="button">View Projects</a>
   </div>
 
-  <!-- TECH STACK -->
   <section id="tech">
     <h2>Tech Stack & Tools</h2>
+    <div class="section-line"></div>
+
     <div class="tech-group">
       <h3>Languages & Scripting</h3>
       <div class="badges">
@@ -270,6 +383,7 @@ li { margin-bottom: 8px; font-size: 16px; }
         <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white">
       </div>
     </div>
+
     <div class="tech-group">
       <h3>Data & Visualization</h3>
       <div class="badges">
@@ -279,26 +393,11 @@ li { margin-bottom: 8px; font-size: 16px; }
         <img src="https://img.shields.io/badge/Matplotlib-008080?style=for-the-badge&logo=matplotlib&logoColor=white">
       </div>
     </div>
-    <div class="tech-group">
-      <h3>Workflow & Automation</h3>
-      <div class="badges">
-        <img src="https://img.shields.io/badge/Power%20Automate-0066FF?style=for-the-badge&logo=microsoftpowerautomate&logoColor=white">
-        <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white">
-        <img src="https://img.shields.io/badge/Python%20Scripts-3776AB?style=for-the-badge&logo=python&logoColor=white">
-      </div>
-    </div>
-    <div class="tech-group">
-      <h3>Tools & Platforms</h3>
-      <div class="badges">
-        <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
-        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
-        <img src="https://img.shields.io/badge/Microsoft%20Loop-0078D4?style=for-the-badge&logo=microsoft&logoColor=white">
-        <img src="https://img.shields.io/badge/Asana-273347?style=for-the-badge&logo=asana&logoColor=white">
-        <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello&logoColor=white">
-      </div>
-    </div>
+
   </section>
+
 </main>
 </div>
+
 </body>
 </html>
