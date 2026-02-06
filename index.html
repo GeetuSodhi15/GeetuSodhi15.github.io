@@ -46,10 +46,7 @@ body {
   border-bottom: 1px solid var(--border);
 }
 
-.welcome {
-  font-size: 18px;
-  font-weight: 500;
-}
+
 
 .topbar-right {
   display: flex;
@@ -85,6 +82,9 @@ body {
   font-size: 14.5px;
   text-decoration: none;
   transition: transform 0.25s ease;
+}
+.animated-welcome {
+  animation: shimmer 2.5s ease-out 1;
 }
 
 .top-button:hover { transform: scale(1.05); }
@@ -282,7 +282,10 @@ details[open] summary {
 <body>
 
 <header class="topbar">
-  <span class="welcome"> Hi there! Dive into my portfolio and discover how I make learning exciting and impactful.</span>
+ <span class="welcome animated-welcome">
+  🌷 Hi there! Dive into my portfolio and discover how I make learning exciting and impactful.
+</span>
+
   <nav class="topbar-right">
     <a href="Projects.html" class="top-link">Projects</a>
 
