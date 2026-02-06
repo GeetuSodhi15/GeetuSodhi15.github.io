@@ -227,6 +227,52 @@ h2 {
   .right { padding: 32px 24px; }
   .tech-list.columns { grid-template-columns: 1fr; }
 }
+
+  .qualifications summary {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 26px;
+}
+
+.qual-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.qual-hint {
+  font-size: 14px;
+  color: #666;
+}
+
+.qual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 26px;
+}
+
+.qual-block h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #8b5cf6; /* soft purple accent */
+}
+
+.qual-block ul {
+  list-style: none;
+}
+
+.qual-block li {
+  font-size: 15px;
+  color: #444;
+  padding: 6px 0;
+  border-bottom: 1px solid #e7ded5;
+}
+
+details[open] summary {
+  margin-bottom: 32px;
+}
+
 </style>
 </head>
 
@@ -314,6 +360,64 @@ h2 {
         </ul>
       </div>
     </section>
+
+    <section class="card qualifications">
+  <details>
+    <summary>
+      <span class="qual-title">Qualifications</span>
+      <span class="qual-hint">education · experience · training</span>
+    </summary>
+
+    <div class="qual-grid">
+
+      <div class="qual-block">
+        <h4>Education</h4>
+        <ul>
+          <li>Masters & Bachelors in Computer Application</li>
+        </ul>
+      </div>
+
+      <div class="qual-block">
+        <h4>Professional Experience</h4>
+        <ul>
+          <li>Technical Trainer – Data Analytics & Cloud Fundamentals</li>
+          <li>Learning Experience & Curriculum Designer</li>
+          <li>Trainer Enablement & Instructor Coaching</li>
+        </ul>
+      </div>
+
+      <div class="qual-block">
+        <h4>Certifications</h4>
+        <ul>
+          <li>Microsoft Azure Fundamentals (AZ-900)</li>
+          <li>Microsoft Azure Data Fundamentals (DP-900)</li>
+          <li>IBM Data Analytics & Business Intelligence Certifications</li>
+           <li>Learning Experience Design -University of Michigan </li>
+        </ul>
+      </div>
+
+      <div class="qual-block">
+        <h4>Training & Facilitation</h4>
+        <ul>
+          <li>Adult Learning & Andragogy</li>
+          <li>Train-the-Trainer Programs</li>
+          <li>Inclusive & Accessible Learning Design</li>
+        </ul>
+      </div>
+
+      <div class="qual-block">
+        <h4>Knowledge Areas</h4>
+        <ul>
+          <li>Learning Experience Design (LXD)</li>
+          <li>Assessment & Evaluation Strategy</li>
+          <li>Career Readiness & Interview Preparation</li>
+        </ul>
+      </div>
+
+    </div>
+  </details>
+</section>
+
 
   </main>
 </div>
