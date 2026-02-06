@@ -18,8 +18,17 @@
   font-weight: 800;
 }
 
-  .animated-welcome {
-  animation: shimmer 2.5s ease-out 1;
+.animated-welcome {
+  opacity: 0;                 /* start invisible */
+  transform: translateY(-20px); /* start slightly above */
+  animation: fadeSlideIn 2s ease-out forwards; /* runs once on load */
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* RESET */
@@ -260,7 +269,7 @@ h2 {
 
 .qual-title {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 .qual-hint {
@@ -338,16 +347,15 @@ details[open] summary {
     <div class="sidebar-card">
       <h1>Geetu Sodhi</h1>
       <p>Learning Experience Designer<br>Technical Trainer</p>
-      <p class="personality">
-        Educator at heart. Problem solver by nature.  
-        Trainer and Learning Experience Designer in action.
-      </p>
+      
     </div>
 
     <div class="sidebar-card">
       <p>
-        I design learner-centred, outcome-driven learning experiences that transform
-        complex technical concepts into practical, inclusive, and measurable outcomes.
+       I’ve spent 15 years in education crafting learning journeys that make technical concepts approachable and practical. 
+       My work focuses on inclusive, engaging experiences that equip diverse adult learners with the skills they need to excel in the real world. 
+      I specialize in designing curriculum and technical training programs that create inclusive, engaging, and learner-centered experiences for diverse adult learners. 
+      I transform complex concepts into practical, actionable learning outcomes that empower students from all backgrounds to succeed.
       </p>
     </div>
   </aside>
@@ -405,7 +413,7 @@ details[open] summary {
   <details>
     <summary>
       <span class="qual-title">Qualifications</span>
-      <span class="qual-hint">education · experience · training</span>
+      <span class="qual-hint">Education · Experience · Training</span>
     </summary>
 
     <div class="qual-grid">
@@ -459,7 +467,9 @@ details[open] summary {
   </details>
 </section>
 
-
+<p class="personality">
+      <b><<i> Educator at heart |  Problem solver by nature | Trainer and Learning Experience Designer in action.</i> </b>
+      </p>
   </main>
 </div>
 
