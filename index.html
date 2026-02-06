@@ -7,7 +7,7 @@
 
 <style>
 :root {
-  --bg: #fffaf0; /* cream-white background */
+  --bg: #fffdf9; /* true cream-white */
   --panel: #fff6e8;
   --text: #1f2937;
   --muted: #555555;
@@ -29,18 +29,16 @@ body {
 
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb {
-  background: #000;
-  border-radius: 6px;
-}
+::-webkit-scrollbar-thumb { background: #000; border-radius: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 * { scrollbar-width: thin; scrollbar-color: #000 transparent; }
 
 /* MAIN GRID */
 .main {
   display: grid;
-  grid-template-columns: 360px 1fr; /* left wider */
+  grid-template-columns: 380px 1fr; /* wider left */
   min-height: 100vh;
+  gap: 20px;
 }
 
 /* LEFT SIDEBAR */
@@ -48,12 +46,9 @@ body {
   background: var(--bg);
   border-right: 1px solid var(--border);
   padding: 24px 20px 24px 30px;
-}
-
-.left-scroll {
-  height: calc(100vh - 48px);
-  overflow-y: auto;
-  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* top aligned */
 }
 
 .sidebar-card {
@@ -68,6 +63,17 @@ body {
 .left p { font-size: 15px; color: var(--muted); }
 .left a { display: block; margin-top: 10px; color: var(--accent); text-decoration: none; font-weight: 500; }
 .resume-link { text-decoration: underline; }
+
+/* PERSONA LINE ANIMATION */
+.personality {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #444;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInRight 0.7s forwards;
+  animation-delay: 0.6s;
+}
 
 /* QUALIFICATIONS */
 .qualifications h3 { font-size: 16px; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
@@ -88,17 +94,6 @@ h2 { font-size: 24px; margin-bottom: 16px; }
 p { font-size: 17px; color: var(--muted); }
 ul { padding-left: 24px; }
 li { margin-bottom: 8px; font-size: 16px; }
-
-/* PERSONA LINE ANIMATION */
-.personality {
-  margin-top: 14px;
-  font-size: 16px;
-  color: #444;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation: slideInRight 0.7s forwards;
-  animation-delay: 0.6s;
-}
 
 /* PROJECTS */
 .project {
@@ -166,38 +161,36 @@ li { margin-bottom: 8px; font-size: 16px; }
 
 <!-- LEFT SIDEBAR -->
 <aside class="left">
-  <div class="left-scroll">
 
-    <div class="sidebar-card">
-      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi" style="width:100%; border-radius:14px; object-fit:cover;">
-    </div>
-
-    <div class="sidebar-card">
-      <h1>Geetu Sodhi</h1>
-      <p>Learning Experience Designer<br>Technical Trainer</p>
-      <p class="personality">Educator at heart. Problem solver by nature. Trainer and Learning Experience Designer in action.</p>
-    </div>
-
-    <div class="sidebar-card">
-      <a href="data/Geetu_Resume_LD.pdf" download class="resume-link">📄 Download Resume</a>
-      <a href="mailto:geetusodhi84@gmail.com">✉️ Email</a>
-      <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">🔗 LinkedIn</a>
-    </div>
-
-    <div class="sidebar-card qualifications">
-      <h3>Qualifications & Certifications</h3>
-      <ul>
-        <li>Master's in Computer Applications (MCA)</li>
-        <li>Bachelor's in Computer Applications (BCA)</li>
-        <li>LXD Certificate – University of Michigan</li>
-        <li>IBM Data Analyst Professional Certificate</li>
-        <li>AZ-900: Microsoft Azure Fundamentals</li>
-        <li>AI-900: Microsoft Azure AI Fundamentals</li>
-        <li>Instructional Design for Adult Learners</li>
-      </ul>
-    </div>
-
+  <div class="sidebar-card">
+    <img src="data/GeetuPic.jpg" alt="Geetu Sodhi" style="width:100%; border-radius:14px; object-fit:cover;">
   </div>
+
+  <div class="sidebar-card">
+    <h1>Geetu Sodhi</h1>
+    <p>Learning Experience Designer<br>Technical Trainer</p>
+    <p class="personality">Educator at heart. Problem solver by nature. Trainer and LXD in action.</p>
+  </div>
+
+  <div class="sidebar-card">
+    <a href="data/Geetu_Resume_LD.pdf" download class="resume-link">📄 Download Resume</a>
+    <a href="mailto:geetusodhi84@gmail.com">✉️ Email</a>
+    <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank">🔗 LinkedIn</a>
+  </div>
+
+  <div class="sidebar-card qualifications">
+    <h3>Qualifications & Certifications</h3>
+    <ul>
+      <li>Master's in Computer Applications (MCA)</li>
+      <li>Bachelor's in Computer Applications (BCA)</li>
+      <li>LXD Certificate – University of Michigan</li>
+      <li>IBM Data Analyst Professional Certificate</li>
+      <li>AZ-900: Microsoft Azure Fundamentals</li>
+      <li>AI-900: Microsoft Azure AI Fundamentals</li>
+      <li>Instructional Design for Adult Learners</li>
+    </ul>
+  </div>
+
 </aside>
 
 <!-- RIGHT CONTENT -->
