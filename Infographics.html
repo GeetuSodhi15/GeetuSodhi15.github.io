@@ -24,21 +24,43 @@ section { max-width:1100px; margin:auto; padding:50px 20px; }
 .tag { display:inline-block; margin:5px 8px 0 0; padding:6px 14px; font-size:0.75rem; background:#ffe4e1; color:#b45309; border-radius:999px; font-weight:500; }
 
 /* Carousel Styles */
-.carousel { position: relative; overflow: hidden; border-radius: 15px; margin-top: 15px; }
-.slides { display: flex; transition: transform 0.5s ease-in-out; }
-.carousel img {
-  width: auto;          /* keep width proportional */
-  max-width: 100%;      /* don’t exceed container width */
-  max-height: 400px;    /* adjust height as needed */
-  flex-shrink: 0;
-  object-fit: contain;  /* keep image proportions */
-  display: block;
-  margin: 0 auto;       /* center horizontally */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px; /* limit image size */
+  margin: 20px auto; /* center horizontally */
+  border-radius: 15px;
 }
 
-.carousel button { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px 16px; cursor: pointer; border-radius: 50%; font-size: 18px; }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto; /* maintain aspect ratio */
+  flex-shrink: 0;
+  object-fit: contain; /* avoid stretching */
+}
+
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
 .carousel button.prev { left: 10px; }
 .carousel button.next { right: 10px; }
+
 
 
 
