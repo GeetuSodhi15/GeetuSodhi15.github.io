@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,44 +7,39 @@
 
 <style>
 :root {
-  --bg: #fffdf7; /* cream-white */
-  --panel: #fffaf4;
+  --bg: #fffaf0; /* cream-white background */
+  --panel: #fff6e8;
   --text: #1f2937;
-  --muted: #6b7280;
+  --muted: #555555;
   --accent: #8b5cf6;
   --border: #e7ded5;
 }
 
 /* RESET */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin:0; padding:0; }
 
+/* BODY */
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.75;
+  font-size: 16px; /* bigger base font */
 }
 
-/* BLACK SCROLLBAR */
+/* SCROLLBAR */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb {
   background: #000;
   border-radius: 6px;
 }
 ::-webkit-scrollbar-track { background: transparent; }
-* {
-  scrollbar-width: thin;
-  scrollbar-color: #000 transparent;
-}
+* { scrollbar-width: thin; scrollbar-color: #000 transparent; }
 
 /* MAIN GRID */
 .main {
   display: grid;
-  grid-template-columns: 360px 1fr; /* wider sidebar */
+  grid-template-columns: 360px 1fr; /* left wider */
   min-height: 100vh;
 }
 
@@ -53,7 +47,7 @@ body {
 .left {
   background: var(--bg);
   border-right: 1px solid var(--border);
-  padding: 24px 16px 24px 30px;
+  padding: 24px 20px 24px 30px;
 }
 
 .left-scroll {
@@ -62,138 +56,68 @@ body {
   padding-right: 10px;
 }
 
-/* SIDEBAR CARDS */
 .sidebar-card {
   background: var(--panel);
   border-radius: 18px;
   padding: 18px;
   margin-bottom: 22px;
   box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
 }
 
-.sidebar-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
-}
-
-.left h1 {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-.left p {
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.left a {
-  display: block;
-  margin-top: 10px;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.resume-link {
-  text-decoration: underline;
-}
+.left h1 { font-size: 26px; margin-bottom: 8px; }
+.left p { font-size: 15px; color: var(--muted); }
+.left a { display: block; margin-top: 10px; color: var(--accent); text-decoration: none; font-weight: 500; }
+.resume-link { text-decoration: underline; }
 
 /* QUALIFICATIONS */
-.qualifications h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--accent);
-  margin-bottom: 14px;
-}
-
-.qualifications ul {
-  list-style: none;
-}
-
-.qualifications li {
-  font-size: 14px;
-  padding: 8px 0;
-  border-bottom: 1px dashed var(--border);
-}
-
-.qualifications li:last-child {
-  border-bottom: none;
-}
+.qualifications h3 { font-size: 16px; font-weight: 600; color: var(--accent); margin-bottom: 14px; }
+.qualifications ul { list-style: none; }
+.qualifications li { font-size: 15px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+.qualifications li:last-child { border-bottom: none; }
 
 /* RIGHT CONTENT */
-.right {
-  padding: 50px 60px;
-}
-
-/* RIGHT CARDS */
+.right { padding: 50px 60px; }
 .card {
   background: var(--panel);
   border-radius: 20px;
-  padding: 32px;
+  padding: 36px;
   margin-bottom: 30px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s forwards;
 }
+h2 { font-size: 24px; margin-bottom: 16px; }
+p { font-size: 17px; color: var(--muted); }
+ul { padding-left: 24px; }
+li { margin-bottom: 8px; font-size: 16px; }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
-}
-
-/* HEADING & LINE */
-h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-}
-
-.section-line {
-  width: 42px;
-  height: 3px;
-  background: #111;
-  border-radius: 6px;
-  margin: 10px 0 22px;
-}
-
-p {
+/* PERSONA LINE ANIMATION */
+.personality {
+  margin-top: 14px;
   font-size: 16px;
-  color: var(--muted);
-}
-
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 8px;
-  font-size: 15px;
+  color: #444;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInRight 0.7s forwards;
+  animation-delay: 0.6s;
 }
 
 /* PROJECTS */
 .project {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   border-left: 3px solid #111;
-  padding-left: 14px;
+  padding-left: 16px;
   opacity: 0;
-  transform: translateX(-20px);
-  animation: fadeInRight 0.6s forwards;
+  transform: translateX(-30px);
+  animation: slideInRight 0.7s forwards;
 }
 
-.project strong {
-  font-size: 16px;
-}
+.project:nth-child(1) { animation-delay: 0.5s; }
+.project:nth-child(2) { animation-delay: 0.6s; }
+.project:nth-child(3) { animation-delay: 0.7s; }
+.project:nth-child(4) { animation-delay: 0.8s; }
+.project:nth-child(5) { animation-delay: 0.9s; }
 
-.project span {
-  display: block;
-  font-size: 14px;
-  color: var(--muted);
-}
+.project strong { font-size: 17px; }
+.project span { display: block; font-size: 15px; color: var(--muted); }
 
 /* BUTTON */
 .button {
@@ -201,79 +125,37 @@ li {
   margin-top: 18px;
   background: linear-gradient(135deg, #8b5cf6, #a78bfa);
   color: white;
-  padding: 10px 22px;
+  padding: 12px 26px;
   border-radius: 999px;
   text-decoration: none;
-  font-size: 14px;
-  transition: transform 0.2s ease;
+  font-size: 15px;
+  transition: transform 0.3s;
 }
-
-.button:hover {
-  transform: scale(1.05);
-}
+.button:hover { transform: scale(1.05); }
 
 /* TECH STACK */
 #tech {
-  background: #fffdf7;
+  background: var(--bg);
   border-radius: 20px;
   padding: 40px;
+  margin-top: 20px;
 }
 
-#tech h2 {
-  font-size: 26px;
-  margin-bottom: 30px;
-}
+#tech h2 { font-size: 26px; margin-bottom: 30px; }
+.tech-group { margin-bottom: 28px; }
+.tech-group h3 { font-size: 20px; margin-bottom: 12px; color: var(--accent); }
+.badges { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.tech-group {
-  margin-bottom: 28px;
-}
-
-.tech-group h3 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  color: var(--accent);
-}
-
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  transition: transform 0.2s ease;
-}
-
-.badges img:hover {
-  transform: scale(1.1);
-}
-
-/* ANIMATIONS */
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInRight {
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+/* HORIZONTAL SLIDE ANIMATION */
+@keyframes slideInRight {
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* MOBILE */
 @media (max-width: 900px) {
-  .main {
-    grid-template-columns: 1fr;
-  }
-
-  .left {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .right {
-    padding: 32px 24px;
-  }
+  .main { grid-template-columns: 1fr; }
+  .left { border-right: none; border-bottom: 1px solid var(--border); }
+  .right { padding: 32px 24px; }
 }
 </style>
 </head>
@@ -282,18 +164,18 @@ li {
 
 <div class="main">
 
-<!-- LEFT -->
+<!-- LEFT SIDEBAR -->
 <aside class="left">
   <div class="left-scroll">
 
     <div class="sidebar-card">
-      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi"
-           style="width:100%; border-radius:14px; object-fit:cover; transition: transform 0.3s;">
+      <img src="data/GeetuPic.jpg" alt="Geetu Sodhi" style="width:100%; border-radius:14px; object-fit:cover;">
     </div>
 
     <div class="sidebar-card">
       <h1>Geetu Sodhi</h1>
       <p>Learning Experience Designer<br>Technical Trainer</p>
+      <p class="personality">Educator at heart. Problem solver by nature. Trainer and LXD in action.</p>
     </div>
 
     <div class="sidebar-card">
@@ -318,26 +200,21 @@ li {
   </div>
 </aside>
 
-<!-- RIGHT -->
+<!-- RIGHT CONTENT -->
 <main class="right">
 
   <div class="card">
     <h2>About</h2>
-    <div class="section-line"></div>
     <p>
       I am a Technical Trainer, Instructional and Learning Experience Designer with over 15 years of experience designing and delivering impactful learning for adult learners from diverse professional, cultural, and educational backgrounds.
       My work focuses on transforming complex technical concepts into clear, structured, and outcome-driven learning experiences.
       I specialize in curriculum design, instructional strategy, assessment design, and facilitator enablement—ensuring learning programs are practical, inclusive, and aligned with real-world application.
       With experience across technology, data analytics, and professional upskilling, I bring a learner-centred and systems-thinking approach to building scalable learning solutions that support long-term skill development and measurable performance outcomes.
     </p>
-    <p style="margin-top:14px; font-size:14px; color:#444;">
-      Educator at heart. Problem solver by nature. Trainer and LXD in action.
-    </p>
   </div>
 
   <div class="card">
     <h2>Key Projects</h2>
-    <div class="section-line"></div>
 
     <div class="project">
       <strong>Curriculum Design & Instructional Content</strong>
@@ -364,16 +241,12 @@ li {
       <span>Python scripts, Google Sheets automation, certificate workflows.</span>
     </div>
 
-    <p style="margin-top:20px; font-size:14px; color:#555;">
-      Designed with intention. Built for learners.
-    </p>
-
     <a href="Projects.html" class="button">View Projects</a>
   </div>
 
+  <!-- TECH STACK -->
   <section id="tech">
     <h2>Tech Stack & Tools</h2>
-    <div class="section-line"></div>
 
     <div class="tech-group">
       <h3>Languages & Scripting</h3>
@@ -395,6 +268,25 @@ li {
       </div>
     </div>
 
+    <div class="tech-group">
+      <h3>Workflow & Automation</h3>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Power%20Automate-0066FF?style=for-the-badge&logo=microsoftpowerautomate&logoColor=white">
+        <img src="https://img.shields.io/badge/Google%20Sheets-34A853?style=for-the-badge&logo=googlesheets&logoColor=white">
+        <img src="https://img.shields.io/badge/Python%20Scripts-3776AB?style=for-the-badge&logo=python&logoColor=white">
+      </div>
+    </div>
+
+    <div class="tech-group">
+      <h3>Tools & Platforms</h3>
+      <div class="badges">
+        <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
+        <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
+        <img src="https://img.shields.io/badge/Microsoft%20Loop-0078D4?style=for-the-badge&logo=microsoft&logoColor=white">
+        <img src="https://img.shields.io/badge/Asana-273347?style=for-the-badge&logo=asana&logoColor=white">
+        <img src="https://img.shields.io/badge/Trello-0079BF?style=for-the-badge&logo=trello&logoColor=white">
+      </div>
+    </div>
   </section>
 
 </main>
