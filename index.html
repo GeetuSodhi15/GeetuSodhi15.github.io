@@ -38,7 +38,7 @@ body {
   position: relative;
   width: 320px;
   height: 100vh;
-  padding-left: 20px; /* margin from left edge */
+  padding-left: 30px; /* margin from left edge */
   border-right: 1px solid var(--border);
   background: var(--bg);
 }
@@ -59,22 +59,45 @@ body {
 }
 
 .left h1 {
-  margin-left: 10px; /* optional for spacing from left */
+  margin-left: 20px; /* optional for spacing from left */
 }
 
 .left p, .left a, .qualifications {
-  margin-left: 10px; /* consistent padding for content */
+  margin-left: 20px; /* consistent padding for content */
+}
+
+.qualifications {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 20px 18px;
+  margin-top: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
 }
 
 .qualifications h3 {
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--accent);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
 }
+
 .qualifications ul {
-  padding-left: 18px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.qualifications li {
   font-size: 14px;
   color: var(--text);
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+  line-height: 1.5;
+}
+
+.qualifications li:last-child {
+  border-bottom: none;
 }
 
 
@@ -243,6 +266,8 @@ li {
   <!-- LEFT PANEL -->
   <aside class="left">
   <div class="left-scroll">
+    <br>
+    <br>
     <div class="photo">
       <img src="data/GeetuPic.jpg" class="photo" alt="Geetu Sodhi">
     </div>
