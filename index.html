@@ -590,10 +590,10 @@ async function loadTestimonials() {
     // Column mapping (adjust if your sheet columns differ)
     const rows = data.table.rows;
     rows.forEach(row => {
-      const name = row.c[0]?.v || "";       // Name
-      const email = row.c[1]?.v || "";      // Email
-      const feedback = row.c[2]?.v || "";   // Feedback
-      const approved = row.c[3]?.v || "";   // Approved column
+      const name = row.c[1]?.v || "";       // Name
+      const email = row.c[2]?.v || "";      // Email
+      const feedback = row.c[3]?.v || "";   // Feedback
+      const approved = row.c[4]?.v || "";   // Approved column
 
       if(approved.toLowerCase() === "yes") {
         const span = document.createElement("span");
