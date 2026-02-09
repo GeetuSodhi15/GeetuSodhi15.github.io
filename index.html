@@ -588,7 +588,7 @@ function submitFeedback() {
   let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
 
   // Add new feedback (Anonymous for now)
-  feedbacks.push({ name: "Anonymous", feedback: text });
+  feedbacks.push({ name: "", feedback: text });
   localStorage.setItem("localFeedbacks", JSON.stringify(feedbacks));
 
   // Clear input box
