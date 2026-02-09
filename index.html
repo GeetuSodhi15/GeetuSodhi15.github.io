@@ -550,19 +550,20 @@ details[open] summary {
 
 
 
-  <section class="testimonials">
-  <details>
+ <section class="testimonials">
+  <details open>
     <summary>Share Your Feedback</summary>
     <p style="font-size:12px; color:#555;">Thank you for taking the time to share your feedback!</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhgwzoVN0BsL_g6F3Jt34aC775AQAGAVVRXBqBa2keMLAU_Q/viewform?usp=sf_link"
-       target="_blank"
-       style="padding:10px 20px; border-radius:999px; background:var(--accent); color:white; text-decoration:none; display:inline-block; margin-top:10px;">
-       Submit Feedback
-    </a>
+    
+    <div class="testimonial-form">
+      <input type="text" id="feedbackInput" placeholder="Write your feedback here...">
+      <button onclick="submitFeedback()">Submit</button>
+    </div>
 
     <div id="testimonialCloud" class="cloud"></div>
   </details>
 </section>
+
 
 
 
@@ -574,68 +575,69 @@ details[open] summary {
   </main>
 </div>
 
- <script>
-const sheetURL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOf6hFKuOzE_wVxsEXP4St6n5KFnukis8MXmTlpGszNcGqRz8hZDsaEw2WoAseI6FrfhAPs5AL8VSb/gviz/tq?tqx=out:json&gid=1644422071";
+<script>
+// Load feedbacks from localStorage when page loads
+window.addEventListener("DOMContentLoaded", loadLocalTestimonials);
 
-async function loadTestimonials() {
-  const cloud = document.getElementById("testimonialCloud");
-  cloud.innerHTML = ""; // clear existing content
+function submitFeedback() {
+  const input = document.getElementById("feedbackInput");
+  const text = input.value.trim();
+  if (!text) return alert("Feedback cannot be empty!");
 
-  try {
-    const response = await fetch(sheetURL);
-    let text = await response.text();
+  // Get current feedbacks from localStorage
+  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
 
-    // Remove Google visualization wrapper
-    text = text.substring(47, text.length - 2);
-    const data = JSON.parse(text);
+  // Add new feedback (Anonymous for now)
+  feedbacks.push({ name: "Anonymous", feedback: text });
+  localStorage.setItem("localFeedbacks", JSON.stringify(feedbacks));
 
-    const rows = data.table.rows;
-    let count = 0;
+  // Clear input box
+  input.value = "";
 
-    rows.forEach(row => {
-      const name = row.c[1]?.v || "Anonymous";
-      const feedback = row.c[3]?.v || "";
-      const approved = row.c[4]?.v;
-
-      // Handle Yes / TRUE / checkbox approval
-      const isApproved =
-        approved === true ||
-        String(approved).trim().toLowerCase() === "yes";
-
-      if (isApproved && feedback) {
-        const span = document.createElement("span");
-
-        span.innerHTML = `
-          <strong>${name}</strong><br>
-          <em>"${feedback}"</em>
-        `;
-
-        // Word-cloud style variation
-        span.style.fontSize =
-          (14 + Math.floor(Math.random() * 5)) + "px";
-
-        cloud.appendChild(span);
-        count++;
-      }
-    });
-
-    // Friendly fallback if nothing approved yet
-    if (count === 0) {
-      cloud.innerHTML =
-        "<span>Testimonials will appear here once approved 🌱</span>";
-    }
-
-  } catch (error) {
-    console.error("Error loading testimonials:", error);
-    cloud.innerHTML =
-      "<span>Unable to load testimonials right now.</span>";
-  }
+  // Reload cloud
+  loadLocalTestimonials();
 }
 
-// Load after page is ready
-window.addEventListener("DOMContentLoaded", loadTestimonials);
+function loadLocalTestimonials() {
+  const cloud = document.getElementById("testimonialCloud");
+  cloud.innerHTML = "";
+
+  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
+
+  if (feedbacks.length === 0) {
+    cloud.innerHTML = "<span>Testimonials will appear here 🌱</span>";
+    return;
+  }
+
+  feedbacks.forEach((fb, index) => {
+    const span = document.createElement("span");
+    span.innerHTML = `<strong>${fb.name}</strong><br><em>"${fb.feedback}"</em>`;
+
+    // Random font size for word-cloud effect
+    span.style.fontSize = (14 + Math.floor(Math.random() * 5)) + "px";
+
+    // Add a delete button for moderation
+    const delBtn = document.createElement("span");
+    delBtn.textContent = " ×";
+    delBtn.style.color = "red";
+    delBtn.style.cursor = "pointer";
+    delBtn.style.marginLeft = "6px";
+    delBtn.onclick = () => deleteFeedback(index);
+
+    span.appendChild(delBtn);
+    cloud.appendChild(span);
+  });
+}
+
+// Delete feedback
+function deleteFeedback(index) {
+  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
+  feedbacks.splice(index, 1);
+  localStorage.setItem("localFeedbacks", JSON.stringify(feedbacks));
+  loadLocalTestimonials();
+}
 </script>
+
 
 
 </body>
