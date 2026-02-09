@@ -574,43 +574,66 @@ details[open] summary {
   </main>
 </div>
 
-  <script>
-const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOf6hFKuOzE_wVxsEXP4St6n5KFnukis8MXmTlpGszNcGqRz8hZDsaEw2WoAseI6FrfhAPs5AL8VSb/gviz/tq?tqx=out:json&gid=1644422071";
+ <script>
+const sheetURL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSOf6hFKuOzE_wVxsEXP4St6n5KFnukis8MXmTlpGszNcGqRz8hZDsaEw2WoAseI6FrfhAPs5AL8VSb/gviz/tq?tqx=out:json&gid=1644422071";
 
 async function loadTestimonials() {
   const cloud = document.getElementById("testimonialCloud");
+  cloud.innerHTML = ""; // clear existing content
+
   try {
     const response = await fetch(sheetURL);
     let text = await response.text();
 
-    // Remove extra wrapper added by Google
+    // Remove Google visualization wrapper
     text = text.substring(47, text.length - 2);
     const data = JSON.parse(text);
 
-    // Column mapping (adjust if your sheet columns differ)
     const rows = data.table.rows;
+    let count = 0;
+
     rows.forEach(row => {
-      const name = row.c[1]?.v || "";       // Name
-      const email = row.c[2]?.v || "";      // Email
-      const feedback = row.c[3]?.v || "";   // Feedback
-      const approved = row.c[4]?.v || "";   // Approved column
+      const name = row.c[1]?.v || "Anonymous";
+      const feedback = row.c[3]?.v || "";
+      const approved = row.c[4]?.v;
 
-      if(if(String(approved).trim().toLowerCase() === "yes") {
-) {
+      // Handle Yes / TRUE / checkbox approval
+      const isApproved =
+        approved === true ||
+        String(approved).trim().toLowerCase() === "yes";
+
+      if (isApproved && feedback) {
         const span = document.createElement("span");
-        span.textContent = feedback;
 
-        // Random font size for word-cloud effect
-        span.style.fontSize = (14 + Math.floor(Math.random() * 6)) + "px";
+        span.innerHTML = `
+          <strong>${name}</strong><br>
+          <em>"${feedback}"</em>
+        `;
+
+        // Word-cloud style variation
+        span.style.fontSize =
+          (14 + Math.floor(Math.random() * 5)) + "px";
+
         cloud.appendChild(span);
+        count++;
       }
     });
 
-  } catch (err) {
-    console.error("Error loading testimonials:", err);
+    // Friendly fallback if nothing approved yet
+    if (count === 0) {
+      cloud.innerHTML =
+        "<span>Testimonials will appear here once approved 🌱</span>";
+    }
+
+  } catch (error) {
+    console.error("Error loading testimonials:", error);
+    cloud.innerHTML =
+      "<span>Unable to load testimonials right now.</span>";
   }
 }
 
+// Load after page is ready
 window.addEventListener("DOMContentLoaded", loadTestimonials);
 </script>
 
