@@ -595,7 +595,8 @@ async function loadTestimonials() {
       const feedback = row.c[3]?.v || "";   // Feedback
       const approved = row.c[4]?.v || "";   // Approved column
 
-      if(approved.toLowerCase() === "yes") {
+      if(if(String(approved).trim().toLowerCase() === "yes") {
+) {
         const span = document.createElement("span");
         span.textContent = feedback;
 
