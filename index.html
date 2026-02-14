@@ -553,11 +553,6 @@ details[open] summary {
 
 
 
-
-
-
-
-
 <p class="personality">
       Educator at heart |  Problem solver by nature | Trainer and Learning Experience Designer in action
       </p>
@@ -566,68 +561,6 @@ details[open] summary {
   </main>
 </div>
 
-<script>
-// Load feedbacks from localStorage when page loads
-window.addEventListener("DOMContentLoaded", loadLocalTestimonials);
-
-function submitFeedback() {
-  const input = document.getElementById("feedbackInput");
-  const text = input.value.trim();
-  if (!text) return alert("Feedback cannot be empty!");
-
-  // Get current feedbacks from localStorage
-  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
-
-  // Add new feedback (Anonymous for now)
-  feedbacks.push({ name: "", feedback: text });
-  localStorage.setItem("localFeedbacks", JSON.stringify(feedbacks));
-
-  // Clear input box
-  input.value = "";
-
-  // Reload cloud
-  loadLocalTestimonials();
-}
-
-function loadLocalTestimonials() {
-  const cloud = document.getElementById("testimonialCloud");
-  cloud.innerHTML = "";
-
-  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
-
-  if (feedbacks.length === 0) {
-    cloud.innerHTML = "<span>Testimonials will appear here 🌱</span>";
-    return;
-  }
-
-  feedbacks.forEach((fb, index) => {
-    const span = document.createElement("span");
-    span.innerHTML = `<strong>${fb.name}</strong><br><em>"${fb.feedback}"</em>`;
-
-    // Random font size for word-cloud effect
-    span.style.fontSize = (14 + Math.floor(Math.random() * 5)) + "px";
-
-    // Add a delete button for moderation
-    const delBtn = document.createElement("span");
-    delBtn.textContent = " ×";
-    delBtn.style.color = "red";
-    delBtn.style.cursor = "pointer";
-    delBtn.style.marginLeft = "6px";
-    delBtn.onclick = () => deleteFeedback(index);
-
-    span.appendChild(delBtn);
-    cloud.appendChild(span);
-  });
-}
-
-// Delete feedback
-function deleteFeedback(index) {
-  let feedbacks = JSON.parse(localStorage.getItem("localFeedbacks")) || [];
-  feedbacks.splice(index, 1);
-  localStorage.setItem("localFeedbacks", JSON.stringify(feedbacks));
-  loadLocalTestimonials();
-}
-</script>
 
 
 
