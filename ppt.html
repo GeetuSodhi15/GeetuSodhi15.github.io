@@ -3,57 +3,319 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Presentation Decks | Geetu Sodhi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geetu Sodhi | Projects Overview</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-body { margin:0; font-family:'Inter',sans-serif; color:#222; background: linear-gradient(135deg,#ff9a8b,#fecfef,#c3f9d1);}
-header { padding:70px 30px 40px; text-align:center; background: linear-gradient(135deg,#ff6f61,#ffb347,#8fd3f4); color:#fff;}
-header h1 { font-family:'Playfair Display', serif; font-size:2.8rem; margin-bottom:5px;}
-header a.button { display:inline-block; margin-top:10px; background:linear-gradient(135deg,#ff6f61,#ff914d); color:#fff; padding:12px 28px; border-radius:30px; text-decoration:none; font-weight:600; transition:0.3s;}
-header a.button:hover { transform: translateY(-3px); box-shadow:0 10px 25px rgba(255,111,97,0.5);}
-section { max-width:1100px; margin:auto; padding:50px 20px;}
-.card { background: rgba(255,255,255,0.9); border-radius:20px; padding:30px; margin-bottom:40px; box-shadow:0 15px 40px rgba(0,0,0,0.08); backdrop-filter: blur(10px); transition:0.3s;}
-.card:hover { transform: translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,0.15);}
-.card h2 { font-family:'Playfair Display', serif; color:#ff6f61; font-size:1.8rem; margin-bottom:10px;}
-.card p { margin-top:10px; line-height:1.5;}
-.tags { margin-top:10px;}
-.tag { display:inline-block; margin:5px 8px 0 0; padding:6px 14px; font-size:0.75rem; background:#ffe4e1; color:#b45309; border-radius:999px; font-weight:500;}
-iframe { width:100%; height:500px; border-radius:15px; border:none; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-top:15px;}
+:root {
+  --ombre-orange-start: #ff9a3c;
+  --ombre-orange-end: #ff6a00;
+  --beige: #f3ede4;
+  --soft-green: #dfeee6;
+  --soft-blue: #e6eef5;
+  --soft-teal: #dfecec;
+  --soft-sand: #efe7dc;
+  --text-dark: #2b2b2b;
+}
+
+body {
+  margin:0;
+  font-family:'Inter',sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(135deg, var(--ombre-orange-start), var(--ombre-orange-end));
+}
+
+header {
+  padding: 60px 20px 40px;
+  text-align:center;
+  color:white;
+}
+
+header h1 {
+  font-family:'Playfair Display', serif;
+  font-size:2.6rem;
+  margin-bottom:10px;
+}
+
+header p {
+  font-size:1.1rem;
+  opacity:0.95;
+}
+
+.button {
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 28px;
+  border-radius:999px;
+  background:white;
+  color: var(--ombre-orange-end);
+  text-decoration:none;
+  font-weight:bold;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.button:hover { transform: scale(1.05); background:#fff7ed; }
+
+.section-wrapper {
+  background: #ffffff;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  padding:70px 40px 90px;
+}
+
+.sections-grid {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:45px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-card {
+  aspect-ratio:1/1;
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  cursor:pointer;
+  text-decoration:none;
+  color:inherit;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+}
+
+.section-card h3 { margin-top:18px; font-size:1.15rem; }
+.section-card span { margin-top:6px; font-size:0.9rem; opacity:0.75; }
+.icon { font-size:2.8rem; }
+
+.beige { background: var(--beige); }
+.green { background: var(--soft-green); }
+.blue { background: var(--soft-blue); }
+.teal { background: var(--soft-teal); }
+.sand { background: var(--soft-sand); }
+
+section.content { max-width:1100px; margin:auto; padding:50px 20px; }
+.card {
+  background: rgba(255,255,255,0.95);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+.card h2 { font-family:'Playfair Display', serif; color:#ff6f61; margin-bottom:10px; }
+.card p { margin-top:10px; line-height:1.5; }
+.tags { margin-top:10px; }
+.tag { display:inline-block; margin:5px 8px 0 0; padding:6px 14px; font-size:0.75rem; background:#ffe4e1; color:#b45309; border-radius:999px; font-weight:500; }
+iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-top:15px; }
+
+/* Curriculum Overlay */
+.curriculum-card {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+.curriculum-card img {
+  width:100%;
+  display:block;
+  transition: transform 0.3s ease;
+}
+.curriculum-card:hover img { transform: scale(1.05); }
+.curriculum-overlay {
+  position: absolute;
+  bottom:0;
+  width:100%;
+  padding:20px;
+  background: rgba(255,255,255,0.85);
+  text-align:center;
+  backdrop-filter: blur(4px);
+}
+.curriculum-overlay p { font-weight:600; margin-bottom:10px; color:#333; }
+.curriculum-overlay .button { padding:8px 16px; font-size:14px; }
+
+/* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin:20px auto;
+  border-radius:15px;
+}
+.slides {
+  display:flex;
+  transition: transform 0.5s ease-in-out;
+  height:100%;
+}
+.carousel img {
+  width:100%;
+  height:100%;
+  flex-shrink:0;
+  object-fit:contain;
+  background:#fff;
+}
+.carousel button {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  cursor:pointer;
+  border-radius:50%;
+  font-size:18px;
+}
+.carousel button.prev { left:10px; }
+.carousel button.next { right:10px; }
+
+/* Responsive */
+@media (max-width:900px) { .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } .icon { font-size:2.4rem; } }
+@media (max-width:600px) { .sections-grid { grid-template-columns:1fr; gap:25px; } .icon { font-size:2rem; } }
+
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Presentation Decks</h1>
-  <a href="projects-overview.html" class="button">Back to Overview</a>
+  <h1>Geetu Sodhi | Projects Overview</h1>
+  <p>Adult learning • Data analytics • Automation • Curriculum • Visual learning</p>
+  <a href="#" class="button">Back to Profile</a>
 </header>
 
-<section>
+<section class="section-wrapper">
+  <div class="sections-grid">
+    <a class="section-card beige"><div class="icon">📘</div><h3>Digital Learning Design</h3><span>Articulate & eLearning</span></a>
+    <a class="section-card teal"><div class="icon">🧩</div><h3>Curriculum Design</h3><span>Adult learning</span></a>
+    <a class="section-card green"><div class="icon">⚙️</div><h3>Automation & AI-Powered Learning</h3><span>Smart systems & workflows</span></a>
+    <a class="section-card sand"><div class="icon">🎯</div><h3>Career Readiness & Mock Interviews</h3><span>Interview prep & employability</span></a>
+    <a class="section-card teal"><div class="icon">📝</div><h3>Assessment & Evaluation</h3><span>Rubrics • Capstones</span></a>
+    <a class="section-card beige"><div class="icon">🎨</div><h3>Infographics & Visual Learning</h3><span>Data storytelling</span></a>
+  </div>
+</section>
 
+<section class="content">
+  <!-- Articulate / eLearning -->
   <div class="card">
-    <h2>📌 Data Analytics Training Deck</h2>
-    <p>Comprehensive presentation for data analytics course with engaging visuals, structured lessons, and exercises.</p>
-    <div class="tags">
-      <span class="tag">PowerPoint</span>
-      <span class="tag">Training</span>
-      <span class="tag">Data Analytics</span>
-    </div>
-    <iframe src="data/data_analytics_deck.pdf"></iframe>
+    <h2>🎓 Interactive Training Module</h2>
+    <p>Soft-skills simulation in Articulate Rise with quizzes and branching scenarios.</p>
+    <div class="tags"><span class="tag">Articulate Rise</span><span class="tag">Simulation</span><span class="tag">Quizzes</span></div>
+    <embed src="PythonLesson.pdf" type="application/pdf" />
+  </div>
+
+  <!-- Career Readiness -->
+  <div class="card">
+    <h2>🎓 Skills-Based Job Search & Mock Interview Program</h2>
+    <p>Helps learners move from unfocused applications to skills-aligned roles and confident interview performance.</p>
+    <div class="tags"><span class="tag">Job Search</span><span class="tag">Interview Prep</span><span class="tag">Skills Alignment</span></div>
+    <embed src="data/CaseStudy.pdf" type="application/pdf" />
   </div>
 
   <div class="card">
-    <h2>📌 Python Basics Deck</h2>
-    <p>Step-by-step lesson slides for beginners, including practice exercises and visual explanations.</p>
-    <div class="tags">
-      <span class="tag">Python</span>
-      <span class="tag">Presentation</span>
-      <span class="tag">Training</span>
+    <h2>👥 Learner Personas for Technical Mock Interviews</h2>
+    <p>10 personas to create personalized, psychologically safe learning journeys.</p>
+    <div class="tags"><span class="tag">LXD Design</span><span class="tag">ADDIE</span><span class="tag">Personalization</span></div>
+    <embed src="data/LearnerPersonas.pdf" type="application/pdf" />
+  </div>
+
+  <!-- Assessment -->
+  <div class="card">
+    <h2>🎓 AI 900 Mock Test</h2>
+    <p>Practice for Microsoft Azure AI-900 exam, understand patterns and identify gaps.</p>
+    <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="button">Click Here!</a>
+  </div>
+
+  <div class="card">
+    <h2>📊 Data Wrangling Assignment</h2>
+    <p>Practice cleaning, transforming, and preparing datasets for analysis.</p>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="button">Start Data Wrangling Assignment</a>
+  </div>
+
+  <!-- Curriculum -->
+  <div class="card">
+    <h2>Full Python Bootcamp Curriculum</h2>
+    <p>Curriculum structure, lesson flow, exercises, and assessments for beginner-to-advanced Python learners.</p>
+    <div class="tags"><span class="tag">Curriculum</span><span class="tag">Python</span><span class="tag">Training</span></div>
+    <div class="curriculum-card">
+      <img src="data/currscreenshot.png" alt="Curriculum Design">
+      <div class="curriculum-overlay">
+        <p>Curriculum Design Sample</p>
+        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
+      </div>
     </div>
-    <iframe src="data/python_basics_deck.pdf"></iframe>
+  </div>
+
+  <div class="card">
+    <h2>Data Analytics Curriculum</h2>
+    <p>Structured modules for data analytics with hands-on labs, exercises, and evaluation methods.</p>
+    <div class="tags"><span class="tag">Data Analytics</span><span class="tag">Curriculum</span><span class="tag">Lesson Planning</span></div>
+    <div class="curriculum-card">
+      <img src="data/currscreenshot2.png" alt="Curriculum Design">
+      <div class="curriculum-overlay">
+        <p>Curriculum Design Sample</p>
+        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Infographics -->
+  <div class="card">
+    <h2>Visual Bytes of Knowledge</h2>
+    <p>Microlearning & Instructional Design Showcase.</p>
+    <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Infographic</span></div>
+    <div class="carousel">
+      <div class="slides">
+        <img src="data/Outliers.jpg" alt="Outliers Infographic">
+        <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+        <img src="data/NULL_Values.jpg" alt="NULL Values Infographic">
+        <img src="data/Agentic AI.jpg" alt="Agentic AI Infographic">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
   </div>
 
 </section>
+
+<script>
+// Carousel functionality
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const slides = carousel.querySelector('.slides');
+  const images = slides.querySelectorAll('img');
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
+  let index = 0;
+
+  function showSlide(i) {
+    if(i<0) index = images.length-1;
+    else if(i>=images.length) index=0;
+    else index=i;
+    slides.style.transform = `translateX(${-index*100}%)`;
+  }
+
+  prev.addEventListener('click', ()=>showSlide(index-1));
+  next.addEventListener('click', ()=>showSlide(index+1));
+
+  setInterval(()=>showSlide(index+1),5000);
+});
+</script>
 
 </body>
 </html>
