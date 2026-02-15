@@ -17,14 +17,17 @@
 
 body {
   margin: 0;
-  height: 100vh;                   /* full viewport height */
-  display: flex;
-  justify-content: center;          /* center horizontally */
-  align-items: center;              /* center vertically */
   font-family: 'Inter', sans-serif;
-  color: var(--text-dark);
+  color: black; /* make all text black */
   background: linear-gradient(135deg, var(--ombre-orange-start), var(--ombre-orange-end));
   text-align: center;
+}
+
+/* Remove flex centering from body */
+body > header {
+  padding: 60px 20px 40px;
+  text-align: center;
+  color: var(--text-dark); /* header text now dark, not white */
 }
 
 
@@ -193,13 +196,23 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
 @media (max-width:900px) { .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } .icon { font-size:2.4rem; } }
 @media (max-width:600px) { .sections-grid { grid-template-columns:1fr; gap:25px; } .icon { font-size:2rem; } }
 
+/* Typing text styling */
 .intro-summary {
   max-width: 900px;
   margin: 30px auto 50px;
-  text-align: center;
   font-size: 1.05rem;
-  line-height: 1.7;
+  line-height: 1.7;        /* better spacing between lines */
+  word-spacing: 1px;       /* avoid words sticking together */
+  text-align: center;
   min-height: 120px;
+}
+
+/* Section wrapper / content styling */
+.section-wrapper,
+section.content {
+  max-width: 1200px;
+  margin: 0 auto;           /* centers content */
+  padding: 50px 20px;
 }
 
 
