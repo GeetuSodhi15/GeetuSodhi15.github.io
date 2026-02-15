@@ -15,20 +15,18 @@
   --border: #e7ded5;
 }
 
+/* RESET */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  margin: 0;
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-thumb { background: #000; border-radius: 6px; }
-* { scrollbar-width: thin; scrollbar-color: #000 transparent; }
+a { text-decoration:none; }
 
-/* Topbar */
 .topbar {
   position: sticky;
   top: 0;
@@ -51,204 +49,152 @@ body {
   text-decoration: none;
   transition: transform 0.25s ease;
 }
-.top-button:hover { transform: scale(1.05); }
-
 .top-button.secondary {
   background: transparent;
   color: var(--accent);
   border: 2px solid var(--accent);
 }
-.top-button.secondary:hover { background: rgba(139,92,246,0.08); }
+.top-button:hover { transform: scale(1.05); }
 
-/* Main grid layout */
-.main {
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 40px;
-  padding: 40px 60px;
-}
+/* Main grid */
+.main { display: grid; grid-template-columns: 380px 1fr; gap:40px; padding: 40px 60px; }
+@media (max-width:900px){ .main { grid-template-columns:1fr; padding: 20px; } }
 
-/* Left sidebar */
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
+/* LEFT sidebar for project intro */
+.left { padding: 0; }
+.project-intro { background: var(--panel); border-radius:20px; padding:26px; margin-bottom:40px; box-shadow:0 12px 30px rgba(0,0,0,0.08); }
+.project-intro h2 { font-size: 22px; margin-bottom:12px; }
+.project-intro p { font-size: 15.5px; line-height:1.6; color:var(--text); }
 
-.sidebar-card {
-  background: var(--panel);
-  border-radius: 18px;
-  padding: 20px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.05);
-}
+/* RIGHT project rollout */
+.right { display:flex; flex-direction:column; gap:50px; }
 
-.left img { width: 100%; border-radius: 14px; object-fit: cover; }
+.project-card { background: var(--panel); border-radius:20px; padding:30px; box-shadow:0 12px 30px rgba(0,0,0,0.08); }
+.project-card h3 { font-size:20px; margin-bottom:14px; }
+.project-card p { font-size:15.5px; line-height:1.6; color:var(--text); margin-bottom:15px; }
+.project-card embed, .project-card iframe { width:100%; height:600px; border:none; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-top:10px; }
 
-.left h2 {
-  font-size: 22px;
-  margin-bottom: 12px;
-  color: var(--accent);
-}
+/* Carousel */
+.carousel { position: relative; overflow: hidden; width: 100%; height: 450px; border-radius:15px; }
+.slides { display:flex; transition: transform 0.5s ease-in-out; height:100%; }
+.carousel img { width:100%; height:100%; flex-shrink:0; object-fit:contain; background:#fff; }
+.carousel button { position:absolute; top:50%; transform:translateY(-50%); background: rgba(0,0,0,0.5); color:white; border:none; padding:10px 16px; cursor:pointer; border-radius:50%; font-size:18px; }
+.carousel button.prev { left:10px; }
+.carousel button.next { right:10px; }
 
-.left p { font-size: 15px; color: var(--text); }
+@media (max-width:900px){ .main { grid-template-columns:1fr; } }
 
-.project-summary {
-  font-size: 14.5px;
-  line-height: 1.6;
-  color: var(--text);
-}
+/* Buttons inside project cards */
+.project-card .button { margin-top:20px; display:inline-block; background: linear-gradient(135deg, #8b5cf6, #a78bfa); color:white; padding:10px 22px; border-radius:999px; }
 
-/* Right content */
-.right {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-/* Project card */
-.project-card {
-  background: var(--panel);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.project-card h2 {
-  font-size: 22px;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-
-.project-card p { font-size: 15px; color: var(--text); line-height: 1.6; }
-
-.tags { margin-top: 10px; }
-.tag {
-  display: inline-block;
-  margin: 5px 8px 0 0;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  background: rgba(139,92,246,0.15);
-  color: var(--accent);
-  border-radius: 999px;
-  font-weight: 500;
-}
-
-/* PDF embed full width */
-.project-card embed {
-  width: 100%;
-  height: 500px;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  margin-top: 12px;
-}
-
-/* Responsive */
-@media(max-width: 900px) {
-  .main { grid-template-columns: 1fr; padding: 20px; }
-  .left { order: 2; }
-  .right { order: 1; }
-}
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <span>🌷 Explore my Projects & Learning Design Work</span>
+  <span>🌷 Explore my projects in Learning Experience Design, Data Analytics & Automation.</span>
   <nav class="topbar-right">
     <a href="index.html" class="top-button">Back to Profile</a>
-    <a href="https://linkedin.com/in/geetu-sodhi-canada/" target="_blank" class="top-button secondary">LinkedIn</a>
-    <a href="data/Geetu_Resume_LD.pdf" target="_blank" class="top-button">Resume</a>
   </nav>
 </header>
 
 <div class="main">
 
-  <!-- Left: Project Summary -->
+  <!-- LEFT: Intro summary -->
   <aside class="left">
-    <div class="sidebar-card">
-      <h2>Interactive Training & Automation</h2>
-      <p class="project-summary">
-        My work spans instructional design, curriculum creation, technical training, and automation for adult learners. 
-        I integrate LXD principles, ADDIE frameworks, and microlearning strategies to create structured, engaging, and measurable learning experiences. 
-        All projects are designed to be interactive, outcome-driven, and scalable for enterprise or classroom deployment.
-      </p>
+    <div class="project-intro">
+      <h2>Project Overview</h2>
+      <p>As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation. I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes. In today’s fast-paced digital world, I focus on microlearning and structured content design to make learning concise, practical, and retention-focused. My work includes interactive Articulate lessons, industry-aligned curriculum, certification-based assessments, and LMS-driven performance insights to continuously improve learner engagement and impact.</p>
     </div>
   </aside>
 
-  <!-- Right: Project Rollout -->
+  <!-- RIGHT: Project rollout -->
   <main class="right">
 
-    <!-- Project 1 -->
+    <!-- Python Lesson -->
     <div class="project-card">
-      <h2>🎓 Interactive Training Module</h2>
+      <h3>🎓 Interactive Python Training Module</h3>
       <p>This Articulate 360–based Python lesson was designed using strong Learning Experience Design (LXD) principles to ensure clarity, engagement, and real-world relevance. The module blends microlearning, scenario-based interactions, and knowledge checks to make core Python concepts practical and learner-centered. Built with measurable outcomes in mind, it supports active practice, immediate feedback, and skill transfer beyond the virtual classroom.</p>
-      <div class="tags"><span class="tag">Articulate Rise</span><span class="tag">Simulation</span><span class="tag">Quizzes</span></div>
       <embed src="PythonLesson.pdf" type="application/pdf" />
     </div>
 
-    <!-- Project 2 -->
+    <!-- Skills-Based Job Search -->
     <div class="project-card">
-      <h2>🎓 Skills-Based Job Search & Mock Interview Program</h2>
-      <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE (Analyze, Design, Develop, Implement, Evaluate) model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
-      <div class="tags"><span class="tag">Job Search</span><span class="tag">Interview Prep</span><span class="tag">Skills Alignment</span></div>
+      <h3>🎓 Skills-Based Job Search & Mock Interview Program</h3>
+      <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
       <embed src="data/CaseStudy.pdf" type="application/pdf" />
     </div>
 
-    <!-- Project 3 -->
+    <!-- AI-900 Mock Test -->
     <div class="project-card">
-      <h2>👥 Learner Personas for Technical Mock Interviews</h2>
-      <p>10 personas to create personalized, psychologically safe learning journeys for technical learners.</p>
-      <div class="tags"><span class="tag">LXD Design</span><span class="tag">ADDIE</span><span class="tag">Personalization</span></div>
-      <embed src="data/LearnerPersonas.pdf" type="application/pdf" />
+      <h3>🎓 AI-900 Mock Test</h3>
+      <p>Designed a comprehensive AI-900 assessment framework using Backward Design and LXD principles, aligning every question with exam objectives and real-world Azure AI use cases. The mock tests were structured to mirror certification patterns, reinforcing concept clarity, scenario-based thinking, and applied understanding. Continuous feedback loops and performance analytics ensured targeted remediation, contributing to consistent learner success and exam readiness.</p>
+      <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="button">Click Here!</a>
     </div>
 
-    <!-- Project 4 -->
+    <!-- Data Wrangling Assignment -->
     <div class="project-card">
-      <h2>🎓 AI 900 Mock Test</h2>
-      <p>Designed a comprehensive AI-900 assessment framework using Backward Design and LXD principles, aligning every question with exam objectives and real-world Azure AI use cases. The mock tests reinforce concept clarity, scenario-based thinking, and applied understanding. Continuous feedback loops and performance analytics ensure targeted remediation and exam readiness.</p>
-      <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="top-button">Click Here!</a>
+      <h3>📊 Data Wrangling Assignment</h3>
+      <p>Designed a hands-on Data Wrangling assignment grounded in real-world datasets to strengthen analytical thinking and data preparation skills. Using experiential learning and LXD principles, learners practice cleaning, transforming, and validating messy data before analysis. The assignment integrates guided checkpoints and reflection prompts to reinforce applied understanding. Outcomes are aligned with industry expectations, ensuring learners build job-ready data preprocessing competencies.</p>
+      <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="button">Start Data Wrangling Assignment</a>
     </div>
 
-    <!-- Project 5 -->
+    <!-- Full Python Bootcamp Curriculum -->
     <div class="project-card">
-      <h2>📊 Data Wrangling Assignment</h2>
-      <p>Designed a hands-on Data Wrangling assignment grounded in real-world datasets to strengthen analytical thinking and data preparation skills. Learners practice cleaning, transforming, and validating messy data before analysis. Guided checkpoints and reflection prompts reinforce applied understanding, aligned with industry expectations.</p>
-      <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="top-button">Start Data Wrangling Assignment</a>
-    </div>
-
-    <!-- Project 6 -->
-    <div class="project-card">
-      <h2>Full Python Bootcamp Curriculum</h2>
+      <h3>Full Python Bootcamp Curriculum</h3>
       <p>Curriculum structure, lesson flow, exercises, and assessments for beginner-to-advanced Python learners.</p>
-      <div class="tags"><span class="tag">Curriculum</span><span class="tag">Python</span><span class="tag">Training</span></div>
       <embed src="data/CurriculumDesign.pdf" type="application/pdf" />
     </div>
 
-    <!-- Project 7 -->
+    <!-- Data Analytics Curriculum -->
     <div class="project-card">
-      <h2>Data Analytics Curriculum</h2>
-      <p>Designed a comprehensive, industry-aligned curriculum using backward design and ADDIE principles, ensuring measurable learning outcomes. Includes hands-on labs, real-world projects, and progressive assessments for adult learners.</p>
-      <div class="tags"><span class="tag">Data Analytics</span><span class="tag">Curriculum</span><span class="tag">Lesson Planning</span></div>
+      <h3>Data Analytics Curriculum</h3>
+      <p>Designed a comprehensive, industry-aligned curriculum using backward design and ADDIE principles, ensuring every module maps to measurable learning outcomes. The program integrates hands-on labs, real-world projects, and progressive assessments to support skill mastery. Structured for adult learners, it blends theory with applied practice to build job-ready competencies. Continuous feedback and iteration ensure the curriculum remains relevant, scalable, and outcome-driven.</p>
       <embed src="data/CurriculumDesign.pdf" type="application/pdf" />
     </div>
 
-    <!-- Project 8 -->
+    <!-- Infographics Carousel -->
     <div class="project-card">
-      <h2>Visual Bytes of Knowledge</h2>
-      <p>Microlearning & Instructional Design Showcase with interactive infographics.</p>
-      <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Infographic</span></div>
-      <embed src="data/Outliers.jpg" type="image/jpg" />
-      <embed src="data/Data Wrangling.jpg" type="image/jpg" />
-      <embed src="data/NULL_Values.jpg" type="image/jpg" />
-      <embed src="data/Agentic AI.jpg" type="image/jpg" />
+      <h3>Visual Bytes of Knowledge</h3>
+      <p>Microlearning & Instructional Design Showcase.</p>
+      <div class="carousel">
+        <div class="slides">
+          <img src="data/Outliers.jpg" alt="Outliers Infographic">
+          <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+          <img src="data/NULL_Values.jpg" alt="NULL Values Infographic">
+          <img src="data/Agentic AI.jpg" alt="Agentic AI Infographic">
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
   </main>
+
 </div>
+
+<script>
+// Carousel functionality
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const slides = carousel.querySelector('.slides');
+  const images = slides.querySelectorAll('img');
+  const prev = carousel.querySelector('.prev');
+  const next = carousel.querySelector('.next');
+  let index = 0;
+
+  function showSlide(i) {
+    if(i<0) index = images.length-1;
+    else if(i>=images.length) index=0;
+    else index=i;
+    slides.style.transform = `translateX(${-index*100}%)`;
+  }
+
+  prev.addEventListener('click', ()=>showSlide(index-1));
+  next.addEventListener('click', ()=>showSlide(index+1));
+
+  setInterval(()=>showSlide(index+1),5000);
+});
+</script>
 
 </body>
 </html>
