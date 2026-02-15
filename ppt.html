@@ -59,17 +59,7 @@ a { text-decoration:none; }
 .project-card h3 { font-size:20px; margin-bottom:14px; }
 .project-card p { font-size:15.5px; line-height:1.6; color:var(--text); margin-bottom:15px; }
 
-/* PDF/Word embed fixes */
-.project-card embed,
-.project-card iframe,
-.project-card object {
-  width: 100% !important;
-  height: 80vh !important; /* full container height */
-  border:none;
-  border-radius:15px;
-  flex-shrink:0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
+
 
 /* Buttons inside project cards */
 .project-card .button {
@@ -97,22 +87,24 @@ a { text-decoration:none; }
 }
 
 
-  /* Ensure PDFs and Word files fill project-card */
+/* Remove old conflicting rules */
+
+/* Proper full-height PDF container */
 .file-container {
-  display: flex;
-  flex: 1;
-  min-height: 600px; /* adjust for default view */
+  width: 100%;
+  height: 75vh;   /* Controls how tall the PDF appears */
+  min-height: 650px;
+  margin-top: 15px;
 }
 
-.file-container embed,
-.file-container iframe,
-.file-container object {
-  flex: 1;
-  width: 100% !important;
-  height: 100% !important;
+.file-container embed {
+  width: 100%;
+  height: 100%;
   border: none;
   border-radius: 15px;
+  display: block;
 }
+
 
 </style>
 
