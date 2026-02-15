@@ -17,138 +17,86 @@
 
 /* RESET */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
+body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height:1.7; }
 
 a { text-decoration:none; }
 
+/* Top bar */
 .topbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--bg);
-  padding: 22px 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
+  position: sticky; top:0; z-index:1000;
+  background: var(--bg); padding: 22px 60px;
+  display:flex; justify-content: space-between; align-items:center;
+  border-bottom:1px solid var(--border);
 }
-
-.topbar-right { display: flex; align-items: center; gap: 18px; }
-
+.topbar-right { display:flex; align-items:center; gap:18px; }
 .top-button {
-  background: linear-gradient(135deg, #8b5cf6, #a78bfa);
-  color: white;
-  padding: 12px 26px;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: transform 0.25s ease;
+  background: linear-gradient(135deg,#8b5cf6,#a78bfa);
+  color:white; padding:12px 26px; border-radius:999px;
+  text-decoration:none; transition: transform 0.25s ease;
 }
 .top-button.secondary {
-  background: transparent;
-  color: var(--accent);
-  border: 2px solid var(--accent);
+  background: transparent; color: var(--accent); border: 2px solid var(--accent);
 }
 .top-button:hover { transform: scale(1.05); }
 
 /* Main grid */
-.main { display: grid; grid-template-columns: 380px 1fr; gap:40px; padding: 40px 60px; }
-@media (max-width:900px){ .main { grid-template-columns:1fr; padding: 20px; } }
+.main { display:grid; grid-template-columns:380px 1fr; gap:40px; padding:40px 60px; }
+@media (max-width:900px){ .main { grid-template-columns:1fr; padding:20px; } }
 
-/* LEFT sidebar for project intro */
-.left { padding: 0; }
+/* LEFT sidebar: project intro */
+.left { padding:0; }
 .project-intro { background: var(--panel); border-radius:20px; padding:26px; margin-bottom:40px; box-shadow:0 12px 30px rgba(0,0,0,0.08); }
-.project-intro h2 { font-size: 22px; margin-bottom:12px; }
-.project-intro p { font-size: 15.5px; line-height:1.6; color:var(--text); }
+.project-intro h2 { font-size:22px; margin-bottom:12px; }
+.project-intro p { font-size:0.95rem; line-height:1.6; color:var(--text); font-style:italic; font-weight:500; opacity:0.95; margin-bottom:12px; }
 
-/* RIGHT project rollout */
+/* RIGHT: project rollout */
 .right { display:flex; flex-direction:column; gap:50px; }
 .project-card {
-  background: var(--panel);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
+  background: var(--panel); border-radius:20px; padding:30px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  display:flex; flex-direction:column;
 }
 .project-card h3 { font-size:20px; margin-bottom:14px; }
 .project-card p { font-size:15.5px; line-height:1.6; color:var(--text); margin-bottom:15px; }
+
+/* PDF/Word embed fixes */
 .project-card embed,
-.project-card iframe {
-  width: 100%;
-  height: 80vh; /* full visible height of the viewport minus padding */
-  border: none;
-  border-radius: 15px;
+.project-card iframe,
+.project-card object {
+  width: 100% !important;
+  height: 80vh !important; /* full container height */
+  border:none;
+  border-radius:15px;
+  flex-shrink:0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  margin-top: 10px;
-  flex-shrink: 0;
+}
+
+/* Buttons inside project cards */
+.project-card .button {
+  margin-top:20px;
+  display:inline-block;
+  background: linear-gradient(135deg,#8b5cf6,#a78bfa);
+  color:white;
+  padding:10px 22px;
+  border-radius:999px;
 }
 
 /* Carousel */
-.carousel { position: relative; overflow: hidden; width: 100%; height: 450px; border-radius:15px; }
-.slides { display:flex; transition: transform 0.5s ease-in-out; height:100%; }
+.carousel { position:relative; overflow:hidden; width:100%; height:450px; border-radius:15px; }
+.slides { display:flex; transition:transform 0.5s ease-in-out; height:100%; }
 .carousel img { width:100%; height:100%; flex-shrink:0; object-fit:contain; background:#fff; }
-.carousel button { position:absolute; top:50%; transform:translateY(-50%); background: rgba(0,0,0,0.5); color:white; border:none; padding:10px 16px; cursor:pointer; border-radius:50%; font-size:18px; }
+.carousel button { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.5); color:white; border:none; padding:10px 16px; cursor:pointer; border-radius:50%; font-size:18px; }
 .carousel button.prev { left:10px; }
 .carousel button.next { right:10px; }
 
+/* Mobile adjustments */
 @media (max-width:900px){
   .project-card embed,
-  .project-card iframe {
-    height: 60vh; /* smaller screens */
-  }
-}
-  @media (max-width: 900px) {
-  .card embed,
-  .card iframe,
-  .card object {
-    min-height: 500px;
-  }
-}
-
-
-/* Buttons inside project cards */
-.project-card .button { margin-top:20px; display:inline-block; background: linear-gradient(135deg, #8b5cf6, #a78bfa); color:white; padding:10px 22px; border-radius:999px; }
-
-
-  .card {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  width: 100%;
-}
-
-  .card embed,
-.card iframe,
-.card object {
-  width: 100% !important;
-  min-height: 600px; /* adjust as needed */
-  flex-grow: 1;
-}
-
-  .curriculum-card {
-  position: relative;
-  width: 100%;
-  height: auto;
-}
-
-.curriculum-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
-
-.curriculum-overlay {
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
+  .project-card iframe,
+  .project-card object { height:60vh !important; }
 }
 </style>
+
 </head>
 <body>
 
