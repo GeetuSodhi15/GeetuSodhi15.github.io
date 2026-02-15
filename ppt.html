@@ -84,12 +84,12 @@ a { text-decoration:none; }
 
 /* Remove old conflicting rules */
 
+
+  /* Clean full-width PDF layout */
 .file-container {
   width: 100%;
-  height: 900px;  /* adjust as needed */
   margin-top: 20px;
 }
-
 .file-container iframe {
   width: 100%;
   height: 100%;
@@ -97,6 +97,16 @@ a { text-decoration:none; }
   border-radius: 15px;
   display: block;
 }
+
+.file-container embed {
+  width: 100%;
+  height: 900px;   /* <- THIS controls size */
+  display: block;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
 
 
 
