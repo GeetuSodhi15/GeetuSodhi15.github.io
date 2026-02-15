@@ -13,7 +13,6 @@
   --text-dark: #2b2b2b;
 }
 
-/* BODY */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -22,38 +21,37 @@ body {
   text-align: center;
 }
 
-/* HEADER */
 header {
   padding: 60px 20px 40px;
   text-align:center;
   color: var(--text-dark);
 }
+
 header h1 {
   font-family:'Playfair Display', serif;
   font-size:2.6rem;
   margin-bottom:10px;
 }
+
 header p {
   font-size:1.1rem;
   opacity:0.95;
 }
+
 .button {
   display:inline-block;
   margin-top:15px;
   padding:12px 28px;
   border-radius:999px;
-  background:#ff8c42; /* darker orange */
+  background:#ff8c42; /* darker orangish */
   color:white;
   text-decoration:none;
   font-weight:bold;
   transition: transform 0.2s ease, background 0.2s ease;
 }
-.button:hover { 
-  transform: scale(1.05); 
-  background:#e57a30; 
-}
 
-/* INTRO TYPING */
+.button:hover { transform: scale(1.05); background:#ff704d; }
+
 .intro-summary {
   max-width: 900px;
   margin: 30px auto 50px;
@@ -62,14 +60,16 @@ header p {
   word-spacing: 1px;
   text-align: center;
   min-height: 150px;
+  white-space: pre-wrap; /* preserve line breaks */
 }
 
-/* SECTIONS / CARDS */
+/* Content Cards */
 section.content {
   max-width:1100px;
   margin:auto;
   padding:50px 20px;
 }
+
 .card {
   background: rgba(255,255,255,0.95);
   border-radius:20px;
@@ -79,21 +79,24 @@ section.content {
   backdrop-filter: blur(10px);
   transition:0.3s;
 }
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
+
 .card h2 { 
   font-family:'Playfair Display', serif; 
   color:#ff6f61; 
   margin-bottom:10px; 
 }
+
 .card p { 
   margin-top:10px; 
   line-height:1.6; 
+  text-align: left;
 }
 
-/* TAGS */
 .tags { margin-top:10px; }
 .tag { 
   display:inline-block; 
@@ -106,18 +109,17 @@ section.content {
   font-weight:500; 
 }
 
-/* EMBED / PDF */
+/* PDF / Embed Responsive */
 .card embed, .card iframe {
-  width: 100%;          
-  min-height: 600px;    
-  max-height: 80vh;     
+  width: 100%;
+  height: 80vh;
   border-radius: 15px;
   border: none;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   margin-top: 15px;
 }
 
-/* CURRICULUM CARDS */
+/* Curriculum Overlay */
 .curriculum-card {
   position: relative;
   width: 100%;
@@ -145,7 +147,7 @@ section.content {
 .curriculum-overlay p { font-weight:600; margin-bottom:10px; color:#333; }
 .curriculum-overlay .button { padding:8px 16px; font-size:14px; }
 
-/* CAROUSEL */
+/* Carousel */
 .carousel {
   position: relative;
   overflow: hidden;
@@ -182,15 +184,10 @@ section.content {
 .carousel button.prev { left:10px; }
 .carousel button.next { right:10px; }
 
-/* RESPONSIVE */
-@media (max-width:900px) { 
-  .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } 
-  .icon { font-size:2.4rem; } 
-}
-@media (max-width:600px) { 
-  .sections-grid { grid-template-columns:1fr; gap:25px; } 
-  .icon { font-size:2rem; } 
-}
+/* Responsive */
+@media (max-width:900px) { .card p { text-align:left; } }
+@media (max-width:600px) { .card p { text-align:left; } }
+
 </style>
 </head>
 <body>
@@ -200,11 +197,13 @@ section.content {
   <p>Adult learning • Data analytics • Automation • Curriculum • Visual learning</p>
   <a href="index.html" class="button">Back to Profile</a>
 
-  <div class="intro-summary" id="typing-container">
-    <p>As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation.</p>
-    <p>I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes.</p>
-    <p>In today’s fast-paced digital world, I focus on microlearning and structured content design to make learning concise, practical, and retention-focused.</p>
-    <p>My work includes interactive Articulate lessons, industry-aligned curriculum, certification-based assessments, and LMS-driven performance insights to continuously improve learner engagement and impact.</p>
+  <div class="intro-summary">
+    <p id="typing-text">
+As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation.  
+I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes.  
+In today’s fast-paced digital world, I focus on microlearning and structured content design to make learning concise, practical, and retention-focused.  
+My work includes interactive Articulate lessons, industry-aligned curriculum, certification-based assessments, and LMS-driven performance insights to continuously improve learner engagement and impact.
+    </p>
   </div>
 </header>
 
@@ -221,7 +220,7 @@ section.content {
   <!-- Project 2 -->
   <div class="card">
     <h2>🎓 Skills-Based Job Search & Mock Interview Program</h2>
-    <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE (Analyze, Design, Develop, Implement, Evaluate) model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
+    <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE model to move learners from unfocused applications to skills-aligned roles. Targeted resume strategies and AI-supported mock interviews were created. The program was implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
     <div class="tags"><span class="tag">Job Search</span><span class="tag">Interview Prep</span><span class="tag">Skills Alignment</span></div>
     <embed src="data/CaseStudy.pdf" type="application/pdf" />
   </div>
@@ -234,39 +233,70 @@ section.content {
     <embed src="data/LearnerPersonas.pdf" type="application/pdf" />
   </div>
 
-  <!-- Add rest of your projects here (Curriculum, AI 900, Data Wrangling, Carousel, etc.) -->
+  <!-- Project 4 -->
+  <div class="card">
+    <h2>🎓 AI 900 Mock Test</h2>
+    <p>Comprehensive AI-900 assessment framework using Backward Design and LXD principles, aligning every question with exam objectives and real-world Azure AI use cases. Continuous feedback loops and performance analytics ensured targeted remediation and exam readiness.</p>
+    <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="button">Click Here!</a>
+  </div>
+
+  <!-- Project 5 -->
+  <div class="card">
+    <h2>📊 Data Wrangling Assignment</h2>
+    <p>Hands-on Data Wrangling assignment grounded in real-world datasets to strengthen analytical thinking and data preparation skills. Guided checkpoints and reflection prompts reinforce applied understanding, ensuring learners build job-ready competencies.</p>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="button">Start Data Wrangling Assignment</a>
+  </div>
+
+  <!-- Project 6 -->
+  <div class="card">
+    <h2>Full Python Bootcamp Curriculum</h2>
+    <p>Curriculum structure, lesson flow, exercises, and assessments for beginner-to-advanced Python learners.</p>
+    <div class="tags"><span class="tag">Curriculum</span><span class="tag">Python</span><span class="tag">Training</span></div>
+    <div class="curriculum-card">
+      <img src="data/currscreenshot.png" alt="Curriculum Design">
+      <div class="curriculum-overlay">
+        <p>Curriculum Design Sample</p>
+        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 7 -->
+  <div class="card">
+    <h2>Data Analytics Curriculum</h2>
+    <p>Designed an industry-aligned curriculum using backward design and ADDIE principles. Hands-on labs, real-world projects, and progressive assessments support skill mastery. Continuous feedback ensures relevance, scalability, and outcome-driven learning.</p>
+    <div class="tags"><span class="tag">Data Analytics</span><span class="tag">Curriculum</span><span class="tag">Lesson Planning</span></div>
+    <div class="curriculum-card">
+      <img src="data/currscreenshot2.png" alt="Curriculum Design">
+      <div class="curriculum-overlay">
+        <p>Curriculum Design Sample</p>
+        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project 8 -->
+  <div class="card">
+    <h2>Visual Bytes of Knowledge</h2>
+    <p>Microlearning & Instructional Design Showcase.</p>
+    <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Infographic</span></div>
+    <div class="carousel">
+      <div class="slides">
+        <img src="data/Outliers.jpg" alt="Outliers Infographic">
+        <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
+        <img src="data/NULL_Values.jpg" alt="NULL Values Infographic">
+        <img src="data/Agentic AI.jpg" alt="Agentic AI Infographic">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </div>
 
 </section>
 
 <script>
-// Typing effect for multiple paragraphs
-const container = document.getElementById("typing-container");
-const paragraphs = Array.from(container.querySelectorAll("p"));
-container.innerHTML = "";  // clear container to start typing
+// Typing effect
 
-let pIndex = 0;   // current paragraph
-let cIndex = 0;   // character index in paragraph
-
-function typeParagraph() {
-  if (pIndex < paragraphs.length) {
-    const para = paragraphs[pIndex].innerText;
-    if (cIndex < para.length) {
-      if (!container.children[pIndex]) {
-        const p = document.createElement("p");
-        container.appendChild(p);
-      }
-      container.children[pIndex].innerHTML += para.charAt(cIndex);
-      cIndex++;
-      setTimeout(typeParagraph, 18);
-    } else {
-      pIndex++;
-      cIndex = 0;
-      setTimeout(typeParagraph, 200); // pause between paragraphs
-    }
-  }
-}
-
-window.onload = typeParagraph;
 
 // Carousel functionality
 document.querySelectorAll('.carousel').forEach(carousel => {
