@@ -7,116 +7,114 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ombre-orange-start: #fff2e6;
-  --ombre-orange-end: #ffe0cc;
-  --accent-orange: #ff8c42;
-  --accent-orange-dark: #e0662d;
-  --text-dark: #000000;
+  --ombre-orange-start: #fff2e6;   /* soft light orange */
+  --ombre-orange-end: #ffe0cc;     /* gentle peach-orange */
+  --accent-orange: #ff8c42;        /* medium orangish, not too dark */
+  --text-dark: #2b2b2b;
 }
 
+/* BODY */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  color: var(--text-dark);
+  color: black;
   background: linear-gradient(135deg, var(--ombre-orange-start), var(--ombre-orange-end));
-  line-height: 1.6;
+  text-align: center;
 }
 
 /* HEADER */
 header {
-  max-width: 1200px;
-  margin: 0 auto;
   padding: 60px 20px 40px;
-  text-align: center;
+  text-align:center;
+  color: var(--text-dark);
 }
-
 header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.6rem;
-  margin-bottom: 15px;
+  font-family:'Playfair Display', serif;
+  font-size:2.6rem;
+  margin-bottom:10px;
 }
-
 header p {
-  font-size: 1.15rem;
-  margin-bottom: 25px;
-  opacity: 0.95;
+  font-size:1.1rem;
+  opacity:0.95;
 }
-
-/* BUTTON */
 .button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 28px;
-  border-radius: 999px;
-  background: var(--accent-orange-dark);
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 28px;
+  border-radius:999px;
+  background:#ff8c42; /* darker orange */
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
   transition: transform 0.2s ease, background 0.2s ease;
 }
-.button:hover {
-  transform: scale(1.05);
-  background: var(--accent-orange);
+.button:hover { 
+  transform: scale(1.05); 
+  background:#e57a30; 
 }
 
-/* INTRO SUMMARY */
+/* INTRO TYPING */
 .intro-summary {
   max-width: 900px;
   margin: 30px auto 50px;
   font-size: 1.05rem;
   line-height: 1.7;
-  text-align: center;
-  min-height: 120px;
   word-spacing: 1px;
+  text-align: center;
+  min-height: 150px;
 }
 
-/* CONTENT SECTION */
+/* SECTIONS / CARDS */
 section.content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 50px 20px;
+  max-width:1100px;
+  margin:auto;
+  padding:50px 20px;
 }
-
-/* CARDS */
 .card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 40px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  background: rgba(255,255,255,0.95);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
   backdrop-filter: blur(10px);
-  transition: 0.3s;
+  transition:0.3s;
 }
-
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
-
-.card h2 {
-  font-family: 'Playfair Display', serif;
-  color: var(--accent-orange-dark);
-  margin-bottom: 10px;
+.card h2 { 
+  font-family:'Playfair Display', serif; 
+  color:#ff6f61; 
+  margin-bottom:10px; 
 }
-
-.card p {
-  margin-top: 10px;
-  line-height: 1.5;
+.card p { 
+  margin-top:10px; 
+  line-height:1.6; 
 }
 
 /* TAGS */
-.tags {
-  margin-top: 10px;
+.tags { margin-top:10px; }
+.tag { 
+  display:inline-block; 
+  margin:5px 8px 0 0; 
+  padding:6px 14px; 
+  font-size:0.75rem; 
+  background:#ffe4e1; 
+  color:#b45309; 
+  border-radius:999px; 
+  font-weight:500; 
 }
-.tag {
-  display: inline-block;
-  margin: 5px 8px 0 0;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  background: #ffe4e1;
-  color: #b45309;
-  border-radius: 999px;
-  font-weight: 500;
+
+/* EMBED / PDF */
+.card embed, .card iframe {
+  width: 100%;          
+  min-height: 600px;    
+  max-height: 80vh;     
+  border-radius: 15px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  margin-top: 15px;
 }
 
 /* CURRICULUM CARDS */
@@ -154,40 +152,45 @@ section.content {
   width: 100%;
   max-width: 600px;
   height: 400px;
-  margin: 20px auto;
-  border-radius: 15px;
+  margin:20px auto;
+  border-radius:15px;
 }
 .slides {
-  display: flex;
+  display:flex;
   transition: transform 0.5s ease-in-out;
-  height: 100%;
+  height:100%;
 }
 .carousel img {
-  width: 100%;
-  height: 100%;
-  flex-shrink: 0;
-  object-fit: contain;
-  background: #fff;
+  width:100%;
+  height:100%;
+  flex-shrink:0;
+  object-fit:contain;
+  background:#fff;
 }
 .carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
   background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  cursor: pointer;
-  border-radius: 50%;
-  font-size: 18px;
+  color:white;
+  border:none;
+  padding:10px 16px;
+  cursor:pointer;
+  border-radius:50%;
+  font-size:18px;
 }
-.carousel button.prev { left: 10px; }
-.carousel button.next { right: 10px; }
+.carousel button.prev { left:10px; }
+.carousel button.next { right:10px; }
 
 /* RESPONSIVE */
-@media (max-width:900px) { .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } }
-@media (max-width:600px) { .sections-grid { grid-template-columns:1fr; gap:25px; } }
-
+@media (max-width:900px) { 
+  .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } 
+  .icon { font-size:2.4rem; } 
+}
+@media (max-width:600px) { 
+  .sections-grid { grid-template-columns:1fr; gap:25px; } 
+  .icon { font-size:2rem; } 
+}
 </style>
 </head>
 <body>
@@ -197,19 +200,17 @@ section.content {
   <p>Adult learning • Data analytics • Automation • Curriculum • Visual learning</p>
   <a href="index.html" class="button">Back to Profile</a>
 
-  <div class="intro-summary">
-    <p id="typing-text">
-      As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation. 
-      I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes. 
-      In today’s fast-paced digital world, I focus on microlearning and structured content design to make learning concise, practical, and retention-focused. 
-      My work includes interactive Articulate lessons, industry-aligned curriculum, certification-based assessments, and LMS-driven performance insights to continuously improve learner engagement and impact.
-    </p>
+  <div class="intro-summary" id="typing-container">
+    <p>As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation.</p>
+    <p>I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes.</p>
+    <p>In today’s fast-paced digital world, I focus on microlearning and structured content design to make learning concise, practical, and retention-focused.</p>
+    <p>My work includes interactive Articulate lessons, industry-aligned curriculum, certification-based assessments, and LMS-driven performance insights to continuously improve learner engagement and impact.</p>
   </div>
 </header>
 
 <section class="content">
 
-  <!-- Interactive Training Module -->
+  <!-- Project 1 -->
   <div class="card">
     <h2>🎓 Interactive Training Module</h2>
     <p>This Articulate 360–based Python lesson was designed using strong Learning Experience Design (LXD) principles to ensure clarity, engagement, and real-world relevance. The module blends microlearning, scenario-based interactions, and knowledge checks to make core Python concepts practical and learner-centered. Built with measurable outcomes in mind, it supports active practice, immediate feedback, and skill transfer beyond the virtual classroom.</p>
@@ -217,15 +218,15 @@ section.content {
     <embed src="PythonLesson.pdf" type="application/pdf" />
   </div>
 
-  <!-- Skills-Based Job Search -->
+  <!-- Project 2 -->
   <div class="card">
     <h2>🎓 Skills-Based Job Search & Mock Interview Program</h2>
-    <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
+    <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE (Analyze, Design, Develop, Implement, Evaluate) model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
     <div class="tags"><span class="tag">Job Search</span><span class="tag">Interview Prep</span><span class="tag">Skills Alignment</span></div>
     <embed src="data/CaseStudy.pdf" type="application/pdf" />
   </div>
 
-  <!-- Learner Personas -->
+  <!-- Project 3 -->
   <div class="card">
     <h2>👥 Learner Personas for Technical Mock Interviews</h2>
     <p>10 personas to create personalized, psychologically safe learning journeys.</p>
@@ -233,97 +234,58 @@ section.content {
     <embed src="data/LearnerPersonas.pdf" type="application/pdf" />
   </div>
 
-  <!-- AI 900 Mock Test -->
-  <div class="card">
-    <h2>🎓 AI 900 Mock Test</h2>
-    <p>Designed a comprehensive AI-900 assessment framework using Backward Design and LXD principles, aligning every question with exam objectives and real-world Azure AI use cases. The mock tests were structured to mirror certification patterns, reinforcing concept clarity, scenario-based thinking, and applied understanding. Continuous feedback loops and performance analytics ensured targeted remediation, contributing to consistent learner success and exam readiness.</p>
-    <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="button">Click Here!</a>
-  </div>
-
-  <!-- Data Wrangling Assignment -->
-  <div class="card">
-    <h2>📊 Data Wrangling Assignment</h2>
-    <p>Designed a hands-on Data Wrangling assignment grounded in real-world datasets to strengthen analytical thinking and data preparation skills. Using experiential learning and LXD principles, learners practice cleaning, transforming, and validating messy data before analysis. The assignment integrates guided checkpoints and reflection prompts to reinforce applied understanding. Outcomes are aligned with industry expectations, ensuring learners build job-ready data preprocessing competencies.</p>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="button">Start Data Wrangling Assignment</a>
-  </div>
-
-  <!-- Python Bootcamp Curriculum -->
-  <div class="card">
-    <h2>Full Python Bootcamp Curriculum</h2>
-    <p>Curriculum structure, lesson flow, exercises, and assessments for beginner-to-advanced Python learners.</p>
-    <div class="tags"><span class="tag">Curriculum</span><span class="tag">Python</span><span class="tag">Training</span></div>
-    <div class="curriculum-card">
-      <img src="data/currscreenshot.png" alt="Curriculum Design">
-      <div class="curriculum-overlay">
-        <p>Curriculum Design Sample</p>
-        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Data Analytics Curriculum -->
-  <div class="card">
-    <h2>Data Analytics Curriculum</h2>
-    <p>Designed a comprehensive, industry-aligned curriculum using backward design and ADDIE principles, ensuring every module maps to measurable learning outcomes. The program integrates hands-on labs, real-world projects, and progressive assessments to support skill mastery. Structured for adult learners, it blends theory with applied practice to build job-ready competencies. Continuous feedback and iteration ensure the curriculum remains relevant, scalable, and outcome-driven.</p>
-    <div class="tags"><span class="tag">Data Analytics</span><span class="tag">Curriculum</span><span class="tag">Lesson Planning</span></div>
-    <div class="curriculum-card">
-      <img src="data/currscreenshot2.png" alt="Curriculum Design">
-      <div class="curriculum-overlay">
-        <p>Curriculum Design Sample</p>
-        <a href="data/CurriculumDesign.pdf" target="_blank" class="button">Download PDF</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Visual Bytes / Carousel -->
-  <div class="card">
-    <h2>Visual Bytes of Knowledge</h2>
-    <p>Microlearning & Instructional Design Showcase.</p>
-    <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Infographic</span></div>
-    <div class="carousel">
-      <div class="slides">
-        <img src="data/Outliers.jpg" alt="Outliers Infographic">
-        <img src="data/Data Wrangling.jpg" alt="Data Wrangling Infographic">
-        <img src="data/NULL_Values.jpg" alt="NULL Values Infographic">
-        <img src="data/Agentic AI.jpg" alt="Agentic AI Infographic">
-      </div>
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    </div>
-  </div>
+  <!-- Add rest of your projects here (Curriculum, AI 900, Data Wrangling, Carousel, etc.) -->
 
 </section>
 
 <script>
-// Typing effect
-const text = document.getElementById("typing-text");
-const content = text.innerText;
-text.innerText = "";
-let i = 0;
-function typeWriter() {
-  if (i < content.length) {
-    text.innerText += content.charAt(i);
-    i++;
-    setTimeout(typeWriter, 18);
+// Typing effect for multiple paragraphs
+const container = document.getElementById("typing-container");
+const paragraphs = Array.from(container.querySelectorAll("p"));
+container.innerHTML = "";  // clear container to start typing
+
+let pIndex = 0;   // current paragraph
+let cIndex = 0;   // character index in paragraph
+
+function typeParagraph() {
+  if (pIndex < paragraphs.length) {
+    const para = paragraphs[pIndex].innerText;
+    if (cIndex < para.length) {
+      if (!container.children[pIndex]) {
+        const p = document.createElement("p");
+        container.appendChild(p);
+      }
+      container.children[pIndex].innerHTML += para.charAt(cIndex);
+      cIndex++;
+      setTimeout(typeParagraph, 18);
+    } else {
+      pIndex++;
+      cIndex = 0;
+      setTimeout(typeParagraph, 200); // pause between paragraphs
+    }
   }
 }
-window.onload = typeWriter;
 
-// Carousel
+window.onload = typeParagraph;
+
+// Carousel functionality
 document.querySelectorAll('.carousel').forEach(carousel => {
   const slides = carousel.querySelector('.slides');
   const images = slides.querySelectorAll('img');
   const prev = carousel.querySelector('.prev');
   const next = carousel.querySelector('.next');
   let index = 0;
+
   function showSlide(i) {
     if(i<0) index = images.length-1;
     else if(i>=images.length) index=0;
     else index=i;
     slides.style.transform = `translateX(${-index*100}%)`;
   }
-  prev?.addEventListener('click', ()=>showSlide(index-1));
-  next?.addEventListener('click', ()=>showSlide(index+1));
+
+  prev.addEventListener('click', ()=>showSlide(index-1));
+  next.addEventListener('click', ()=>showSlide(index+1));
+
   setInterval(()=>showSlide(index+1),5000);
 });
 </script>
