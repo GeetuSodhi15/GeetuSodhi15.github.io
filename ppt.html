@@ -190,6 +190,26 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
 @media (max-width:900px) { .sections-grid { grid-template-columns:repeat(2,1fr); gap:30px; } .icon { font-size:2.4rem; } }
 @media (max-width:600px) { .sections-grid { grid-template-columns:1fr; gap:25px; } .icon { font-size:2rem; } }
 
+  /* Intro Animation */
+.intro-summary {
+  max-width: 900px;
+  margin: 30px auto 50px;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 </style>
 </head>
 <body>
@@ -198,8 +218,16 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
   <h1>Geetu Sodhi | Projects Overview</h1>
   <p>Adult learning • Data analytics • Automation • Curriculum • Visual learning</p>
   <a href="#" class="button">Back to Profile</a>
+  <div class="intro-summary">
+  <p>
+    As an Instructional Designer, I design and deliver complete learning programs from planning to evaluation. 
+    I apply structured frameworks like ADDIE and backward design to ensure clear, measurable learning outcomes. 
+    My work includes interactive Articulate lessons, industry-focused curriculum, and certification-aligned assessments. 
+    I also leverage LMS platforms and data insights to continuously improve learner engagement and program impact.
+  </p>
+</div>
 </header>
-
+<!--
 <section class="section-wrapper">
   <div class="sections-grid">
     <a class="section-card beige"><div class="icon">📘</div><h3>Digital Learning Design</h3><span>Articulate & eLearning</span></a>
@@ -209,13 +237,13 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
     <a class="section-card teal"><div class="icon">📝</div><h3>Assessment & Evaluation</h3><span>Rubrics • Capstones</span></a>
     <a class="section-card beige"><div class="icon">🎨</div><h3>Infographics & Visual Learning</h3><span>Data storytelling</span></a>
   </div>
-</section>
+</section> -->
 
 <section class="content">
   <!-- Articulate / eLearning -->
   <div class="card">
     <h2>🎓 Interactive Training Module</h2>
-    <p>Soft-skills simulation in Articulate Rise with quizzes and branching scenarios.</p>
+    <p>This Articulate 360–based Python lesson was designed using strong Learning Experience Design (LXD) principles to ensure clarity, engagement, and real-world relevance. The module blends microlearning, scenario-based interactions, and knowledge checks to make core Python concepts practical and learner-centered. Built with measurable outcomes in mind, it supports active practice, immediate feedback, and skill transfer beyond the virtual classroom.</p>
     <div class="tags"><span class="tag">Articulate Rise</span><span class="tag">Simulation</span><span class="tag">Quizzes</span></div>
     <embed src="PythonLesson.pdf" type="application/pdf" />
   </div>
@@ -223,7 +251,7 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
   <!-- Career Readiness -->
   <div class="card">
     <h2>🎓 Skills-Based Job Search & Mock Interview Program</h2>
-    <p>Helps learners move from unfocused applications to skills-aligned roles and confident interview performance.</p>
+    <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE (Analyze, Design, Develop, Implement, Evaluate) model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
     <div class="tags"><span class="tag">Job Search</span><span class="tag">Interview Prep</span><span class="tag">Skills Alignment</span></div>
     <embed src="data/CaseStudy.pdf" type="application/pdf" />
   </div>
@@ -238,13 +266,13 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
   <!-- Assessment -->
   <div class="card">
     <h2>🎓 AI 900 Mock Test</h2>
-    <p>Practice for Microsoft Azure AI-900 exam, understand patterns and identify gaps.</p>
+    <p>Designed a comprehensive AI-900 assessment framework using Backward Design and LXD principles, aligning every question with exam objectives and real-world Azure AI use cases. The mock tests were structured to mirror certification patterns, reinforcing concept clarity, scenario-based thinking, and applied understanding. Continuous feedback loops and performance analytics ensured targeted remediation, contributing to consistent learner success and exam readiness..</p>
     <a href="https://wayground.com/join?gc=24634230&source=liveDashboard" target="_blank" class="button">Click Here!</a>
   </div>
 
   <div class="card">
     <h2>📊 Data Wrangling Assignment</h2>
-    <p>Practice cleaning, transforming, and preparing datasets for analysis.</p>
+    <p>Designed a hands-on Data Wrangling assignment grounded in real-world datasets to strengthen analytical thinking and data preparation skills. Using experiential learning and LXD principles, learners practice cleaning, transforming, and validating messy data before analysis. The assignment integrates guided checkpoints and reflection prompts to reinforce applied understanding. Outcomes are aligned with industry expectations, ensuring learners build job-ready data preprocessing competencies.</p>
     <a href="https://docs.google.com/document/d/e/2PACX-1vSaX99fI2rhnGuaU5gkrkiDN7RD_xdfynKEExK-BoSQ8HJlHFRy-H3v3mRfIkeBMJAnvnjG729m-xKv/pub" target="_blank" class="button">Start Data Wrangling Assignment</a>
   </div>
 
@@ -264,7 +292,7 @@ iframe, embed { width:100%; height:500px; border-radius:15px; border:none; box-s
 
   <div class="card">
     <h2>Data Analytics Curriculum</h2>
-    <p>Structured modules for data analytics with hands-on labs, exercises, and evaluation methods.</p>
+    <p>Designed a comprehensive, industry-aligned curriculum using backward design and ADDIE principles, ensuring every module maps to measurable learning outcomes. The program integrates hands-on labs, real-world projects, and progressive assessments to support skill mastery. Structured for adult learners, it blends theory with applied practice to build job-ready competencies. Continuous feedback and iteration ensure the curriculum remains relevant, scalable, and outcome-driven.</p>
     <div class="tags"><span class="tag">Data Analytics</span><span class="tag">Curriculum</span><span class="tag">Lesson Planning</span></div>
     <div class="curriculum-card">
       <img src="data/currscreenshot2.png" alt="Curriculum Design">
