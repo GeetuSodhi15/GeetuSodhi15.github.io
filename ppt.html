@@ -8,18 +8,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ombre-orange-start: #f7efe5;   /* very soft warm cream */
-  --ombre-orange-end: #fde8d5;     /* subtle peach tint */
-  --accent-orange: #e67e22;        /* refined accent */
+  --ombre-orange-start: #fff2e6;   /* soft light orange */
+  --ombre-orange-end: #ffe0cc;     /* gentle peach-orange */
+  --accent-orange: #ff8c42;        /* medium orangish, not too dark */
   --text-dark: #2b2b2b;
 }
 
 
 body {
-  margin:0;
-  font-family:'Inter',sans-serif;
+  margin: 0;
+  height: 100vh;                   /* full viewport height */
+  display: flex;
+  justify-content: center;          /* center horizontally */
+  align-items: center;              /* center vertically */
+  font-family: 'Inter', sans-serif;
   color: var(--text-dark);
-  background: linear-gradient(135deg, #faf7f2, #fdf1e7);
+  background: linear-gradient(135deg, var(--ombre-orange-start), var(--ombre-orange-end));
+  text-align: center;
 }
 
 
