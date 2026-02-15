@@ -84,21 +84,20 @@ a { text-decoration:none; }
 
 /* Remove old conflicting rules */
 
-/* Proper full-height PDF container */
 .file-container {
   width: 100%;
-  height: 80vh;   /* Controls how tall the PDF appears */
-  min-height: 700px;
-  margin-top: 15px;
+  height: 900px;  /* adjust as needed */
+  margin-top: 20px;
 }
 
-.file-container embed {
+.file-container iframe {
   width: 100%;
   height: 100%;
   border: none;
   border-radius: 15px;
   display: block;
 }
+
 
 
 </style>
@@ -133,9 +132,10 @@ a { text-decoration:none; }
     <div class="project-card">
       <h3>🎓 Interactive Python Training Module</h3>
       <p>This Articulate 360–based Python lesson was designed using strong Learning Experience Design (LXD) principles to ensure clarity, engagement, and real-world relevance. The module blends microlearning, scenario-based interactions, and knowledge checks to make core Python concepts practical and learner-centered. Built with measurable outcomes in mind, it supports active practice, immediate feedback, and skill transfer beyond the virtual classroom.</p>
-       <div class="file-container">
-      <embed src="PythonLesson.pdf" type="application/pdf" class="pdf-file" />
-       </div>
+
+         <iframe src="PythonLesson.pdf#zoom=page-width"></iframe>
+
+ 
     </div>
 
     <!-- Skills-Based Job Search -->
