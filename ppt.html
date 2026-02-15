@@ -68,11 +68,26 @@ a { text-decoration:none; }
 
 /* RIGHT project rollout */
 .right { display:flex; flex-direction:column; gap:50px; }
-
-.project-card { background: var(--panel); border-radius:20px; padding:30px; box-shadow:0 12px 30px rgba(0,0,0,0.08); }
+.project-card {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+}
 .project-card h3 { font-size:20px; margin-bottom:14px; }
 .project-card p { font-size:15.5px; line-height:1.6; color:var(--text); margin-bottom:15px; }
-.project-card embed, .project-card iframe { width:100%; height:600px; border:none; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.15); margin-top:10px; }
+.project-card embed,
+.project-card iframe {
+  width: 100%;
+  height: 80vh; /* full visible height of the viewport minus padding */
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  margin-top: 10px;
+  flex-shrink: 0;
+}
 
 /* Carousel */
 .carousel { position: relative; overflow: hidden; width: 100%; height: 450px; border-radius:15px; }
@@ -82,7 +97,12 @@ a { text-decoration:none; }
 .carousel button.prev { left:10px; }
 .carousel button.next { right:10px; }
 
-@media (max-width:900px){ .main { grid-template-columns:1fr; } }
+@media (max-width:900px){
+  .project-card embed,
+  .project-card iframe {
+    height: 60vh; /* smaller screens */
+  }
+}
 
 /* Buttons inside project cards */
 .project-card .button { margin-top:20px; display:inline-block; background: linear-gradient(135deg, #8b5cf6, #a78bfa); color:white; padding:10px 22px; border-radius:999px; }
