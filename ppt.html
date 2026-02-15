@@ -356,22 +356,6 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 </script>
 
 
-  <script>
-const text = document.getElementById("typing-text");
-const content = text.innerText;
-text.innerText = "";
-
-let i = 0;
-function typeWriter() {
-  if (i < content.length) {
-    text.innerText += content.charAt(i);
-    i++;
-    setTimeout(typeWriter, 18); // speed (lower = faster)
-  }
-}
-
-window.onload = typeWriter;
-</script>
 
 
 </body>
