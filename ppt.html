@@ -90,17 +90,19 @@ a { text-decoration:none; }
 
 
 
-  .file-container {
+.file-container {
   width: 100%;
-  max-width: 900px;   /* Adjust this */
-  margin: auto;
+  height: 1000px;   /* Controls vertical size */
 }
 
-.file-container iframe {
+.file-container iframe,
+.file-container embed {
   width: 100%;
-  height: 1200px;
+  height: 100%;
+  display: block;
   border: none;
 }
+
 
 
 
@@ -139,8 +141,10 @@ a { text-decoration:none; }
     <div class="project-card">
       <h3>🎓 Interactive Python Training Module</h3>
       <p>This Articulate 360–based Python lesson was designed using strong Learning Experience Design (LXD) principles to ensure clarity, engagement, and real-world relevance. The module blends microlearning, scenario-based interactions, and knowledge checks to make core Python concepts practical and learner-centered. Built with measurable outcomes in mind, it supports active practice, immediate feedback, and skill transfer beyond the virtual classroom.</p>
-  <iframe 
-  src="PythonLesson.pdf#zoom=page-width"></iframe>
+ <div class="file-container">
+  <iframe src="PythonLesson.pdf#zoom=page-width"></iframe>
+</div>
+
 
 
  
@@ -151,9 +155,11 @@ a { text-decoration:none; }
       <h3>🎓 Skills-Based Job Search & Mock Interview Program</h3>
       <p>Designed a structured Skills-Based Job Search & Mock Interview Program using the ADDIE model to move learners from unfocused applications to skills-aligned roles. During Analysis, learner gaps and job market requirements were identified; in Design & Development, targeted resume strategies and AI-supported mock interviews were created. The program was Implemented through guided practice sessions with structured feedback. Continuous Evaluation ensured measurable improvement in clarity, confidence, and interview performance.</p>
    
-       <div class="file-container">
-         <embed src="data/CaseStudy.pdf" type="application/pdf" class="pdf-file" />
-    </div>
+      <div class="file-container">
+  <iframe src="data/CaseStudy.pdf#zoom=page-width"></iframe>
+</div>
+
+
     </div>
 
     <!-- AI-900 Mock Test -->
@@ -174,19 +180,22 @@ a { text-decoration:none; }
     <div class="project-card">
       <h3>Full Python Bootcamp Curriculum</h3>
       <p>Curriculum structure, lesson flow, exercises, and assessments for beginner-to-advanced Python learners.</p>
-      
-       <div class="file-container">
-         <embed src="data/CurriculumDesign.pdf" type="application/pdf" class="pdf-file" />
-    </div>
+
+      <div class="file-container">
+  <iframe src="data/CurriculumDesign.pdf#zoom=page-width"></iframe>
+</div>
+
+
     </div>
 
     <!-- Data Analytics Curriculum -->
     <div class="project-card">
       <h3>Data Analytics Curriculum</h3>
       <p>Designed a comprehensive, industry-aligned curriculum using backward design and ADDIE principles, ensuring every module maps to measurable learning outcomes. The program integrates hands-on labs, real-world projects, and progressive assessments to support skill mastery. Structured for adult learners, it blends theory with applied practice to build job-ready competencies. Continuous feedback and iteration ensure the curriculum remains relevant, scalable, and outcome-driven.</p>
-       <div class="file-container">
-         <embed src="data/CurriculumDesign.pdf" type="application/pdf"  class="pdf-file"/>
-    </div>
+      
+        <div class="file-container">
+  <iframe src="data/CurriculumDesign.pdf#zoom=page-width"></iframe>
+</div>
     </div>
 
     <!-- Infographics Carousel -->
